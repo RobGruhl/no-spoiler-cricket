@@ -8,6 +8,7 @@
       "specialties": ["opener", "captain", "limited-overs"],
       "ranking": 1, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "1987-04-30",
+      "iplFranchise": "mumbai-indians",
       "photoUrl": "players/photos/rohit-sharma.jpg"
     },
     {
@@ -16,6 +17,7 @@
       "specialties": ["top-order", "chase-master", "all-formats"],
       "ranking": 2, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "1988-11-05",
+      "iplFranchise": "royal-challengers-bengaluru",
       "photoUrl": "players/photos/virat-kohli.jpg"
     },
     {
@@ -24,6 +26,7 @@
       "specialties": ["fast", "yorker", "death-overs", "all-formats"],
       "ranking": 3, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "1993-12-06",
+      "iplFranchise": "mumbai-indians",
       "photoUrl": "players/photos/jasprit-bumrah.jpg"
     },
     {
@@ -32,14 +35,16 @@
       "specialties": ["left-arm-spin", "lower-order", "fielding"],
       "ranking": 6, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "1988-12-06",
+      "iplFranchise": "chennai-super-kings",
       "photoUrl": "players/photos/ravindra-jadeja.jpg"
     },
     {
       "id": "shubman-gill", "slug": "shubman-gill", "name": "GILL Shubman",
       "team": "India · Gujarat Titans", "role": "batter",
-      "specialties": ["opener", "top-order", "limited-overs"],
+      "specialties": ["opener", "top-order", "limited-overs", "captain"],
       "ranking": 8, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "1999-09-08",
+      "iplFranchise": "gujarat-titans",
       "photoUrl": "players/photos/shubman-gill.jpg"
     },
     {
@@ -48,22 +53,25 @@
       "specialties": ["opener", "test-specialist", "left-hander"],
       "ranking": 10, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "2001-12-28",
+      "iplFranchise": "rajasthan-royals",
       "photoUrl": "players/photos/yashasvi-jaiswal.jpg"
     },
     {
       "id": "suryakumar-yadav", "slug": "suryakumar-yadav", "name": "YADAV Suryakumar",
       "team": "India · Mumbai Indians", "role": "batter",
-      "specialties": ["t20-specialist", "360-degree", "captain"],
+      "specialties": ["t20-specialist", "360-degree"],
       "ranking": 12, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "1990-09-14",
+      "iplFranchise": "mumbai-indians",
       "photoUrl": "players/photos/suryakumar-yadav.jpg"
     },
     {
       "id": "hardik-pandya", "slug": "hardik-pandya", "name": "PANDYA Hardik",
       "team": "India · Mumbai Indians", "role": "all-rounder",
-      "specialties": ["seam-bowling", "power-hitter", "t20-specialist"],
+      "specialties": ["seam-bowling", "power-hitter", "t20-specialist", "captain"],
       "ranking": 14, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "1993-10-11",
+      "iplFranchise": "mumbai-indians",
       "photoUrl": "players/photos/hardik-pandya.jpg"
     },
     {
@@ -72,6 +80,7 @@
       "specialties": ["left-arm-wrist-spin", "limited-overs"],
       "ranking": 16, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "1994-12-14",
+      "iplFranchise": "delhi-capitals",
       "photoUrl": "players/photos/kuldeep-yadav.jpg"
     },
     {
@@ -80,22 +89,25 @@
       "specialties": ["fast", "new-ball", "all-formats"],
       "ranking": 18, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "1994-03-13",
+      "iplFranchise": "royal-challengers-bengaluru",
       "photoUrl": "players/photos/mohammed-siraj.jpg"
     },
     {
       "id": "kl-rahul", "slug": "kl-rahul", "name": "RAHUL KL",
-      "team": "India · Lucknow Super Giants", "role": "wicket-keeper",
+      "team": "India · Delhi Capitals", "role": "wicket-keeper",
       "specialties": ["top-order", "keeper", "all-formats"],
       "ranking": 20, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "1992-04-18",
+      "iplFranchise": "delhi-capitals",
       "photoUrl": "players/photos/kl-rahul.jpg"
     },
     {
       "id": "rishabh-pant", "slug": "rishabh-pant", "name": "PANT Rishabh",
-      "team": "India · Delhi Capitals", "role": "wicket-keeper",
-      "specialties": ["left-hander", "test-specialist", "keeper"],
+      "team": "India · Lucknow Super Giants", "role": "wicket-keeper",
+      "specialties": ["left-hander", "test-specialist", "keeper", "captain"],
       "ranking": 22, "nationality": "India", "nationalityCode": "IN",
       "dateOfBirth": "1997-10-04",
+      "iplFranchise": "lucknow-super-giants",
       "photoUrl": "players/photos/rishabh-pant.jpg"
     },
     {
@@ -104,6 +116,7 @@
       "specialties": ["fast", "captain", "all-formats"],
       "ranking": 4, "nationality": "Australia", "nationalityCode": "AU",
       "dateOfBirth": "1993-05-08",
+      "iplFranchise": "sunrisers-hyderabad",
       "photoUrl": "players/photos/pat-cummins.jpg"
     },
     {
@@ -120,6 +133,7 @@
       "specialties": ["left-hander", "opener", "finals-specialist"],
       "ranking": 9, "nationality": "Australia", "nationalityCode": "AU",
       "dateOfBirth": "1993-12-29",
+      "iplFranchise": "sunrisers-hyderabad",
       "photoUrl": "players/photos/travis-head.jpg"
     },
     {
@@ -140,10 +154,11 @@
     },
     {
       "id": "jos-buttler", "slug": "jos-buttler", "name": "BUTTLER Jos",
-      "team": "England · Rajasthan Royals", "role": "wicket-keeper",
+      "team": "England · Gujarat Titans", "role": "wicket-keeper",
       "specialties": ["opener", "power-hitter", "limited-overs"],
       "ranking": 13, "nationality": "England", "nationalityCode": "UK",
       "dateOfBirth": "1990-09-08",
+      "iplFranchise": "gujarat-titans",
       "photoUrl": "players/photos/jos-buttler.jpg"
     },
     {
@@ -152,6 +167,7 @@
       "specialties": ["leg-spin", "t20-specialist"],
       "ranking": 15, "nationality": "Afghanistan", "nationalityCode": "AF",
       "dateOfBirth": "1998-09-20",
+      "iplFranchise": "gujarat-titans",
       "photoUrl": "players/photos/rashid-khan.jpg"
     },
     {
@@ -184,6 +200,7 @@
       "specialties": ["fast", "all-formats"],
       "ranking": 23, "nationality": "South Africa", "nationalityCode": "ZA",
       "dateOfBirth": "1995-05-25",
+      "iplFranchise": "gujarat-titans",
       "photoUrl": "players/photos/kagiso-rabada.jpg"
     },
     {
@@ -192,6 +209,7 @@
       "specialties": ["power-hitter", "limited-overs"],
       "ranking": 25, "nationality": "South Africa", "nationalityCode": "ZA",
       "dateOfBirth": "1991-07-30",
+      "iplFranchise": "sunrisers-hyderabad",
       "photoUrl": "players/photos/heinrich-klaasen.jpg"
     }
   ]

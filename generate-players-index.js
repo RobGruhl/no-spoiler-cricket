@@ -124,6 +124,7 @@ function buildIndex(players, opts = {}) {
       <nav class="navstrip">
         <a href="index.html">01 — Fixtures</a>
         <a href="players.html" class="on">02 — Players</a>
+        <a href="ipl.html">03 — IPL</a>
         <span class="spacer"></span>
         <span class="edition mono">EN</span>
       </nav>

@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>IPL 2026 — Season 19 — No Spoiler Cricket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.crumbs{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);padding:16px 0;border-bottom:1px solid var(--rule-soft)}
+.crumbs a{color:var(--ink-3);border-bottom:1px solid transparent}
+.crumbs a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.crumbs .sep{margin:0 10px;color:var(--rule-soft)}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;padding:40px 0 32px;border-bottom:3px solid var(--ink)}
+.hero .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+.hero h1{font-family:var(--font-sans);font-weight:800;font-size:clamp(56px,7vw,104px);line-height:.88;letter-spacing:-.04em;margin:0}
+.hero h1 .em{font-style:italic;font-weight:500;color:var(--signal)}
+.hero .sub{font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;color:var(--ink-2);margin-top:18px;max-width:62ch;line-height:1.5}
+.hero aside{border-left:1px solid var(--rule);padding-left:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;align-content:start}
+.stat{display:block}
+.stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.stat .v{font-family:var(--font-sans);font-weight:700;font-size:32px;letter-spacing:-.02em;line-height:1;margin-top:4px}
+.stat .v.sm{font-size:18px;line-height:1.2}
+.section{padding:32px 0;border-bottom:1px solid var(--rule-soft)}
+.section h2{font-family:var(--font-sans);font-weight:700;font-size:22px;letter-spacing:-.01em;margin:0 0 6px}
+.teams-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule);margin-top:20px}
+.tcard{display:grid;grid-template-rows:auto auto auto 1fr auto;gap:10px;padding:22px;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);color:inherit;position:relative;min-height:220px;transition:background .1s}
+.tcard:nth-child(2n){border-right:0}
+.tcard:hover{background:var(--paper-2)}
+.tcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--team-color,var(--ink))}
+.tcard .head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding-left:14px}
+.tcard .abbr{font-family:var(--font-sans);font-weight:800;font-size:28px;letter-spacing:-.02em;color:var(--team-color,var(--ink))}
+.tcard .name{font-family:var(--font-sans);font-weight:700;font-size:18px;letter-spacing:-.005em;padding-left:14px}
+.tcard .meta{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;padding-left:14px}
+.tcard .id-line{font-family:var(--font-sans);font-size:13.5px;color:var(--ink-2);line-height:1.45;padding-left:14px;max-width:52ch}
+.tcard .foot{display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;padding-left:14px;padding-top:6px;border-top:1px solid var(--rule-soft);margin-top:6px}
+.tcard .titles{color:var(--ink);font-weight:600}
+.wstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);margin-top:16px}
+.wcell{padding:16px 18px;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft)}
+.wcell:nth-child(4n){border-right:0}
+.wcell .geo{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);display:flex;align-items:center;gap:8px}
+.wcell .flag{font-size:18px}
+.wcell .bc{font-family:var(--font-sans);font-weight:600;font-size:15px;margin-top:6px;line-height:1.2}
+.wcell .notes{font-size:11.5px;color:var(--ink-2);margin-top:4px;line-height:1.4}
+.wcell a{color:var(--ink);border-bottom:1px solid var(--rule-soft)}
+.wcell a:hover{border-bottom-color:var(--ink)}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:14px}
+.rules .rule h3{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px;font-weight:500}
+.rules .rule p{font-family:var(--font-sans);font-size:14px;color:var(--ink-2);line-height:1.55;margin:0}
+.narratives{margin-top:10px;padding:0;list-style:none}
+.narratives li{font-family:var(--font-sans);font-size:15px;line-height:1.55;color:var(--ink-2);margin:8px 0;padding-left:18px;position:relative;max-width:78ch}
+.narratives li::before{content:"§";position:absolute;left:0;color:var(--ink-3);font-family:var(--font-mono);font-weight:600}
+@media (max-width:960px){
+  .teams-grid{grid-template-columns:1fr}
+  .tcard:nth-child(2n){border-right:0}
+  .wstrip{grid-template-columns:repeat(2,1fr)}
+  .wcell:nth-child(4n){border-right:1px solid var(--rule-soft)}
+  .wcell:nth-child(2n){border-right:0}
+  .rules{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr}
+  .hero aside{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:20px}
+}
+</style>
+</head>
+<body>
+  <div class="tricolour thick"></div>
+  <header class="masthead">
+    <div class="frame">
+      <div class="masthead-inner">
+        <div class="wordmark">No<span class="slash">/</span>Spoiler Cricket
+          <span class="sub">IPL · 2026 · Franchises &amp; watch guide</span>
+        </div>
+        <div class="mast-meta">
+          Document <b>NSC/IPL/26</b><br/>
+          Updated <b>2026-04-20</b>
+        </div>
+      </div>
+      <nav class="navstrip">
+        <a href="index.html">01 — Fixtures</a>
+        <a href="players.html">02 — Players</a>
+        <a href="ipl.html" class="on">03 — IPL</a>
+        <span class="spacer"></span>
+        <span class="edition mono">EN</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="frame">
+
+    <nav class="crumbs">
+      <a href="index.html">Fixtures</a><span class="sep">/</span>
+      <span>IPL 2026 — Season 19</span>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <div class="tag">
+          <span class="code sig">IPL</span>
+          <span>IPL 2026 — Season 19</span>
+          <span>·</span>
+          <span>Mar 20 – May 24</span>
+          <span>·</span>
+          <span>74 matches</span>
+        </div>
+        <h1>Indian Premier<br/><span class="em">League</span></h1>
+        <p class="sub">Ten franchises. Seventy-four matches over ten weeks. The richest, loudest, and most-watched T20 league in the world — every evening from March to late May.</p>
+      </div>
+      <aside>
+        <div class="stat"><span class="k">Season</span><span class="v">19</span></div>
+        <div class="stat"><span class="k">Franchises</span><span class="v">10</span></div>
+        <div class="stat"><span class="k">Matches</span><span class="v">74</span></div>
+        <div class="stat"><span class="k">League stage</span><span class="v">70</span></div>
+        <div class="stat"><span class="k">Playoffs</span><span class="v">4</span></div>
+        <div class="stat"><span class="k">Defending</span><span class="v sm">RCB</span></div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ Franchises</div>
+      <h2>Ten teams. One trophy.</h2>
+      <div class="teams-grid">
+    <a class="tcard" style="--team-color:#F9CD05" href="ipl/chennai-super-kings.html">
+      <div class="head">
+        <div class="abbr">CSK</div>
+        <div class="meta">5 titles · 2021, 2023</div>
+      </div>
+      <div class="name">Chennai Super Kings</div>
+      <div class="meta">Chennai · Chepauk</div>
+      <div class="id-line">The Yellow Army — five-time champions, playoff fixtures almost every season, and the spiritual home of MS Dhoni.</div>
+      <div class="foot">
+        <span>Captain · <span class="titles">GAIKWAD Ruturaj</span></span>
+        <span>→</span>
+      </div>
+    </a>
+    <a class="tcard" style="--team-color:#004BA0" href="ipl/mumbai-indians.html">
+      <div class="head">
+        <div class="abbr">MI</div>
+        <div class="meta">5 titles · 2019, 2020</div>
+      </div>
+      <div class="name">Mumbai Indians</div>
+      <div class="meta">Mumbai · Wankhede</div>
+      <div class="id-line">Record five-time winners — a squad-depth and data-first franchise, with Wankhede dew a constant chasing ally.</div>
+      <div class="foot">
+        <span>Captain · <span class="titles">PANDYA Hardik</span></span>
+        <span>→</span>
+      </div>
+    </a>
+    <a class="tcard" style="--team-color:#EC1C24" href="ipl/royal-challengers-bengaluru.html">
+      <div class="head">
+        <div class="abbr">RCB</div>
+        <div class="meta">1 title · 2025</div>
+      </div>
+      <div class="name">Royal Challengers Bengaluru</div>
+      <div class="meta">Bengaluru · Chinnaswamy</div>
+      <div class="id-line">Defending champions. Chinnaswamy&#39;s short boundaries make every RCB home match a six-fest.</div>
+      <div class="foot">
+        <span>Captain · <span class="titles">PATIDAR Rajat</span></span>
+        <span>→</span>
+      </div>
+    </a>
+    <a class="tcard" style="--team-color:#3A225D" href="ipl/kolkata-knight-riders.html">
+      <div class="head">
+        <div class="abbr">KKR</div>
+        <div class="meta">3 titles · 2014, 2024</div>
+      </div>
+      <div class="name">Kolkata Knight Riders</div>
+      <div class="meta">Kolkata · Eden</div>
+      <div class="id-line">Eden&#39;s purple-and-gold cathedral. Mystery spin has defined KKR titles across three eras.</div>
+      <div class="foot">
+        <span>Captain · <span class="titles">RAHANE Ajinkya</span></span>
+        <span>→</span>
+      </div>
+    </a>
+    <a class="tcard" style="--team-color:#17479E" href="ipl/delhi-capitals.html">
+      <div class="head">
+        <div class="abbr">DC</div>
+        <div class="meta">0 titles</div>
+      </div>
+      <div class="name">Delhi Capitals</div>
+      <div class="meta">Delhi · Kotla</div>
+      <div class="id-line">Formerly Delhi Daredevils. Still chasing a maiden title; the last decade has seen repeated playoff heartbreak.</div>
+      <div class="foot">
+        <span>Captain · <span class="titles">PATEL Axar</span></span>
+        <span>→</span>
+      </div>
+    </a>
+    <a class="tcard" style="--team-color:#1B2133" href="ipl/gujarat-titans.html">
+      <div class="head">
+        <div class="abbr">GT</div>
+        <div class="meta">1 title · 2022</div>
+      </div>
+      <div class="name">Gujarat Titans</div>
+      <div class="meta">Ahmedabad · Motera</div>
+      <div class="id-line">Debuted 2022 and won the title that year. 132,000-seat Motera is the largest cricket ground on earth.</div>
+      <div class="foot">
+        <span>Captain · <span class="titles">GILL Shubman</span></span>
+        <span>→</span>
+      </div>
+    </a>
+    <a class="tcard" style="--team-color:#EA1A85" href="ipl/rajasthan-royals.html">
+      <div class="head">
+        <div class="abbr">RR</div>
+        <div class="meta">1 title · 2008</div>
+      </div>
+      <div class="name">Rajasthan Royals</div>
+      <div class="meta">Jaipur · SMS</div>
+      <div class="id-line">The inaugural 2008 champions under Shane Warne. Renowned academy — always the franchise to find the next Indian star.</div>
+      <div class="foot">
+        <span>Captain · <span class="titles">PARAG Riyan</span></span>
+        <span>→</span>
+      </div>
+    </a>
+    <a class="tcard" style="--team-color:#FB643E" href="ipl/sunrisers-hyderabad.html">
+      <div class="head">
+        <div class="abbr">SRH</div>
+        <div class="meta">1 title · 2016</div>
+      </div>
+      <div class="name">Sunrisers Hyderabad</div>
+      <div class="meta">Hyderabad · Uppal</div>
+      <div class="id-line">2016 champions. Modern era known for 250+ totals — the hardest-hitting top order in the league.</div>
+      <div class="foot">
+        <span>Captain · <span class="titles">KISHAN Ishan</span></span>
+        <span>→</span>
+      </div>
+    </a>
+    <a class="tcard" style="--team-color:#005F9F" href="ipl/lucknow-super-giants.html">
+      <div class="head">
+        <div class="abbr">LSG</div>
+        <div class="meta">0 titles</div>
+      </div>
+      <div class="name">Lucknow Super Giants</div>
+      <div class="meta">Lucknow · Ekana</div>
+      <div class="id-line">Record ₹7,090-crore franchise purchase in 2021. Still chasing first trophy; Pant-led era begins now.</div>
+      <div class="foot">
+        <span>Captain · <span class="titles">PANT Rishabh</span></span>
+        <span>→</span>
+      </div>
+    </a>
+    <a class="tcard" style="--team-color:#D71920" href="ipl/punjab-kings.html">
+      <div class="head">
+        <div class="abbr">PBKS</div>
+        <div class="meta">0 titles</div>
+      </div>
+      <div class="name">Punjab Kings</div>
+      <div class="meta">Mohali · Mullanpur (New PCA)</div>
+      <div class="id-line">Formerly Kings XI Punjab. Moved primary home to the new Mullanpur stadium near Chandigarh. Still no title in 18 seasons — the IPL&#39;s longest wait.</div>
+      <div class="foot">
+        <span>Captain · <span class="titles">IYER Shreyas</span></span>
+        <span>→</span>
+      </div>
+    </a></div>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ Format &amp; rules</div>
+      <h2>2026 — structure</h2>
+      <div class="rules">
+        <div class="rule">
+          <h3>Format</h3>
+          <p>Double group-stage (two groups of 5), each team plays 14 league matches. Top 4 advance to playoffs: Qualifier 1 (#1 v #2), Eliminator (#3 v #4), Qualifier 2, Final.</p>
+        </div>
+        <div class="rule">
+          <h3>Impact Player</h3>
+          <p>Retained for 2026 — each team can substitute one player between overs 0–14 of either innings.</p>
+        </div>
+        <div class="rule">
+          <h3>Auction cycle</h3>
+          <p>mini-auction (Dec 2025). Most recent mega-auction was pre-2025; 2026 is a retention/mini-auction year with only marginal squad changes.</p>
+        </div>
+        <div class="rule">
+          <h3>Playoffs</h3>
+          <p>Four matches. Qualifier 1 pits the league top two — winner goes direct to the Final. Eliminator is a sudden-death between #3 and #4. Qualifier 2 is Qualifier 1's loser vs the Eliminator winner. Final is a standalone single-match decider.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ Pre-tournament storylines</div>
+      <h2>Things to know before the first ball</h2>
+      <ul class="narratives"><li>RCB enter as defending champions after their maiden title in 2025, under new captain Rajat Patidar — Kohli still in red.</li><li>Cameron Green joined KKR at ₹25.20 crore, becoming the most expensive overseas signing in IPL history.</li><li>MS Dhoni&#39;s potential farewell season — CSK are rebuilding around Ruturaj Gaikwad after a last-place finish in 2025.</li><li>Sanju Samson&#39;s move from Rajasthan to Chennai after 11 seasons at RR is the most significant Indian transfer.</li><li>Rishabh Pant (captain) and Shreyas Iyer (captain) swap franchises — Pant now leads LSG, Iyer takes over Punjab.</li><li>Vaibhav Suryavanshi&#39;s second year at Rajasthan — the teenage opener whose 2025 debut was sport&#39;s breakout story.</li><li>The Impact Player rule is retained. 2026 is a mini-auction year — minor churn versus the 2025 mega-auction.</li></ul>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ Where to watch — IPL 2026</div>
+      <h2>Primary broadcasters by region</h2>
+      <div class="wstrip"><div class="wcell">
+      <div class="geo"><span class="flag">🇮🇳</span>India</div>
+      <div class="bc"><a href="https://www.hotstar.com" target="_blank" rel="noopener">JioHotstar (streaming) · Star Sports (TV)</a></div>
+      <div class="notes">Merged Disney+ Hotstar / JioCinema entity after the 2024 Disney-Reliance merger. Mobile plans from ₹79/mo.</div>
+    </div><div class="wcell">
+      <div class="geo"><span class="flag">🇺🇸</span>United States</div>
+      <div class="bc"><a href="https://www.willow.tv" target="_blank" rel="noopener">Willow TV</a></div>
+      <div class="notes">Also on Fubo and Sling TV. Matches start 10:00 ET / 06:00 ET for double-headers.</div>
+    </div><div class="wcell">
+      <div class="geo"><span class="flag">🇬🇧</span>United Kingdom</div>
+      <div class="bc"><a href="https://www.skysports.com/cricket" target="_blank" rel="noopener">Sky Sports Cricket</a></div>
+      <div class="notes">Stream via Sky Go or NOW TV.</div>
+    </div><div class="wcell">
+      <div class="geo"><span class="flag">🇦🇺</span>Australia</div>
+      <div class="bc"><a href="https://www.kayosports.com.au/cricket" target="_blank" rel="noopener">Fox Cricket / Kayo Sports</a></div>
+      
+    </div><div class="wcell">
+      <div class="geo"><span class="flag">🇨🇦</span>Canada</div>
+      <div class="bc"><a href="https://www.willow.tv" target="_blank" rel="noopener">Willow TV / ATN Cricket Plus</a></div>
+      
+    </div><div class="wcell">
+      <div class="geo"><span class="flag">🇦🇪</span>UAE / Middle East</div>
+      <div class="bc"><a href="https://www.bein.com" target="_blank" rel="noopener">beIN Sports (MENA)</a></div>
+      <div class="notes">Also on StarzPlay and CricLife.</div>
+    </div><div class="wcell">
+      <div class="geo"><span class="flag">🇸🇬</span>Singapore / SEA</div>
+      <div class="bc"><a href="https://www.yupptv.com" target="_blank" rel="noopener">YuppTV</a></div>
+      
+    </div><div class="wcell">
+      <div class="geo"><span class="flag">🇿🇦</span>South Africa</div>
+      <div class="bc"><a href="https://www.supersport.com" target="_blank" rel="noopener">SuperSport</a></div>
+      
+    </div></div>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ Full fixture schedule</div>
+      <h2>All 74 matches</h2>
+      <p class="sub" style="max-width:72ch;font-family:var(--font-sans);color:var(--ink-2);margin-top:10px;">The league schedule, start times, and venue-by-venue breakdown is on the IPL fixture page. Spoiler-safe — no scores or standings — just dates, teams, and where to watch.</p>
+      <p style="margin-top:14px"><a href="match-details/ipl-2026.html" style="border-bottom:1px solid var(--ink);font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600">→ View IPL 2026 fixture sheet</a></p>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-row">
+        <span>No Spoiler Cricket · 2026 Fixtures</span>
+        <span>§ 03 — IPL</span>
+        <span>Built 2026-04-20</span>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>

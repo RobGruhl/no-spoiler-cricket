@@ -62,6 +62,20 @@
 .mrow .nm{font-family:var(--font-sans);font-weight:600;font-size:14px;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mrow .vn{font-size:11px;color:var(--ink-3);letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mrow:hover{background:var(--paper-2)}
+.fgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:16px;border-top:1px solid var(--rule)}
+.fcard{padding:16px;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);position:relative;display:grid;gap:6px;color:inherit;min-height:130px;transition:background .08s}
+.fcard:nth-child(5n){border-right:0}
+.fcard:hover{background:var(--paper-2)}
+.fcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--team-color,var(--ink))}
+.fcard .fcard-ab{font-family:var(--font-sans);font-weight:800;font-size:24px;color:var(--team-color,var(--ink));letter-spacing:-.02em;padding-left:10px;line-height:1}
+.fcard .fcard-nm{font-family:var(--font-sans);font-weight:600;font-size:13.5px;line-height:1.2;padding-left:10px;letter-spacing:-.005em}
+.fcard .fcard-cp{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;color:var(--ink-2);padding-left:10px;text-transform:uppercase}
+.fcard .fcard-hv{font-size:10.5px;letter-spacing:.12em;color:var(--ink-3);padding-left:10px;text-transform:uppercase;margin-top:auto}
+@media (max-width:960px){
+  .fgrid{grid-template-columns:repeat(2,1fr)}
+  .fcard:nth-child(5n){border-right:1px solid var(--rule-soft)}
+  .fcard:nth-child(2n){border-right:0}
+}
 .narratives{margin-top:10px;padding:0;list-style:none}
 .narratives li{font-family:var(--font-sans);font-size:15px;line-height:1.55;color:var(--ink-2);margin:8px 0;padding-left:18px;position:relative}
 .narratives li::before{content:"§";position:absolute;left:0;color:var(--ink-3);font-family:var(--font-mono);font-weight:600}
@@ -102,6 +116,7 @@
       <nav class="navstrip">
         <a href="../index.html" class="on">01 — Fixtures</a>
         <a href="../players.html">02 — Players</a>
+        <a href="../ipl.html">03 — IPL</a>
         <span class="spacer"></span>
         <span class="edition mono">§ Match Sheet</span>
       </nav>
@@ -120,7 +135,7 @@
           <span>Mar 20 – May 24 2026</span>
         </div>
         <h1>Indian Premier League 2026</h1>
-        <p class="sub">Ten franchises across India play a double round-robin (70 league matches) followed by four playoff matches — Qualifier 1, Eliminator, Qualifier 2, and the Final. Each match is a standalone spectacle; the league&#39;s format concentrates star power into three-hour T20 games most evenings.</p>
+        <p class="sub">Ten franchises across India. 70 league matches grouped into two divisions of five — each team plays 14 — then four playoffs (Qualifier 1, Eliminator, Qualifier 2, Final). Match-by-match the league concentrates global T20 star power into three-hour games almost every evening from late March to late May.</p>
       </div>
       <aside>
         <div class="stat"><span class="k">Teams</span><span class="v sm">IN</span></div>
@@ -184,6 +199,72 @@
     
     <p class="prose" style="margin-top:10px;font-size:12px;letter-spacing:.04em">⚠️ Spoiler warning: live streams and broadcaster home pages often show current scores. Disable autoplay &amp; avoid sidebar recommendations on YouTube.</p>
   </section>
+    <section class="section">
+    <div class="eyebrow">§ Franchises</div>
+    <h2>The ten teams</h2>
+    <p class="prose" style="font-size:13px">Each franchise has its own hub page with squad, marquee watch, and full team info. <a href="../ipl.html" style="border-bottom:1px solid var(--ink);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">View IPL league hub →</a></p>
+    <div class="fgrid">
+    <a class="fcard" style="--team-color:#F9CD05" href="../ipl/chennai-super-kings.html">
+      <div class="fcard-ab">CSK</div>
+      <div class="fcard-nm">Chennai Super Kings</div>
+      <div class="fcard-cp mono">Captain · GAIKWAD Ruturaj</div>
+      <div class="fcard-hv mono">Chepauk</div>
+    </a>
+    <a class="fcard" style="--team-color:#004BA0" href="../ipl/mumbai-indians.html">
+      <div class="fcard-ab">MI</div>
+      <div class="fcard-nm">Mumbai Indians</div>
+      <div class="fcard-cp mono">Captain · PANDYA Hardik</div>
+      <div class="fcard-hv mono">Wankhede</div>
+    </a>
+    <a class="fcard" style="--team-color:#EC1C24" href="../ipl/royal-challengers-bengaluru.html">
+      <div class="fcard-ab">RCB</div>
+      <div class="fcard-nm">Royal Challengers Bengaluru</div>
+      <div class="fcard-cp mono">Captain · PATIDAR Rajat</div>
+      <div class="fcard-hv mono">Chinnaswamy</div>
+    </a>
+    <a class="fcard" style="--team-color:#3A225D" href="../ipl/kolkata-knight-riders.html">
+      <div class="fcard-ab">KKR</div>
+      <div class="fcard-nm">Kolkata Knight Riders</div>
+      <div class="fcard-cp mono">Captain · RAHANE Ajinkya</div>
+      <div class="fcard-hv mono">Eden</div>
+    </a>
+    <a class="fcard" style="--team-color:#17479E" href="../ipl/delhi-capitals.html">
+      <div class="fcard-ab">DC</div>
+      <div class="fcard-nm">Delhi Capitals</div>
+      <div class="fcard-cp mono">Captain · PATEL Axar</div>
+      <div class="fcard-hv mono">Kotla</div>
+    </a>
+    <a class="fcard" style="--team-color:#1B2133" href="../ipl/gujarat-titans.html">
+      <div class="fcard-ab">GT</div>
+      <div class="fcard-nm">Gujarat Titans</div>
+      <div class="fcard-cp mono">Captain · GILL Shubman</div>
+      <div class="fcard-hv mono">Motera</div>
+    </a>
+    <a class="fcard" style="--team-color:#EA1A85" href="../ipl/rajasthan-royals.html">
+      <div class="fcard-ab">RR</div>
+      <div class="fcard-nm">Rajasthan Royals</div>
+      <div class="fcard-cp mono">Captain · PARAG Riyan</div>
+      <div class="fcard-hv mono">SMS</div>
+    </a>
+    <a class="fcard" style="--team-color:#FB643E" href="../ipl/sunrisers-hyderabad.html">
+      <div class="fcard-ab">SRH</div>
+      <div class="fcard-nm">Sunrisers Hyderabad</div>
+      <div class="fcard-cp mono">Captain · KISHAN Ishan</div>
+      <div class="fcard-hv mono">Uppal</div>
+    </a>
+    <a class="fcard" style="--team-color:#005F9F" href="../ipl/lucknow-super-giants.html">
+      <div class="fcard-ab">LSG</div>
+      <div class="fcard-nm">Lucknow Super Giants</div>
+      <div class="fcard-cp mono">Captain · PANT Rishabh</div>
+      <div class="fcard-hv mono">Ekana</div>
+    </a>
+    <a class="fcard" style="--team-color:#D71920" href="../ipl/punjab-kings.html">
+      <div class="fcard-ab">PBKS</div>
+      <div class="fcard-nm">Punjab Kings</div>
+      <div class="fcard-cp mono">Captain · IYER Shreyas</div>
+      <div class="fcard-hv mono">Mullanpur (New PCA)</div>
+    </a></div>
+  </section>
     
     <section class="section">
     <div class="eyebrow">§ 03 — Players to watch</div>
@@ -223,17 +304,17 @@
     <section class="section">
     <div class="eyebrow">§ 04 — Storylines</div>
     <h2>Narratives to watch</h2>
-    <ul class="narratives"><li>Mega auction years reshape squads every 2–3 seasons — the composition of teams can shift drastically between editions.</li><li>The Impact Player rule (introduced in 2023) continues to influence how teams build their XI.</li><li>International players&#39; availability depends on their national boards&#39; schedules — keep an eye on NOCs.</li><li>The playoffs are where legacies are made: the Qualifier-2-to-Final path has produced several fairytale runs.</li></ul>
+    <ul class="narratives"><li>RCB enter as defending champions after their maiden title in 2025, under new captain Rajat Patidar — Kohli still in red.</li><li>Cameron Green joined KKR at ₹25.20 crore, becoming the most expensive overseas signing in IPL history.</li><li>MS Dhoni&#39;s potential farewell season — CSK are rebuilding around Ruturaj Gaikwad after a last-place finish in 2025.</li><li>Sanju Samson&#39;s move from Rajasthan to Chennai after 11 seasons at RR is the most significant Indian transfer.</li><li>Rishabh Pant (captain) and Shreyas Iyer (captain) swap franchises — Pant now leads LSG, Iyer takes over Punjab.</li><li>Vaibhav Suryavanshi&#39;s second year at Rajasthan — the teenage opener whose 2025 debut was sport&#39;s breakout story.</li><li>The Impact Player rule is retained. 2026 is a mini-auction year — minor churn versus the 2025 mega-auction.</li></ul>
   </section>
     <section class="section">
     <div class="eyebrow">§ 05 — Historical Context</div>
     <h2>Form book &amp; lore</h2>
-    <p class="prose">The IPL launched in 2008. Champions: Rajasthan (2008), Deccan (2009), Chennai (2010, 2011, 2018, 2021, 2023), Mumbai (2013, 2015, 2017, 2019, 2020), Kolkata (2012, 2014, 2024), Hyderabad (2016), Gujarat (2022), and more recent winners from the latest editions.</p>
+    <p class="prose">The IPL launched in 2008. Champions: Rajasthan (2008), Deccan (2009), Chennai (2010, 2011, 2018, 2021, 2023), Mumbai (2013, 2015, 2017, 2019, 2020), Kolkata (2012, 2014, 2024), Hyderabad (2016), Gujarat (2022), Royal Challengers Bengaluru (2025 — maiden title).</p>
   </section>
     <section class="section">
     <div class="eyebrow">§ 06 — Viewing Notes</div>
     <h2>When to tune in</h2>
-    <p class="prose">Most matches start 19:30 IST (10:00 ET / 15:00 BST). Weekend double-headers begin 15:30 IST. The final is typically on a Sunday in late May in a major city like Ahmedabad or Mumbai.</p>
+    <p class="prose">Most matches start 19:30 IST (10:00 ET / 15:00 BST). Weekend double-headers begin 15:30 IST. The final is typically on a Sunday in late May. For US viewers the 10:00 ET slot lines up well with weekend mornings.</p>
   </section>
   
     <footer class="foot">

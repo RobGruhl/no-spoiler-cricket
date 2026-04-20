@@ -118,7 +118,7 @@ function renderProgram(player, allMatches) {
   }).join('');
 }
 
-function buildPlayerHtml(player, allMatches) {
+function buildPlayerHtml(player, allMatches, iplTeamsBySlug = {}) {
   const built = new Date().toISOString().slice(0, 10);
   const flag = NATIONALITY_FLAGS[player.nationalityCode] || '🏳️';
   const photo = player.photoUrl && player.photoUrl.startsWith('players') ? `../${player.photoUrl}` : null;
@@ -128,6 +128,7 @@ function buildPlayerHtml(player, allMatches) {
   const given = nameParts[0];
   const surname = nameParts.slice(1).join(' ');
   const specialties = (player.specialties || []).map(s => s.replace('-', ' '));
+  const franchise = player.iplFranchise ? iplTeamsBySlug[player.iplFranchise] : null;
 
   const programHtml = renderProgram(player, allMatches);
 
@@ -164,6 +165,12 @@ function buildPlayerHtml(player, allMatches) {
 .section .eyebrow{margin-bottom:4px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
 .chips-inline{display:flex;gap:6px;flex-wrap:wrap}
 .sp{display:inline-flex;align-items:center;height:22px;padding:0 10px;border:1px solid var(--ink);font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;line-height:1}
+.ipl-badge{display:inline-flex;align-items:center;gap:10px;margin-top:14px;padding:10px 14px;border:1px solid var(--rule);background:var(--paper-2);color:inherit;transition:background .1s}
+.ipl-badge:hover{background:var(--paper)}
+.ipl-badge .swatch{display:inline-block;width:16px;height:16px;background:var(--franchise-color,var(--ink));border:1px solid var(--rule)}
+.ipl-badge .lbl{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.ipl-badge .nm{font-family:var(--font-sans);font-size:14px;font-weight:600;letter-spacing:-.005em}
+.ipl-badge .arr{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.1em}
 .program{margin-top:14px}
 .pm{margin-top:24px}
 .pm-head{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:16px 0 8px;border-top:3px solid var(--ink)}
@@ -207,6 +214,7 @@ function buildPlayerHtml(player, allMatches) {
       <nav class="navstrip">
         <a href="../index.html">01 — Fixtures</a>
         <a href="../players.html" class="on">02 — Players</a>
+        <a href="../ipl.html">03 — IPL</a>
         <span class="spacer"></span>
         <span class="edition mono">EN</span>
       </nav>
@@ -232,6 +240,11 @@ function buildPlayerHtml(player, allMatches) {
         <div class="chips-inline" style="margin-top:14px">
           ${specialties.map(s => `<span class="sp">${htmlEscape(s.toUpperCase())}</span>`).join('')}
         </div>
+        ${franchise ? `<a class="ipl-badge" style="--franchise-color:${franchise.primaryColor}" href="../ipl/${htmlEscape(franchise.slug)}.html">
+          <span class="swatch"></span>
+          <span><span class="lbl">IPL 2026 · ${htmlEscape(franchise.abbr)}</span><br/><span class="nm">${htmlEscape(franchise.name)}</span></span>
+          <span class="arr">→</span>
+        </a>` : ''}
       </div>
       <aside>
         <div class="stat"><span class="k">Rank</span><span class="v">${player.ranking || '—'}</span></div>
@@ -271,17 +284,27 @@ function buildPlayerHtml(player, allMatches) {
 `;
 }
 
+function loadIplTeamsBySlug() {
+  try {
+    const d = JSON.parse(fs.readFileSync('./data/ipl-teams.json', 'utf8'));
+    const map = {};
+    for (const t of d.teams || []) map[t.slug] = t;
+    return map;
+  } catch { return {}; }
+}
+
 function generateAll() {
   const playersData = JSON.parse(fs.readFileSync('./data/players.json', 'utf8'));
   let matchData = { matches: [] };
   try { matchData = JSON.parse(fs.readFileSync('./data/match-data.json', 'utf8')); } catch {}
+  const iplTeamsBySlug = loadIplTeamsBySlug();
   const outDir = './players';
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
   let n = 0;
   for (const p of playersData.players || []) {
     if (!p.slug && !p.id) continue;
     const filepath = path.join(outDir, `${p.slug || p.id}.html`);
-    fs.writeFileSync(filepath, buildPlayerHtml(p, matchData.matches || []));
+    fs.writeFileSync(filepath, buildPlayerHtml(p, matchData.matches || [], iplTeamsBySlug));
     n++;
   }
   console.log(`✓ generated ${n} player pages`);
@@ -297,10 +320,11 @@ if (args.includes('--all')) {
   if (!p) { console.error(`❌ player not found: ${slug}`); process.exit(1); }
   let matchData = { matches: [] };
   try { matchData = JSON.parse(fs.readFileSync('./data/match-data.json', 'utf8')); } catch {}
+  const iplTeamsBySlug = loadIplTeamsBySlug();
   const outDir = './players';
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
   const filepath = path.join(outDir, `${p.slug || p.id}.html`);
-  fs.writeFileSync(filepath, buildPlayerHtml(p, matchData.matches || []));
+  fs.writeFileSync(filepath, buildPlayerHtml(p, matchData.matches || [], iplTeamsBySlug));
   console.log(`✓ ${filepath}`);
 } else if (args.includes('--help')) {
   console.log('Usage: node generate-player-details.js --all | --player <slug>');

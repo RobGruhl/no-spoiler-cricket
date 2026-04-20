@@ -198,6 +198,23 @@ function renderViewing(match) {
   </section>`;
 }
 
+function renderFranchisesGrid(match, iplTeams) {
+  if (match.id !== 'ipl-2026' || !iplTeams || !iplTeams.length) return '';
+  const cards = iplTeams.map(t => `
+    <a class="fcard" style="--team-color:${t.primaryColor}" href="../ipl/${htmlEscape(t.slug)}.html">
+      <div class="fcard-ab">${htmlEscape(t.abbr)}</div>
+      <div class="fcard-nm">${htmlEscape(t.name)}</div>
+      <div class="fcard-cp mono">Captain · ${htmlEscape(t.captain || '—')}</div>
+      <div class="fcard-hv mono">${htmlEscape(t.homeVenueShort || t.homeVenue)}</div>
+    </a>`).join('');
+  return `<section class="section">
+    <div class="eyebrow">§ Franchises</div>
+    <h2>The ten teams</h2>
+    <p class="prose" style="font-size:13px">Each franchise has its own hub page with squad, marquee watch, and full team info. <a href="../ipl.html" style="border-bottom:1px solid var(--ink);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">View IPL league hub →</a></p>
+    <div class="fgrid">${cards}</div>
+  </section>`;
+}
+
 function renderPlayersToWatch(match, allPlayers) {
   let list = [];
   if (match.topPlayers && match.topPlayers.length) {
@@ -296,6 +313,20 @@ function pageScaffold({ title, docCode, navOn, crumbs, body, footerSection }) {
 .mrow .nm{font-family:var(--font-sans);font-weight:600;font-size:14px;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mrow .vn{font-size:11px;color:var(--ink-3);letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mrow:hover{background:var(--paper-2)}
+.fgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:16px;border-top:1px solid var(--rule)}
+.fcard{padding:16px;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);position:relative;display:grid;gap:6px;color:inherit;min-height:130px;transition:background .08s}
+.fcard:nth-child(5n){border-right:0}
+.fcard:hover{background:var(--paper-2)}
+.fcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--team-color,var(--ink))}
+.fcard .fcard-ab{font-family:var(--font-sans);font-weight:800;font-size:24px;color:var(--team-color,var(--ink));letter-spacing:-.02em;padding-left:10px;line-height:1}
+.fcard .fcard-nm{font-family:var(--font-sans);font-weight:600;font-size:13.5px;line-height:1.2;padding-left:10px;letter-spacing:-.005em}
+.fcard .fcard-cp{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;color:var(--ink-2);padding-left:10px;text-transform:uppercase}
+.fcard .fcard-hv{font-size:10.5px;letter-spacing:.12em;color:var(--ink-3);padding-left:10px;text-transform:uppercase;margin-top:auto}
+@media (max-width:960px){
+  .fgrid{grid-template-columns:repeat(2,1fr)}
+  .fcard:nth-child(5n){border-right:1px solid var(--rule-soft)}
+  .fcard:nth-child(2n){border-right:0}
+}
 .narratives{margin-top:10px;padding:0;list-style:none}
 .narratives li{font-family:var(--font-sans);font-size:15px;line-height:1.55;color:var(--ink-2);margin:8px 0;padding-left:18px;position:relative}
 .narratives li::before{content:"§";position:absolute;left:0;color:var(--ink-3);font-family:var(--font-mono);font-weight:600}
@@ -336,6 +367,7 @@ function pageScaffold({ title, docCode, navOn, crumbs, body, footerSection }) {
       <nav class="navstrip">
         <a href="../index.html"${navOn==='cal'?' class="on"':''}>01 — Fixtures</a>
         <a href="../players.html"${navOn==='players'?' class="on"':''}>02 — Players</a>
+        <a href="../ipl.html"${navOn==='ipl'?' class="on"':''}>03 — IPL</a>
         <span class="spacer"></span>
         <span class="edition mono">§ Match Sheet</span>
       </nav>
@@ -358,7 +390,7 @@ function pageScaffold({ title, docCode, navOn, crumbs, body, footerSection }) {
 `;
 }
 
-function renderMatchPage(match, allPlayers) {
+function renderMatchPage(match, allPlayers, iplTeams) {
   const fmtLabel = FORMAT_LABEL[match.format] || match.format.toUpperCase();
   const dateLabel = fmtDateRange(match.startDate, match.endDate);
   const teamsLabel = (match.teams || []).filter(t => t !== 'INTL').join(' vs ') || 'International field';
@@ -398,6 +430,7 @@ function renderMatchPage(match, allPlayers) {
     </section>
 
     ${renderWatchSection(match)}
+    ${renderFranchisesGrid(match, iplTeams)}
     ${renderMatchesList(match)}
     ${renderPlayersToWatch(match, allPlayers)}
     ${renderStorylines(match)}
@@ -415,16 +448,21 @@ function renderMatchPage(match, allPlayers) {
   });
 }
 
+function loadIplTeams() {
+  try { return JSON.parse(fs.readFileSync('./data/ipl-teams.json', 'utf8')).teams || []; } catch { return []; }
+}
+
 function generateAll(dataPath = './data/match-data.json', playersPath = './data/players.json', outDir = './match-details') {
   const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
   let allPlayers = [];
   try { allPlayers = JSON.parse(fs.readFileSync(playersPath, 'utf8')).players || []; } catch {}
+  const iplTeams = loadIplTeams();
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
   let n = 0;
   for (const m of data.matches) {
     if (!m.id) continue;
     const filepath = path.join(outDir, `${m.id}.html`);
-    fs.writeFileSync(filepath, renderMatchPage(m, allPlayers));
+    fs.writeFileSync(filepath, renderMatchPage(m, allPlayers, iplTeams));
     n++;
   }
   console.log(`✓ generated ${n} match/series sheets`);
@@ -436,10 +474,11 @@ function generateOne(matchId) {
   if (!match) { console.error(`❌ match not found: ${matchId}`); process.exit(1); }
   let allPlayers = [];
   try { allPlayers = JSON.parse(fs.readFileSync('./data/players.json', 'utf8')).players || []; } catch {}
+  const iplTeams = loadIplTeams();
   const outDir = './match-details';
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
   const filepath = path.join(outDir, `${match.id}.html`);
-  fs.writeFileSync(filepath, renderMatchPage(match, allPlayers));
+  fs.writeFileSync(filepath, renderMatchPage(match, allPlayers, iplTeams));
   console.log(`✓ ${filepath}`);
 }
 

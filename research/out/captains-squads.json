@@ -1,0 +1,24 @@
+{
+  "q": "For IPL 2026, confirm the captain for EACH of the 10 franchises, and for each team, name 4-6 marquee squad players (Indian + overseas mix). Use the 2026 mini-auction rosters. Teams:\n1. Chennai Super Kings\n2. Mumbai Indians\n3. Royal Challengers Bengaluru\n4. Kolkata Knight Riders\n5. Delhi Capitals\n6. Gujarat Titans\n7. Rajasthan Royals\n8. Sunrisers Hyderabad\n9. Lucknow Super Giants\n10. Punjab Kings\n\nReturn as JSON with shape:\n{\n  \"teams\": [\n    { \"name\": \"...\", \"abbr\": \"...\", \"captain\": \"...\", \"viceCaptain\": \"... (if known)\", \"headCoach\": \"... (if known)\", \"marqueePlayers\": [\"...\", \"...\"] }\n  ]\n}\nIf a field is uncertain, write \"unknown\" rather than guessing.",
+  "answer": "I can confirm the **captains for all 10 IPL 2026 franchises** from the search results, but the provided search results do not contain detailed squad rosters or marquee player information needed for a complete JSON response as requested.\n\n## Confirmed IPL 2026 Captains\n\n| Team | Captain |\n|------|---------|\n| Chennai Super Kings (CSK) | Ruturaj Gaikwad[1][2] |\n| Mumbai Indians (MI) | Hardik Pandya[1][2] |\n| Royal Challengers Bengaluru (RCB) | Rajat Patidar[1][2] |\n| Kolkata Knight Riders (KKR) | Ajinkya Rahane[1][2] |\n| Delhi Capitals (DC) | Axar Patel[2] |\n| Gujarat Titans (GT) | Shubman Gill[2] |\n| Rajasthan Royals (RR) | Riyan Parag[1][2] |\n| Sunrisers Hyderabad (SRH) | Ishan Kishan[1][2] |\n| Lucknow Super Giants (LSG) | Rishabh Pant[1][2] |\n| Punjab Kings (PBKS) | Shreyas Iyer[2] |\n\n## Limitations\n\nThe search results provided do **not include**:\n- Marquee/key squad players for each team from the 2026 mini-auction rosters\n- Vice-captains for the franchises\n- Head coaches for IPL 2026\n\nTo provide the complete JSON response with 4-6 marquee players per team (Indian and overseas mix), I would need access to official IPL 2026 squad rosters from sources like iplt20.com, ESPNcricinfo, or Cricbuzz, which are not included in these search results.",
+  "citations": [
+    "https://www.yardbarker.com/cricket/articles/ipl_2026_complete_list_of_captains/s1_17727_43630258",
+    "https://www.sportingnews.com/in/cricket/news/ipl-2026-captain-skippers-indian-premier-league/8206bfebc61db1f521a0a855",
+    "https://en.wikipedia.org/wiki/List_of_Indian_Premier_League_captains",
+    "https://www.youtube.com/watch?v=tgVdr-yt4OQ",
+    "https://www.espn.com/cricket/story/_/id/48300962/ipl-2026-ten-indian-captains-ten-different-paths"
+  ],
+  "usage": {
+    "prompt_tokens": 216,
+    "completion_tokens": 366,
+    "total_tokens": 582,
+    "search_context_size": "low",
+    "cost": {
+      "input_tokens_cost": 0.00065,
+      "output_tokens_cost": 0.00549,
+      "request_cost": 0.006,
+      "total_cost": 0.01214
+    }
+  },
+  "ms": 6101
+}

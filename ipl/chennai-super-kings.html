@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chennai Super Kings — IPL 2026 — Season 19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../shared.css"/>
+<style>
+.crumbs{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);padding:16px 0;border-bottom:1px solid var(--rule-soft)}
+.crumbs a{color:var(--ink-3);border-bottom:1px solid transparent}
+.crumbs a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.crumbs .sep{margin:0 10px;color:var(--rule-soft)}
+.team-band{height:10px;width:100%;background:var(--team-color)}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;padding:40px 0 32px;border-bottom:3px solid var(--ink)}
+.hero .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);display:flex;gap:12px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+.hero h1{font-family:var(--font-sans);font-weight:800;font-size:clamp(48px,6vw,96px);line-height:.88;letter-spacing:-.04em;margin:0}
+.hero h1 .em{color:var(--team-color);font-style:italic;font-weight:600}
+.hero .abbr-tag{display:inline-flex;align-items:center;justify-content:center;background:var(--team-color);color:#fff;font-family:var(--font-sans);font-weight:800;font-size:18px;padding:4px 10px;letter-spacing:.02em;border:1px solid var(--team-color)}
+.hero .sub{font-family:var(--font-sans);font-size:16px;color:var(--ink-2);margin-top:18px;max-width:58ch;line-height:1.55}
+.hero aside{border-left:1px solid var(--rule);padding-left:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;align-content:start}
+.stat{display:block}
+.stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.stat .v{font-family:var(--font-sans);font-weight:700;font-size:28px;letter-spacing:-.02em;line-height:1;margin-top:4px}
+.stat .v.sm{font-size:16px;line-height:1.25}
+.section{padding:32px 0;border-bottom:1px solid var(--rule-soft)}
+.section h2{font-family:var(--font-sans);font-weight:700;font-size:22px;letter-spacing:-.01em;margin:0 0 6px}
+.section h2 .emark{color:var(--team-color)}
+.marquee{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);margin-top:16px}
+.marquee .head{padding:18px 22px;background:var(--team-color);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.marquee .head .lbl{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+.marquee .head .nm{font-family:var(--font-sans);font-weight:700;font-size:28px;letter-spacing:-.015em;line-height:1}
+.marquee .body{padding:22px;font-family:var(--font-sans);font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.squad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:16px;border-top:1px solid var(--rule)}
+.pcard{padding:16px;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);display:grid;gap:6px;color:inherit;align-content:start;min-height:200px}
+.pcard:nth-child(4n){border-right:0}
+.pcard:hover{background:var(--paper-2)}
+.pcard .ph{width:100%;aspect-ratio:1/1;background:var(--paper-2);overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--rule-soft);margin-bottom:8px}
+.pcard .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) contrast(1.02)}
+.pcard .ph .no-photo{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.pcard .nm{font-family:var(--font-sans);font-weight:700;font-size:15px;letter-spacing:-.005em;line-height:1.2}
+.pcard .rl{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.pcard .nat{font-family:var(--font-mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em;margin-top:auto;padding-top:6px;border-top:1px solid var(--rule-soft)}
+.pcard.noclick{cursor:default}
+.pcard.noclick:hover{background:transparent}
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 40px;margin-top:14px}
+.info-grid .info .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
+.info-grid .info .v{font-family:var(--font-sans);font-size:17px;font-weight:600;margin-top:4px;letter-spacing:-.005em}
+.info-grid .info .vs{font-family:var(--font-sans);font-size:14px;color:var(--ink-2);line-height:1.5;margin-top:6px;max-width:46ch}
+.teams-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--rule);margin-top:16px}
+.teams-strip a{padding:14px;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);color:inherit;display:flex;flex-direction:column;gap:4px;transition:background .08s}
+.teams-strip a:nth-child(5n){border-right:0}
+.teams-strip a:hover{background:var(--paper-2)}
+.teams-strip .a-ab{font-family:var(--font-sans);font-weight:800;font-size:18px;color:var(--sib-color,var(--ink));letter-spacing:-.01em}
+.teams-strip .a-nm{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-3);text-transform:uppercase}
+@media (max-width:1100px){
+  .hero{grid-template-columns:1fr}
+  .hero aside{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:20px}
+  .squad-grid{grid-template-columns:repeat(3,1fr)}
+  .pcard:nth-child(4n){border-right:1px solid var(--rule-soft)}
+  .pcard:nth-child(3n){border-right:0}
+  .teams-strip{grid-template-columns:repeat(2,1fr)}
+  .teams-strip a:nth-child(5n){border-right:1px solid var(--rule-soft)}
+  .teams-strip a:nth-child(2n){border-right:0}
+  .info-grid{grid-template-columns:1fr}
+  .marquee{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .squad-grid{grid-template-columns:repeat(2,1fr)}
+  .pcard:nth-child(3n){border-right:1px solid var(--rule-soft)}
+  .pcard:nth-child(2n){border-right:0}
+}
+</style>
+</head>
+<body style="--team-color:#F9CD05;--team-secondary:#0A2342">
+  <div class="tricolour thick"></div>
+  <header class="masthead">
+    <div class="frame">
+      <div class="masthead-inner">
+        <div class="wordmark">No<span class="slash">/</span>Spoiler Cricket
+          <span class="sub">IPL · Franchise · CSK</span>
+        </div>
+        <div class="mast-meta">
+          Document <b>NSC/IPL/CSK</b><br/>
+          Updated <b>2026-04-20</b>
+        </div>
+      </div>
+      <nav class="navstrip">
+        <a href="../index.html">01 — Fixtures</a>
+        <a href="../players.html">02 — Players</a>
+        <a href="../ipl.html" class="on">03 — IPL</a>
+        <span class="spacer"></span>
+        <span class="edition mono">EN</span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="team-band"></div>
+
+  <main class="frame">
+
+    <nav class="crumbs">
+      <a href="../index.html">Fixtures</a><span class="sep">/</span>
+      <a href="../ipl.html">IPL 2026</a><span class="sep">/</span>
+      <span>Super Kings</span>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <div class="tag">
+          <span class="abbr-tag">CSK</span>
+          <span>Chennai</span>
+          <span>·</span>
+          <span>Chepauk</span>
+          <span>·</span>
+          <span>5 titles</span>
+        </div>
+        <h1>Chennai Super<br/><span class="em">Kings</span></h1>
+        <p class="sub">The Yellow Army — five-time champions, playoff fixtures almost every season, and the spiritual home of MS Dhoni.</p>
+      </div>
+      <aside>
+        <div class="stat"><span class="k">Captain</span><span class="v sm">GAIKWAD Ruturaj</span></div>
+        <div class="stat"><span class="k">Head coach</span><span class="v sm">Stephen Fleming</span></div>
+        <div class="stat"><span class="k">Home venue</span><span class="v sm">Chepauk</span></div>
+        <div class="stat"><span class="k">Pitch</span><span class="v sm">spin-friendly</span></div>
+        <div class="stat"><span class="k">IPL titles</span><span class="v">5</span></div>
+        <div class="stat"><span class="k">Owner</span><span class="v sm">India Cements / Chennai Super Kings Cricket Ltd.</span></div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ Marquee watch</div>
+      <h2>Who to <span class="emark">watch</span></h2>
+      <div class="marquee">
+        <div class="head">
+          <div class="lbl">Face of CSK — 2026</div>
+          <div class="nm">MS Dhoni</div>
+        </div>
+        <div class="body">potentially his final IPL season. Finisher&#39;s craft and wicket-keeping still the emotional centre of Chepauk nights.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ Key players · 2026 squad</div>
+      <h2>Names to know</h2>
+      <div class="squad-grid"><div class="pcard noclick">
+      <div class="ph"><span class="no-photo">No photo</span></div>
+      <div class="nm">MS Dhoni</div>
+      <div class="rl">—</div>
+      <div class="nat"> </div></div><div class="pcard noclick">
+      <div class="ph"><span class="no-photo">No photo</span></div>
+      <div class="nm">Ruturaj Gaikwad</div>
+      <div class="rl">—</div>
+      <div class="nat"> </div></div><div class="pcard noclick">
+      <div class="ph"><span class="no-photo">No photo</span></div>
+      <div class="nm">Sanju Samson</div>
+      <div class="rl">—</div>
+      <div class="nat"> </div></div><div class="pcard noclick">
+      <div class="ph"><span class="no-photo">No photo</span></div>
+      <div class="nm">Shivam Dube</div>
+      <div class="rl">—</div>
+      <div class="nat"> </div></div><a class="pcard" href="../players/ravindra-jadeja.html">
+      <div class="ph"><img loading="lazy" src="../players/photos/ravindra-jadeja.jpg" alt="JADEJA Ravindra" onerror="this.style.display='none';this.parentNode.innerHTML='<span class=&quot;no-photo&quot;>No photo</span>'"/></div>
+      <div class="nm">JADEJA Ravindra</div>
+      <div class="rl">all rounder</div>
+      <div class="nat">🇮🇳 India</div></a><div class="pcard noclick">
+      <div class="ph"><span class="no-photo">No photo</span></div>
+      <div class="nm">Dewald Brevis</div>
+      <div class="rl">—</div>
+      <div class="nat"> </div></div><div class="pcard noclick">
+      <div class="ph"><span class="no-photo">No photo</span></div>
+      <div class="nm">Noor Ahmad</div>
+      <div class="rl">—</div>
+      <div class="nat"> </div></div><div class="pcard noclick">
+      <div class="ph"><span class="no-photo">No photo</span></div>
+      <div class="nm">Nathan Ellis</div>
+      <div class="rl">—</div>
+      <div class="nat"> </div></div></div>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ Franchise</div>
+      <h2>About the team</h2>
+      <div class="info-grid">
+        <div class="info">
+          <span class="k">Full name</span>
+          <span class="v">Chennai Super Kings</span>
+        </div>
+        <div class="info">
+          <span class="k">Titles</span>
+          <span class="v">5<span class="vs">2010 · 2011 · 2018 · 2021 · 2023</span></span>
+        </div>
+        <div class="info">
+          <span class="k">Home city</span>
+          <span class="v">Chennai, Tamil Nadu</span>
+        </div>
+        <div class="info">
+          <span class="k">Home venue</span>
+          <span class="v">MA Chidambaram Stadium<span class="vs">spin-friendly</span></span>
+        </div>
+        <div class="info">
+          <span class="k">Ownership</span>
+          <span class="v"><span class="vs" style="margin-top:0;font-size:16px;color:var(--ink)">India Cements / Chennai Super Kings Cricket Ltd.</span></span>
+        </div>
+        <div class="info">
+          <span class="k">Colours</span>
+          <span class="v" style="display:flex;gap:10px;align-items:center">
+            <span style="display:inline-block;width:24px;height:24px;background:#F9CD05;border:1px solid var(--rule)"></span>
+            <span style="display:inline-block;width:24px;height:24px;background:#0A2342;border:1px solid var(--rule)"></span>
+            <span class="mono" style="font-size:11px;color:var(--ink-3);letter-spacing:.06em">#F9CD05 · #0A2342</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ Other IPL franchises</div>
+      <h2>Browse the league</h2>
+      <div class="teams-strip">
+    <a href="mumbai-indians.html" style="--sib-color:#004BA0">
+      <span class="a-ab">MI</span>
+      <span class="a-nm">Mumbai</span>
+    </a>
+    <a href="royal-challengers-bengaluru.html" style="--sib-color:#EC1C24">
+      <span class="a-ab">RCB</span>
+      <span class="a-nm">RCB</span>
+    </a>
+    <a href="kolkata-knight-riders.html" style="--sib-color:#3A225D">
+      <span class="a-ab">KKR</span>
+      <span class="a-nm">Knight Riders</span>
+    </a>
+    <a href="delhi-capitals.html" style="--sib-color:#17479E">
+      <span class="a-ab">DC</span>
+      <span class="a-nm">Capitals</span>
+    </a>
+    <a href="gujarat-titans.html" style="--sib-color:#1B2133">
+      <span class="a-ab">GT</span>
+      <span class="a-nm">Titans</span>
+    </a>
+    <a href="rajasthan-royals.html" style="--sib-color:#EA1A85">
+      <span class="a-ab">RR</span>
+      <span class="a-nm">Royals</span>
+    </a>
+    <a href="sunrisers-hyderabad.html" style="--sib-color:#FB643E">
+      <span class="a-ab">SRH</span>
+      <span class="a-nm">Sunrisers</span>
+    </a>
+    <a href="lucknow-super-giants.html" style="--sib-color:#005F9F">
+      <span class="a-ab">LSG</span>
+      <span class="a-nm">Super Giants</span>
+    </a>
+    <a href="punjab-kings.html" style="--sib-color:#D71920">
+      <span class="a-ab">PBKS</span>
+      <span class="a-nm">Punjab</span>
+    </a></div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-row">
+        <span>No Spoiler Cricket · 2026 Fixtures</span>
+        <span>§ IPL / CSK</span>
+        <span>Built 2026-04-20</span>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>

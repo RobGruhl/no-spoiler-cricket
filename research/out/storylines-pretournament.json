@@ -1,0 +1,25 @@
+{
+  "slug": "storylines-pretournament",
+  "q": "What are the pre-tournament storylines entering IPL 2026? Focus ONLY on what was known BEFORE the season started — auctions, transfers, captaincy changes, new head coaches, returning stars, major rookie signings, franchise rebuilds. Do NOT reference any match results or standings from the 2026 season. 5-8 concise bullets.",
+  "answer": "# IPL 2026 Pre-Tournament Storylines\n\n- **RCB's Title Defence:** Royal Challengers Bengaluru won their maiden IPL title in 2025 and enter 2026 as defending champions under new captain Rajat Patidar, with Virat Kohli remaining in the squad.[2]\n\n- **Cameron Green's Record Transfer:** Australian all-rounder Cameron Green joined Kolkata Knight Riders for ₹25.20 crore, becoming the most expensive overseas player in IPL history.[2]\n\n- **MS Dhoni's Potential Farewell:** Chennai Super Kings' iconic captain MS Dhoni faces what could be his final IPL season as the franchise undergoes a rebuild after finishing last in 2025.[2][3]\n\n- **Sanju Samson's CSK Move:** After 11 of his 13 IPL seasons at Rajasthan Royals, Samson transferred to Chennai Super Kings to provide top-order firepower, with the franchise hoping to replicate his impact for the Indian national team.[3]\n\n- **Vaibhav Suryavanshi's Breakout Year:** The teenage opener and one of IPL's youngest players had a stunning debut last season and enters 2026 with enormous expectations at Rajasthan Royals.[2]\n\n- **CSK's Rebuild Challenge:** Chennai Super Kings aim to bounce back from a four-win, last-place finish in 2025 with a revamped squad led by Ruturaj Gaikwad.[3][4]\n\n- **Mumbai Indians' Stacked Squad:** The Mumbai Indians entered 2026 with what observers described as an exceptionally strong squad composition.[4]",
+  "citations": [
+    "https://timesofindia.indiatimes.com/sports/cricket/ipl/top-stories/to-chase-or-to-defend-what-ipl-2026-early-trends-suggest-after-1st-round/articleshow/129970387.cms",
+    "https://m.dailyhunt.in/news/india/english/inside+dailyhunt+english-epaper-idheng/ipl+2026+everything+you+need+to+know+before+season+19+begins-newsid-n703984573",
+    "https://www.thecricketpaper.com/cricket-analysis-all-you-need-to-know-ahead-of-ipl-2026/",
+    "https://www.youtube.com/watch?v=167k8Nwsacw",
+    "https://www.hindustantimes.com/cricket/ipl-2026-lit-up-by-next-gen-indian-talents-top-5-fearless-prodigies-who-have-stolen-the-limelight-in-the-tournament-101775570385141.html"
+  ],
+  "usage": {
+    "prompt_tokens": 167,
+    "completion_tokens": 321,
+    "total_tokens": 488,
+    "search_context_size": "low",
+    "cost": {
+      "input_tokens_cost": 0.0005,
+      "output_tokens_cost": 0.00481,
+      "request_cost": 0.006,
+      "total_cost": 0.01132
+    }
+  },
+  "ms": 10405
+}

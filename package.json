@@ -4,7 +4,7 @@
   "description": "Spoiler-safe cricket fixtures and watch guide — paper/ink UCI-Roadbook-style index of the 2026 season.",
   "type": "module",
   "scripts": {
-    "build": "node generate-page.js && node generate-match-details.js --all && node generate-players-index.js && node generate-player-details.js --all"
+    "build": "node generate-page.js && node generate-match-details.js --all && node generate-players-index.js && node generate-player-details.js --all && node generate-ipl-teams.js"
   },
   "keywords": ["cricket", "spoiler-free", "fixtures", "watch-guide"],
   "author": "Rob Gruhl",

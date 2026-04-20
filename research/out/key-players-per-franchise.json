@@ -1,0 +1,25 @@
+{
+  "slug": "key-players-per-franchise",
+  "q": "For each of the 10 IPL 2026 franchises, name the 1-2 marquee players fans most want to watch — the face of the franchise in 2026. One line explaining why (role + trademark strength). Do NOT reference current-season stats. Use 2026 squad composition.",
+  "answer": "**Chennai Super Kings**: MS Dhoni (wicketkeeper; **trademark leadership and finishing**), Ruturaj Gaikwad (batter; **trademark captaincy and opening stability**).[1]\n\n**Royal Challengers Bengaluru**: Venkatesh Iyer (allrounder; **trademark big-hitting and pace bowling**), Virat Kohli (assumed retained batter; **trademark aggressive batting**).[4]\n\n**Sunrisers Hyderabad**: Travis Head (batter; **trademark explosive opening**), Pat Cummins (allrounder/captain; **trademark leadership and pace**).[1]\n\n**Mumbai Indians**: Rohit Sharma (batter; **trademark captaincy and strokeplay**), Jasprit Bumrah (fast bowler; **trademark yorkers and variations**).[1]\n\n**Kolkata Knight Riders**: Shreyas Iyer (assumed retained batter/captain; **trademark middle-order anchoring**), Varun Chakravarthy (spinner; **trademark mystery spin**).[1]\n\n**Lucknow Super Giants**: KL Rahul (assumed retained batter/captain; **trademark elegant opening**), Nicholas Pooran (assumed retained wicketkeeper; **trademark power-hitting**).[4]\n\n**Delhi Capitals**: Axar Patel (allrounder; **trademark spin and fielding**), Kuldeep Yadav (spinner; **trademark left-arm wristspin**).[1]\n\n**Rajasthan Royals**: Sanju Samson (wicketkeeper; **trademark innovative captaincy and keeping**), Yuzvendra Chahal (spinner; **trademark leg-spin guile**).[1]\n\n**Punjab Kings**: Arshdeep Singh (fast bowler; **trademark death bowling**), Shikhar Dhawan (assumed retained batter; **trademark opening aggression**).[1]\n\n**Gujarat Titans**: Shubman Gill (batter/captain; **trademark elegant strokeplay**), Mohammed Siraj (fast bowler; **trademark raw pace**).[1]",
+  "citations": [
+    "https://www.espn.com/cricket/story/_/id/47324999/ipl-2026-how-csk-dc-gt-kkr-lsg-mi-pbks-rcb-rr-srh-stack-auction",
+    "https://en.wikipedia.org/wiki/List_of_2026_Indian_Premier_League_personnel_changes",
+    "https://www.youtube.com/watch?v=5RFjsjV_8RQ",
+    "https://www.wisden.com/series/ipl-2026/cricket-news/ipl-2026-best-playing-xis-for-each-team-after-the-mini-auction",
+    "https://www.youtube.com/watch?v=tLRfjsoMmlg"
+  ],
+  "usage": {
+    "prompt_tokens": 158,
+    "completion_tokens": 439,
+    "total_tokens": 597,
+    "search_context_size": "low",
+    "cost": {
+      "input_tokens_cost": 0.00047,
+      "output_tokens_cost": 0.00659,
+      "request_cost": 0.006,
+      "total_cost": 0.01306
+    }
+  },
+  "ms": 4305
+}

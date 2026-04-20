@@ -31,6 +31,12 @@
 .section .eyebrow{margin-bottom:4px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
 .chips-inline{display:flex;gap:6px;flex-wrap:wrap}
 .sp{display:inline-flex;align-items:center;height:22px;padding:0 10px;border:1px solid var(--ink);font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;line-height:1}
+.ipl-badge{display:inline-flex;align-items:center;gap:10px;margin-top:14px;padding:10px 14px;border:1px solid var(--rule);background:var(--paper-2);color:inherit;transition:background .1s}
+.ipl-badge:hover{background:var(--paper)}
+.ipl-badge .swatch{display:inline-block;width:16px;height:16px;background:var(--franchise-color,var(--ink));border:1px solid var(--rule)}
+.ipl-badge .lbl{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.ipl-badge .nm{font-family:var(--font-sans);font-size:14px;font-weight:600;letter-spacing:-.005em}
+.ipl-badge .arr{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.1em}
 .program{margin-top:14px}
 .pm{margin-top:24px}
 .pm-head{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:16px 0 8px;border-top:3px solid var(--ink)}
@@ -74,6 +80,7 @@
       <nav class="navstrip">
         <a href="../index.html">01 — Fixtures</a>
         <a href="../players.html" class="on">02 — Players</a>
+        <a href="../ipl.html">03 — IPL</a>
         <span class="spacer"></span>
         <span class="edition mono">EN</span>
       </nav>
@@ -99,6 +106,11 @@
         <div class="chips-inline" style="margin-top:14px">
           <span class="sp">LEFT HANDER</span><span class="sp">OPENER</span><span class="sp">FINALS SPECIALIST</span>
         </div>
+        <a class="ipl-badge" style="--franchise-color:#FB643E" href="../ipl/sunrisers-hyderabad.html">
+          <span class="swatch"></span>
+          <span><span class="lbl">IPL 2026 · SRH</span><br/><span class="nm">Sunrisers Hyderabad</span></span>
+          <span class="arr">→</span>
+        </a>
       </div>
       <aside>
         <div class="stat"><span class="k">Rank</span><span class="v">9</span></div>
