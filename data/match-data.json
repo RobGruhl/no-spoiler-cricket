@@ -9,6 +9,7 @@
     {
       "id": "ashes-2025-26-tail",
       "name": "The Ashes 2025–26 (final Tests)",
+      "name_hi": "द ऐशेज़ २०२५–२६",
       "format": "test-series",
       "teams": ["AUS", "ENG"],
       "venue": "Australia",
@@ -31,6 +32,13 @@
         },
         "youtubeChannels": [{ "channel": "ICC", "handle": "@ICC", "contentType": "highlights" }]
       },
+      "recentMeetings": [
+        { "yr": 2023, "who": "Australia", "result": "drew 2-2 (H)", "host": "ENG" },
+        { "yr": 2021, "who": "Australia", "result": "won 4-0 (H)", "host": "AUS" },
+        { "yr": 2019, "who": "Australia", "result": "drew 2-2 (A)", "host": "ENG" },
+        { "yr": 2017, "who": "Australia", "result": "won 4-0 (H)", "host": "AUS" }
+      ],
+      "sessionTimes": { "start": "10:00 AEDT", "lunch": "12:00", "tea": "14:40", "stumps": "17:00" },
       "matchDetails": {
         "summary": "The final two Tests close out the 2025–26 Ashes series in Australia. Boxing Day at the MCG and the New Year Test at the SCG are cricket's most-watched fixtures on the Australian calendar.",
         "storylines": [
@@ -141,6 +149,7 @@
     {
       "id": "icc-t20-world-cup-2026",
       "name": "ICC Men's T20 World Cup 2026",
+      "name_hi": "आईसीसी पुरुष टी-२० विश्व कप २०२६",
       "format": "icc-tournament",
       "teams": ["INTL"],
       "venue": "India & Sri Lanka",
@@ -198,6 +207,7 @@
     {
       "id": "ipl-2026",
       "name": "Indian Premier League 2026",
+      "name_hi": "इंडियन प्रीमियर लीग २०२६",
       "format": "franchise-league",
       "teams": ["IN"],
       "venue": "India",
@@ -257,6 +267,7 @@
     {
       "id": "ind-tour-eng-2026",
       "name": "India tour of England 2026",
+      "name_hi": "भारत का इंग्लैंड दौरा २०२६",
       "format": "test-series",
       "teams": ["ENG", "IND"],
       "venue": "England",
@@ -281,6 +292,13 @@
           "AU": { "primary": { "broadcaster": "Fox Cricket / Kayo Sports", "type": "streaming", "subscription": true, "url": "https://www.kayosports.com.au/cricket", "coverage": "live" } }
         }
       },
+      "recentMeetings": [
+        { "yr": 2021, "who": "India", "result": "won 2-1", "host": "ENG" },
+        { "yr": 2018, "who": "England", "result": "won 4-1", "host": "ENG" },
+        { "yr": 2014, "who": "England", "result": "won 3-1", "host": "ENG" },
+        { "yr": 2011, "who": "England", "result": "won 4-0", "host": "ENG" }
+      ],
+      "sessionTimes": { "start": "11:00 BST", "lunch": "13:00", "tea": "15:40", "stumps": "18:00" },
       "matchDetails": {
         "summary": "Five Tests on classic English grounds in the peak of summer. Swinging Dukes ball conditions test Indian batters who are used to the subcontinent; Indian spinners' role depends on pitch wear in late-series Tests.",
         "storylines": [
@@ -346,6 +364,7 @@
     {
       "id": "asia-cup-2026",
       "name": "Asia Cup 2026 (T20)",
+      "name_hi": "एशिया कप २०२६",
       "format": "t20i-series",
       "teams": ["INTL"],
       "venue": "TBD",
@@ -398,6 +417,7 @@
     {
       "id": "aus-tour-ind-bgt-2026",
       "name": "Border-Gavaskar Trophy (AUS tour of India)",
+      "name_hi": "बॉर्डर–गावस्कर ट्रॉफ़ी · भारत – ऑस्ट्रेलिया",
       "format": "test-series",
       "teams": ["IND", "AUS"],
       "venue": "India",
@@ -421,6 +441,13 @@
           "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } }
         }
       },
+      "recentMeetings": [
+        { "yr": 2024, "who": "India", "result": "won 4-1 (H)", "host": "IND" },
+        { "yr": 2023, "who": "Australia", "result": "won 2-1 (H)", "host": "AUS" },
+        { "yr": 2021, "who": "India", "result": "won 2-1 (A)", "host": "AUS" },
+        { "yr": 2020, "who": "—", "result": "drew 1-1 (H)", "host": "IND" }
+      ],
+      "sessionTimes": { "start": "09:30 IST", "lunch": "11:30", "tea": "14:10", "stumps": "16:30" },
       "matchDetails": {
         "summary": "Four Tests on Indian spinning surfaces. India's spin trio vs Australia's modern attempts at SENA-inverted batting plans; expect Tests that finish inside four days as pitches wear.",
         "storylines": [

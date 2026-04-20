@@ -1,0 +1,67 @@
+{
+  "_note": "Nation-level team metadata for /teams/<nation>.html pages. Captains per format sourced from current 2026 rosters; update when they change.",
+  "lastUpdated": "2026-04-20T00:00:00Z",
+  "nations": [
+    {
+      "id": "india", "code": "IN", "teamCode": "IND",
+      "name": "India", "name_hi": "भारत",
+      "nickname": "Men in Blue",
+      "nickname_hi": "मेन इन ब्लू",
+      "captains": { "test": "SHARMA Rohit", "odi": "SHARMA Rohit", "t20i": "YADAV Suryakumar" },
+      "coach": "Gautam Gambhir",
+      "homeBoard": "BCCI",
+      "colors": { "primary": "#0070D2", "secondary": "#FF9933" },
+      "identity": "The most-watched cricket team on earth. Test and ODI home fortress; T20 reigning champions (2024)."
+    },
+    {
+      "id": "australia", "code": "AU", "teamCode": "AUS",
+      "name": "Australia", "name_hi": "ऑस्ट्रेलिया",
+      "nickname": "Baggy Greens",
+      "captains": { "test": "CUMMINS Pat", "odi": "CUMMINS Pat", "t20i": "MARSH Mitchell" },
+      "coach": "Andrew McDonald",
+      "homeBoard": "Cricket Australia",
+      "colors": { "primary": "#FFCD00", "secondary": "#006241" },
+      "identity": "WTC 2023 champions; 2023 ODI World Cup winners. Pace-and-pressure pedigree at home, learning to adapt abroad."
+    },
+    {
+      "id": "england", "code": "UK", "teamCode": "ENG",
+      "name": "England", "name_hi": "इंग्लैंड",
+      "nickname": "Bazball",
+      "captains": { "test": "STOKES Ben", "odi": "BUTTLER Jos", "t20i": "BUTTLER Jos" },
+      "coach": "Brendon McCullum",
+      "homeBoard": "ECB",
+      "colors": { "primary": "#12225C", "secondary": "#E11A27" },
+      "identity": "Bazball-era Test side — aggressive, unorthodox, occasionally devastating. 2019 ODI and 2022 T20 World Cup winners."
+    },
+    {
+      "id": "pakistan", "code": "PK", "teamCode": "PAK",
+      "name": "Pakistan", "name_hi": "पाकिस्तान",
+      "nickname": "Shaheens",
+      "captains": { "test": "AZAM Babar", "odi": "AZAM Babar", "t20i": "AZAM Babar" },
+      "coach": "Jason Gillespie (Test)",
+      "homeBoard": "PCB",
+      "colors": { "primary": "#01411C", "secondary": "#FFFFFF" },
+      "identity": "Pace-bowling factory — Shaheen, Naseem, and a rotating cast of teenage quicks. 2009 T20 WC champions."
+    },
+    {
+      "id": "south-africa", "code": "ZA", "teamCode": "ZA",
+      "name": "South Africa", "name_hi": "दक्षिण अफ़्रीका",
+      "nickname": "Proteas",
+      "captains": { "test": "BAVUMA Temba", "odi": "MARKRAM Aiden", "t20i": "MARKRAM Aiden" },
+      "coach": "Shukri Conrad (Test) / Rob Walter (Ltd. Overs)",
+      "homeBoard": "Cricket South Africa",
+      "colors": { "primary": "#008542", "secondary": "#FFCD00" },
+      "identity": "2024 T20 World Cup runners-up. Bouncy home conditions, Rabada leading the attack."
+    },
+    {
+      "id": "new-zealand", "code": "NZ", "teamCode": "NZ",
+      "name": "New Zealand", "name_hi": "न्यूज़ीलैंड",
+      "nickname": "BLACKCAPS",
+      "captains": { "test": "WILLIAMSON Kane", "odi": "SANTNER Mitchell", "t20i": "SANTNER Mitchell" },
+      "coach": "Gary Stead",
+      "homeBoard": "New Zealand Cricket",
+      "colors": { "primary": "#000000", "secondary": "#A7A9AC" },
+      "identity": "2021 WTC champions. Williamson's side plays with a quiet, methodical excellence."
+    }
+  ]
+}

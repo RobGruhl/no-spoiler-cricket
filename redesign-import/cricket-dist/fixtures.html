@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>No Spoiler Cricket — Fixtures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;padding:34px 0 28px;border-bottom:2px dashed var(--rule)}
+.hero h1{font-weight:900;font-size:clamp(54px,7vw,100px);line-height:.88;letter-spacing:-.04em;margin:0}
+.hero h1 .a{color:var(--saffron)}
+.hero h1 .b{color:var(--green)}
+.hero .dev{font-family:var(--font-dev);font-size:16px;color:var(--saffron);font-weight:600;margin-top:6px}
+.hero .lead{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:16px}
+.hero aside{border-left:2px dashed var(--rule);padding-left:26px;display:grid;grid-template-columns:1fr 1fr;gap:16px 22px;align-content:start}
+.hero .stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.hero .stat .v{font-weight:800;font-size:30px;letter-spacing:-.02em;margin-top:4px;line-height:1;color:var(--navy)}
+.hero .stat .v.sm{font-size:20px}
+
+/* Series block */
+.series-head{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;margin:36px 0 4px;padding-bottom:10px;border-bottom:3px solid var(--ink)}
+.series-head .n{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--saffron);font-weight:700}
+.series-head h2{font-weight:800;font-size:28px;letter-spacing:-.02em;margin:4px 0 0}
+.series-head .dev{font-family:var(--font-dev);font-size:14px;color:var(--navy);font-weight:600;margin-top:3px}
+.series-head .arc{font-family:var(--font-mono);font-size:11px;color:var(--ink-2);letter-spacing:.12em;text-transform:uppercase;text-align:right}
+.series-head .arc .now{color:var(--saffron);font-weight:700}
+</style>
+</head>
+<body>
+  <div class="tricolour thick"><span></span><span></span><span></span></div>
+  <header class="masthead">
+    <div class="frame">
+      <div class="masthead-inner">
+        <div>
+          <div class="wordmark-dev">नो स्पॉइलर क्रिकेट</div>
+          <div class="wordmark">No<span class="slash">/</span>Spoiler <span class="two">Cricket</span></div>
+        </div>
+        <div class="mast-meta">
+          Platform №&nbsp;<b>1</b><br/>
+          <b>Fixtures Board</b><br/>
+          20 APR 2026 · IST
+        </div>
+      </div>
+      <nav class="platform">
+        <a href="fixtures.html" class="on"><span class="num">01</span>Fixtures</a>
+        <a href="series-border-gavaskar.html"><span class="num">02</span>Series</a>
+        <a href="match-test-delhi.html"><span class="num">03</span>Test Sheet</a>
+        <a href="match-ipl-final.html"><span class="num">04</span>IPL Sheet</a>
+        <a href="#"><span class="num">05</span>Teams</a>
+        <span class="spacer"></span>
+        <span class="stamp mono">EN · हिंदी</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="frame">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">ICC &amp; Franchise Cricket · Season 2026</div>
+        <h1>The <span class="a">2026</span><br/>Season, <span class="b">Unspoiled</span>.</h1>
+        <div class="dev">हर मैच · बिना स्पॉइलर</div>
+        <div class="lead">Every fixture worth watching. Rated, grouped by series, never tells you who won.</div>
+      </div>
+      <aside>
+        <div class="stat"><span class="k">Matches on file</span><span class="v">412</span></div>
+        <div class="stat"><span class="k">Active series</span><span class="v">17</span></div>
+        <div class="stat"><span class="k">Tests</span><span class="v">42</span></div>
+        <div class="stat"><span class="k">IPL matches</span><span class="v">74</span></div>
+        <div class="stat"><span class="k">★★★★★ fixtures</span><span class="v sm">23</span></div>
+        <div class="stat"><span class="k">★★★★+</span><span class="v sm">91</span></div>
+      </aside>
+    </section>
+
+    <!-- Departure board hero -->
+    <section class="board" style="margin-top:18px">
+      <span class="tag">● NEXT ★★★★★</span>
+      <div>
+        <div class="vs">IND<span class="x">vs</span>AUS</div>
+        <div class="dev">भारत – ऑस्ट्रेलिया · Border–Gavaskar · 2nd Test</div>
+      </div>
+      <div class="when">
+        <b>22 APR</b>
+        <span class="tm">09:30 IST</span>
+      </div>
+      <a class="cta" href="match-test-delhi.html">Match Sheet →</a>
+    </section>
+
+    <!-- Toolbar -->
+    <section class="toolbar" id="toolbar">
+      <div class="toolbar-row">
+        <span class="tb-label">View</span>
+        <button class="chip on" data-f="view" data-v="series">By Series</button>
+        <button class="chip" data-f="view" data-v="date">By Date</button>
+        <span class="tb-label" style="margin-left:18px">Format</span>
+        <button class="chip on" data-f="fmt" data-v="all">All</button>
+        <button class="chip" data-f="fmt" data-v="test">Test</button>
+        <button class="chip" data-f="fmt" data-v="odi">ODI</button>
+        <button class="chip" data-f="fmt" data-v="t20i">T20I</button>
+        <button class="chip" data-f="fmt" data-v="ipl">IPL</button>
+        <button class="chip" data-f="fmt" data-v="womens">Women's</button>
+        <span class="showing"><b id="shown">—</b> of <b id="total">—</b> matches</span>
+      </div>
+      <div class="toolbar-row">
+        <span class="tb-label">Rating</span>
+        <button class="chip on" data-f="rating" data-v="0">All</button>
+        <button class="chip" data-f="rating" data-v="3">★★★+</button>
+        <button class="chip" data-f="rating" data-v="4">★★★★+</button>
+        <button class="chip" data-f="rating" data-v="5">★★★★★</button>
+        <span class="tb-label" style="margin-left:18px">Teams</span>
+        <button class="chip on" data-f="team" data-v="all">All</button>
+        <button class="chip" data-f="team" data-v="IND">IND</button>
+        <button class="chip" data-f="team" data-v="AUS">AUS</button>
+        <button class="chip" data-f="team" data-v="ENG">ENG</button>
+        <button class="chip" data-f="team" data-v="PAK">PAK</button>
+        <button class="chip" data-f="team" data-v="SA">SA</button>
+      </div>
+    </section>
+
+    <section id="cal"></section>
+
+    <section class="legend">
+      <div>
+        <h3>★ Rating Guide</h3>
+        <div class="row2">
+          <span class="k">★★★★★</span><span class="v">Unmissable — Ashes, BGT, WTC Final, IPL Playoffs</span>
+          <span class="k">★★★★</span><span class="v">Marquee — ICC events, top bilateral tours</span>
+          <span class="k">★★★</span><span class="v">Solid — league stage, mid-table bilaterals</span>
+          <span class="k">★★</span><span class="v">Nice to catch — early group stages</span>
+        </div>
+      </div>
+      <div>
+        <h3>Format Codes</h3>
+        <div class="row2">
+          <span class="k">TEST</span><span class="v">5-day international · 2 innings/side</span>
+          <span class="k">ODI</span><span class="v">One Day International · 50 overs</span>
+          <span class="k">T20I</span><span class="v">International Twenty20</span>
+          <span class="k">IPL</span><span class="v">Indian Premier League franchise</span>
+          <span class="k">LEAGUE</span><span class="v">BBL · PSL · The Hundred · SA20</span>
+          <span class="k">WOMEN'S</span><span class="v">All formats, women's game</span>
+        </div>
+      </div>
+      <div>
+        <h3>Colophon</h3>
+        <div class="row2">
+          <span class="k">Set in</span><span class="v">Inter Tight · JetBrains Mono · Noto Devanagari</span>
+          <span class="k">Palette</span><span class="v">Saffron · White · Green · Navy · Gold</span>
+          <span class="k">Metaphor</span><span class="v">Indian Railways × match ticket</span>
+          <span class="k">Edition</span><span class="v">01 · 20 April 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-row">
+        <span>No Spoiler Cricket · 2026 Fixtures Board</span>
+        <span class="dev">धर्म · खेल · रोमांच</span>
+        <span>Admit One · No Refunds on Spoilers</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Tweaks -->
+  <div class="tweaks" id="tweaks">
+    <header><span>Tweaks</span><span class="x" id="tw-close">×</span></header>
+    <div class="row"><span>Theme</span>
+      <span><button class="on" data-th="light">Paper</button><button data-th="dark">Night</button></span>
+    </div>
+    <div class="row"><span>Devanagari</span>
+      <button id="tw-dev" class="on">On</button>
+    </div>
+    <div class="row"><span>Tricolour band</span>
+      <button id="tw-tri" class="on">On</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"theme":"light","devanagari":true,"tricolour":true}/*EDITMODE-END*/;
+  const state = {view:"series", fmt:"all", rating:0, team:"all"};
+  const MONTHS = window.MONTHS;
+
+  const starsHtml = (n)=>`<span class="stars">${"★".repeat(n)}<span class="off">${"★".repeat(5-n)}</span></span>`;
+
+  function match(m){
+    if (state.fmt!=="all" && m.fmt!==state.fmt) return false;
+    if (state.rating && m.rating < state.rating) return false;
+    if (state.team!=="all" && !m.vs.includes(state.team)) return false;
+    return true;
+  }
+
+  function rowHtml(m){
+    const href = m.slug ? `match-${m.fmt==="test"?"test":"ipl"}-${m.slug.split("-").pop()}.html` : "#";
+    const cls = m.final?"final":m.hot?"hot":m.fmt==="test"?"test":"";
+    const tok = m.tok ? `<span class="tok ${m.tokCol}">${m.tok}</span>` : "";
+    return `<a class="row ${cls}" href="${href}">
+      <div class="c first">${tok}</div>
+      <div class="c dt">${m.dt}<span class="tm">${m.time}</span></div>
+      <div class="c"><span class="fmt ${m.fmt}">${m.fmt.toUpperCase()}</span></div>
+      <div class="c">
+        <div class="vs">${m.vs.replace(/vs/,'<span class="x">vs</span>')}</div>
+        <div class="sub">${m.series}</div>
+      </div>
+      <div class="c ven">${m.ven}</div>
+      <div class="c ovr">${m.ovrs} ov</div>
+      <div class="c">${starsHtml(m.rating)}</div>
+      <div class="c cv">${m.cv}</div>
+    </a>`;
+  }
+
+  function render(){
+    const host = document.getElementById("cal");
+    const filtered = window.MATCHES.filter(match);
+    document.getElementById("shown").textContent = filtered.length;
+    document.getElementById("total").textContent = window.MATCHES.length;
+
+    let html = "";
+    if (state.view==="series"){
+      // group by series string
+      const groups = {};
+      filtered.forEach(m=>{ const k = m.series.split("·")[0].trim(); (groups[k]=groups[k]||[]).push(m); });
+      Object.keys(groups).forEach((k,i)=>{
+        const list = groups[k];
+        const total = list[0].series.match(/of\s+(\d+)/)?.[1] || list.length;
+        html += `<header class="series-head">
+          <div>
+            <div class="n">Series ${String(i+1).padStart(2,"0")}</div>
+            <h2>${k}</h2>
+          </div>
+          <div class="arc">${list.length} match${list.length!==1?"es":""}${total!=list.length?` · <span class="now">of ${total}</span>`:""}</div>
+        </header>`;
+        list.forEach(m => html += rowHtml(m));
+      });
+    } else {
+      const groups = {};
+      filtered.forEach(m=>(groups[m.month]=groups[m.month]||[]).push(m));
+      Object.keys(groups).sort((a,b)=>a-b).forEach(mo=>{
+        const list = groups[mo];
+        html += `<header class="month-head">
+          <div><div class="lbl">Month</div><div class="num mono">${String(mo).padStart(2,"0")}</div></div>
+          <div><div class="lbl">2026</div><div class="name">${MONTHS[mo-1]}</div><div class="dev">${window.MONTHS_HI[mo-1]}</div></div>
+          <div class="count">${list.length} match${list.length!==1?"es":""}</div>
+        </header>`;
+        list.forEach(m => html += rowHtml(m));
+      });
+    }
+    if (!filtered.length) html = `<div style="padding:60px 0;text-align:center;font-family:var(--font-mono);color:var(--ink-3);letter-spacing:.12em;text-transform:uppercase">No matches found.</div>`;
+    host.innerHTML = html;
+  }
+
+  document.querySelectorAll(".chip").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const f=btn.dataset.f, v=btn.dataset.v;
+      state[f] = (f==="rating")?Number(v):v;
+      document.querySelectorAll(`.chip[data-f="${f}"]`).forEach(b=>b.classList.toggle("on",b===btn));
+      render();
+    });
+  });
+
+  // Tweaks
+  function apply(t){
+    document.documentElement.setAttribute("data-theme", t.theme);
+    document.body.classList.toggle("no-dev", !t.devanagari);
+    document.body.classList.toggle("no-tri", !t.tricolour);
+  }
+  const style=document.createElement("style");
+  style.textContent = `.no-dev .dev,.no-dev .wordmark-dev{display:none!important} .no-tri .tricolour{display:none!important}`;
+  document.head.appendChild(style);
+  let tweaks={...TWEAK_DEFAULTS}; apply(tweaks);
+  const setTw=(k,v)=>{tweaks[k]=v; apply(tweaks); window.parent.postMessage({type:"__edit_mode_set_keys",edits:{[k]:v}},"*");};
+  document.querySelectorAll(".tweaks [data-th]").forEach(b=>b.onclick=()=>{
+    document.querySelectorAll(".tweaks [data-th]").forEach(x=>x.classList.toggle("on",x===b));
+    setTw("theme",b.dataset.th);
+  });
+  document.getElementById("tw-dev").onclick=function(){const v=!tweaks.devanagari;this.textContent=v?"On":"Off";this.classList.toggle("on",v);setTw("devanagari",v);};
+  document.getElementById("tw-tri").onclick=function(){const v=!tweaks.tricolour;this.textContent=v?"On":"Off";this.classList.toggle("on",v);setTw("tricolour",v);};
+  document.getElementById("tw-close").onclick=()=>document.getElementById("tweaks").classList.remove("show");
+  window.addEventListener("message",(e)=>{
+    if(e.data?.type==="__activate_edit_mode") document.getElementById("tweaks").classList.add("show");
+    if(e.data?.type==="__deactivate_edit_mode") document.getElementById("tweaks").classList.remove("show");
+  });
+  window.parent.postMessage({type:"__edit_mode_available"},"*");
+
+  render();
+  </script>
+</body>
+</html>

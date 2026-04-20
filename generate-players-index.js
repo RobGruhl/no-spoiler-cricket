@@ -11,10 +11,10 @@ const ROLE_LABELS = {
   'wicket-keeper': 'Wicket-keeper',
 };
 
-const NATIONALITY_FLAGS = {
-  IN: '🇮🇳', AU: '🇦🇺', UK: '🇬🇧', GB: '🇬🇧',
-  NZ: '🇳🇿', ZA: '🇿🇦', PK: '🇵🇰', BD: '🇧🇩',
-  AF: '🇦🇫', WI: '🏴‍☠️', IE: '🇮🇪', NP: '🇳🇵', SL: '🇱🇰',
+// Nation codes rendered as a boxed mono tag instead of emoji (no-emoji rule)
+const NATIONALITY_TAG = {
+  IN: 'IND', AU: 'AUS', UK: 'ENG', GB: 'ENG', NZ: 'NZ', ZA: 'SA', PK: 'PAK',
+  BD: 'BAN', AF: 'AFG', WI: 'WI', IE: 'IRE', NP: 'NEP', SL: 'SL',
 };
 
 function htmlEscape(s) {
@@ -37,7 +37,7 @@ function buildIndex(players, opts = {}) {
   const updateStr = lastUpdated ? lastUpdated.slice(0, 10) : built;
 
   const cards = players.map((p, i) => {
-    const flag = NATIONALITY_FLAGS[p.nationalityCode] || '🏳️';
+    const natTag = NATIONALITY_TAG[p.nationalityCode] || (p.nationalityCode || '');
     const photoPath = p.photoUrl?.startsWith('players/') ? p.photoUrl : '';
     const specialtyTags = (p.specialties || []).slice(0, 3).map(s => s.toUpperCase().replace('-', ' ')).join(' · ');
     const specialtyData = (p.specialties || []).concat([p.role || '']).join(' ');
@@ -49,7 +49,7 @@ function buildIndex(players, opts = {}) {
       <div class="rc-name">${htmlEscape(formatSurnameFirst(p.name))}</div>
       <div class="rc-team mono">${htmlEscape(p.team || '')}</div>
       <div class="rc-tags mono">${specialtyTags}</div>
-      <div class="rc-foot mono"><span>${flag} ${htmlEscape(p.nationality || '')}</span></div>
+      <div class="rc-foot mono"><span><span class="nat-tag">${htmlEscape(natTag)}</span> ${htmlEscape(p.nationality || '')}</span></div>
     </a>`;
   }).join('');
 
@@ -64,69 +64,70 @@ function buildIndex(players, opts = {}) {
 <title>Top Players 2026 — No Spoiler Cricket</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="shared.css"/>
 <style>
-.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;padding:44px 0 32px;border-bottom:1px solid var(--rule)}
-.hero h1{font-family:var(--font-sans);font-weight:800;font-size:clamp(56px,7vw,96px);line-height:.88;letter-spacing:-.045em;margin:0}
-.hero h1 .em{font-style:italic;font-weight:500;color:var(--signal)}
-.hero .lead{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-top:18px}
-.hero aside{border-left:1px solid var(--rule);padding-left:32px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px 24px;align-content:start}
-.stat{display:block}
-.stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
-.stat .v{font-family:var(--font-sans);font-weight:700;font-size:32px;letter-spacing:-.02em;line-height:1;margin-top:4px}
-.toolbar{position:sticky;top:0;background:var(--paper);z-index:10;border-bottom:1px solid var(--rule);padding:12px 0 10px;margin-top:18px}
-.toolbar-row{display:flex;flex-wrap:wrap;gap:6px 6px;align-items:center}
-.tb-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin-right:10px;min-width:56px}
-.showing{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.12em;text-transform:uppercase;margin-left:auto}
-.showing b{color:var(--ink);font-weight:600}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;padding:34px 0 28px;border-bottom:2px dashed var(--rule)}
+.hero h1{font-weight:900;font-size:clamp(56px,7vw,96px);line-height:.88;letter-spacing:-.045em;margin:0}
+.hero h1 .a{color:var(--saffron)}
+.hero h1 .b{color:var(--green)}
+.hero .dev{font-family:var(--font-dev);font-size:16px;color:var(--saffron);font-weight:600;margin-top:6px}
+.hero .lead{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:16px;max-width:62ch}
+.hero aside{border-left:2px dashed var(--rule);padding-left:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px 22px;align-content:start}
+.hero .stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.hero .stat .v{font-weight:800;font-size:30px;letter-spacing:-.02em;margin-top:4px;line-height:1;color:var(--navy)}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:24px;border-top:1px solid var(--rule)}
-.rc{display:grid;grid-template-rows:auto auto auto auto auto auto auto;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);padding:16px;transition:background .08s;min-height:280px;color:inherit;gap:4px}
+.rc{display:grid;grid-template-rows:auto auto auto auto auto auto auto;border-right:1px dashed var(--rule-soft);border-bottom:1px dashed var(--rule-soft);padding:16px;transition:background .08s;min-height:280px;color:inherit;gap:4px}
 .rc:nth-child(4n){border-right:0}
 .rc:hover{background:var(--paper-2)}
-.rc-num{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-3);text-transform:uppercase;margin-bottom:10px}
+.rc-num{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;color:var(--saffron);font-weight:700;text-transform:uppercase;margin-bottom:10px}
 .rc-photo{width:100%;aspect-ratio:1/1;background:var(--paper-2);margin-bottom:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--rule-soft)}
 .rc-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.15) contrast(1.02)}
-.rc-photo .no-photo{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
-.rc-rank{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
-.rc-name{font-family:var(--font-sans);font-weight:700;font-size:18px;letter-spacing:-.01em;line-height:1.1;margin-bottom:4px}
-.rc-team{font-size:11px;color:var(--ink-2);letter-spacing:.04em;margin-bottom:8px;line-height:1.3}
-.rc-tags{font-size:10px;letter-spacing:.14em;color:var(--ink-3);margin-bottom:10px}
-.rc-foot{display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:auto;padding-top:8px;border-top:1px solid var(--rule-soft)}
+.rc-photo .no-photo{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.rc-rank{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+.rc-name{font-weight:700;font-size:18px;letter-spacing:-.01em;line-height:1.1;margin-bottom:4px}
+.rc-team{font-family:var(--font-mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em;margin-bottom:8px;line-height:1.3;text-transform:uppercase}
+.rc-tags{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;color:var(--ink-3);margin-bottom:10px}
+.rc-foot{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:auto;padding-top:8px;border-top:1px dashed var(--rule-soft)}
+.nat-tag{display:inline-block;background:var(--navy);color:#fff;padding:2px 6px;font-weight:700;letter-spacing:.12em;font-size:9.5px;margin-right:4px}
 .rc.hidden{display:none}
 @media (max-width:1100px){
   .grid{grid-template-columns:repeat(3,1fr)}
-  .rc:nth-child(4n){border-right:1px solid var(--rule-soft)}
+  .rc:nth-child(4n){border-right:1px dashed var(--rule-soft)}
   .rc:nth-child(3n){border-right:0}
   .hero{grid-template-columns:1fr}
-  .hero aside{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:20px}
+  .hero aside{border-left:0;padding-left:0;border-top:2px dashed var(--rule);padding-top:20px}
 }
 @media (max-width:640px){
   .grid{grid-template-columns:repeat(2,1fr)}
-  .rc:nth-child(3n){border-right:1px solid var(--rule-soft)}
+  .rc:nth-child(3n){border-right:1px dashed var(--rule-soft)}
   .rc:nth-child(2n){border-right:0}
 }
 </style>
 </head>
 <body>
-  <div class="tricolour thick"></div>
+  <div class="tricolour thick"><span></span><span></span><span></span></div>
   <header class="masthead">
     <div class="frame">
       <div class="masthead-inner">
-        <div class="wordmark">No<span class="slash">/</span>Spoiler Cricket
-          <span class="sub">Players · 2026 · Spoiler-safe index</span>
+        <div>
+          <div class="wordmark-dev">नो स्पॉइलर क्रिकेट</div>
+          <div class="wordmark">No<span class="slash">/</span>Spoiler <span class="two">Cricket</span></div>
         </div>
         <div class="mast-meta">
-          Document <b>NSC/PLY/26</b><br/>
-          Updated <b>${updateStr}</b>
+          Platform №&nbsp;<b>5</b><br/>
+          <b>Players Index</b><br/>
+          ${htmlEscape(updateStr.toUpperCase())}
         </div>
       </div>
-      <nav class="navstrip">
-        <a href="index.html">01 — Fixtures</a>
-        <a href="players.html" class="on">02 — Players</a>
-        <a href="ipl.html">03 — IPL</a>
+      <nav class="platform">
+        <a href="index.html"><span class="num">01</span>Fixtures</a>
+        <a href="series/"><span class="num">02</span>Series</a>
+        <a href="match/"><span class="num">03</span>Match Sheets</a>
+        <a href="teams/"><span class="num">04</span>Teams</a>
+        <a href="players.html" class="on"><span class="num">05</span>Players</a>
         <span class="spacer"></span>
-        <span class="edition mono">EN</span>
+        <span class="stamp mono">EN · हिंदी</span>
       </nav>
     </div>
   </header>
@@ -136,14 +137,15 @@ function buildIndex(players, opts = {}) {
     <section class="hero">
       <div>
         <div class="eyebrow">ICC International Rankings · 2026</div>
-        <h1>Top<br/><span class="em">Players</span></h1>
+        <h1>Top <span class="a">Players</span><br/><span class="b">${players.length}</span> on file</h1>
+        <div class="dev">शीर्ष खिलाड़ी · २०२६</div>
         <p class="lead">${players.length} cricketers across formats. Click through for each player's 2026 fixture program.</p>
       </div>
       <aside>
         <div class="stat"><span class="k">Players</span><span class="v">${players.length}</span></div>
         <div class="stat"><span class="k">Nations</span><span class="v">${nationsCount}</span></div>
         <div class="stat"><span class="k">Teams</span><span class="v">${teamsCount}</span></div>
-        <div class="stat"><span class="k">India represented</span><span class="v">${players.filter(p => p.nationalityCode === 'IN').length}</span></div>
+        <div class="stat"><span class="k">India</span><span class="v">${players.filter(p => p.nationalityCode === 'IN').length}</span></div>
       </aside>
     </section>
 
@@ -170,8 +172,8 @@ function buildIndex(players, opts = {}) {
 
     <footer class="foot">
       <div class="foot-row">
-        <span>No Spoiler Cricket · 2026 Fixtures</span>
-        <span>§ 02 — Players</span>
+        <span>No Spoiler Cricket · Players Index</span>
+        <span class="dev">धर्म · खेल · रोमांच</span>
         <span>Built ${built}</span>
       </div>
     </footer>

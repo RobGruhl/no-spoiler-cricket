@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Teams — No Spoiler Cricket</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../shared.css"/>
+<style>
+
+.crumbs{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);padding:14px 0;border-bottom:1px dashed var(--rule-soft)}
+.crumbs a{color:var(--ink-3)} .crumbs .sep{margin:0 10px;color:var(--rule-soft)}
+.section{padding:26px 0;border-bottom:1px dashed var(--rule-soft)}
+.section h2{font-weight:800;font-size:22px;letter-spacing:-.01em;margin:0 0 6px}
+
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;padding:34px 0 28px;border-bottom:2px dashed var(--rule)}
+.hero h1{font-weight:900;font-size:clamp(56px,7vw,100px);line-height:.88;letter-spacing:-.04em;margin:0}
+.hero h1 .a{color:var(--saffron)} .hero h1 .b{color:var(--green)}
+.hero .dev{font-family:var(--font-dev);font-size:16px;color:var(--saffron);font-weight:600;margin-top:6px}
+.hero .lead{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:16px;max-width:62ch}
+.hero aside{border-left:2px dashed var(--rule);padding-left:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px 22px;align-content:start}
+.hero .stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.hero .stat .v{font-weight:800;font-size:30px;letter-spacing:-.02em;margin-top:4px;line-height:1;color:var(--navy)}
+.ngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);margin-top:16px}
+.ncard{padding:18px;border-right:1px dashed var(--rule-soft);border-bottom:1px dashed var(--rule-soft);position:relative;display:grid;gap:4px;color:inherit;min-height:130px;transition:background .08s}
+.ncard:nth-child(3n){border-right:0}
+.ncard:hover{background:var(--paper-2)}
+.ncard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--t-primary,var(--navy))}
+.ncard-code{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;color:var(--saffron);font-weight:700;padding-left:12px}
+.ncard-name{font-weight:900;font-size:28px;letter-spacing:-.02em;padding-left:12px;line-height:1;color:var(--navy);margin-top:4px}
+.ncard-dev{font-family:var(--font-dev);font-size:16px;color:var(--saffron);font-weight:600;padding-left:12px}
+.ncard-nick{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.1em;padding-left:12px;margin-top:auto;text-transform:uppercase}
+.fgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--rule);margin-top:16px}
+.fcard{padding:16px;border-right:1px dashed var(--rule-soft);border-bottom:1px dashed var(--rule-soft);position:relative;display:grid;gap:4px;color:inherit;min-height:120px;transition:background .08s}
+.fcard:nth-child(5n){border-right:0}
+.fcard:hover{background:var(--paper-2)}
+.fcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--t-primary,var(--navy))}
+.fcard-abbr{font-weight:900;font-size:22px;letter-spacing:-.02em;color:var(--t-primary,var(--navy));padding-left:10px;line-height:1}
+.fcard-name{font-weight:600;font-size:13px;padding-left:10px}
+.fcard-captain{font-size:10.5px;letter-spacing:.08em;color:var(--ink-2);padding-left:10px;text-transform:uppercase}
+.fcard-venue{font-size:10.5px;letter-spacing:.12em;color:var(--ink-3);padding-left:10px;text-transform:uppercase;margin-top:auto}
+@media (max-width:1100px){
+  .ngrid{grid-template-columns:repeat(2,1fr)}
+  .ncard:nth-child(3n){border-right:1px dashed var(--rule-soft)}
+  .ncard:nth-child(2n){border-right:0}
+  .fgrid{grid-template-columns:repeat(2,1fr)}
+  .fcard:nth-child(5n){border-right:1px dashed var(--rule-soft)}
+  .fcard:nth-child(2n){border-right:0}
+  .hero{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+  <div class="tricolour thick"><span></span><span></span><span></span></div>
+  <header class="masthead">
+    <div class="frame">
+      <div class="masthead-inner">
+        <div>
+          <div class="wordmark-dev">नो स्पॉइलर क्रिकेट</div>
+          <div class="wordmark">No<span class="slash">/</span>Spoiler <span class="two">Cricket</span></div>
+        </div>
+        <div class="mast-meta">Document <b>NSC/TEAMS/26</b><br/><b>Teams Index</b><br/>2026-04-20</div>
+      </div>
+      <nav class="platform">
+    <a href="../index.html"><span class="num">01</span>Fixtures</a>
+    <a href="../series/"><span class="num">02</span>Series</a>
+    <a href="../match/"><span class="num">03</span>Match Sheets</a>
+    <a href="" class="on"><span class="num">04</span>Teams</a>
+    <a href="../players.html"><span class="num">05</span>Players</a>
+    <span class="spacer"></span>
+    <span class="stamp mono">§ 04 / Teams</span>
+  </nav>
+    </div>
+  </header>
+
+  <main class="frame">
+    <div class="crumbs"><a href="../index.html">Fixtures</a><span class="sep">/</span>Teams</div>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">All teams · Season 2026</div>
+        <h1>The <span class="a">Teams</span><br/>of <span class="b">2026</span>.</h1>
+        <div class="dev">टीमें · २०२६</div>
+        <p class="lead">6 cricket nations and 10 IPL franchises. Click through for squad, captain, home venue, and fixtures.</p>
+      </div>
+      <aside>
+        <div class="stat"><span class="k">Nations</span><span class="v">6</span></div>
+        <div class="stat"><span class="k">Franchises</span><span class="v">10</span></div>
+        <div class="stat"><span class="k">IPL titles total</span><span class="v">17</span></div>
+        <div class="stat"><span class="k">Test-playing</span><span class="v">6</span></div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ 01 — Cricket nations</div>
+      <h2>International teams</h2>
+      <div class="ngrid">
+    <a class="ncard" href="india.html" style="--t-primary:#0070D2;--t-secondary:#FF9933">
+      <div class="ncard-code">IND</div>
+      <div class="ncard-name">India</div>
+      <div class="ncard-dev">भारत</div>
+      <div class="ncard-nick">Men in Blue</div>
+    </a>
+    <a class="ncard" href="australia.html" style="--t-primary:#FFCD00;--t-secondary:#006241">
+      <div class="ncard-code">AUS</div>
+      <div class="ncard-name">Australia</div>
+      <div class="ncard-dev">ऑस्ट्रेलिया</div>
+      <div class="ncard-nick">Baggy Greens</div>
+    </a>
+    <a class="ncard" href="england.html" style="--t-primary:#12225C;--t-secondary:#E11A27">
+      <div class="ncard-code">ENG</div>
+      <div class="ncard-name">England</div>
+      <div class="ncard-dev">इंग्लैंड</div>
+      <div class="ncard-nick">Bazball</div>
+    </a>
+    <a class="ncard" href="pakistan.html" style="--t-primary:#01411C;--t-secondary:#FFFFFF">
+      <div class="ncard-code">PAK</div>
+      <div class="ncard-name">Pakistan</div>
+      <div class="ncard-dev">पाकिस्तान</div>
+      <div class="ncard-nick">Shaheens</div>
+    </a>
+    <a class="ncard" href="south-africa.html" style="--t-primary:#008542;--t-secondary:#FFCD00">
+      <div class="ncard-code">ZA</div>
+      <div class="ncard-name">South Africa</div>
+      <div class="ncard-dev">दक्षिण अफ़्रीका</div>
+      <div class="ncard-nick">Proteas</div>
+    </a>
+    <a class="ncard" href="new-zealand.html" style="--t-primary:#000000;--t-secondary:#A7A9AC">
+      <div class="ncard-code">NZ</div>
+      <div class="ncard-name">New Zealand</div>
+      <div class="ncard-dev">न्यूज़ीलैंड</div>
+      <div class="ncard-nick">BLACKCAPS</div>
+    </a></div>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ 02 — IPL 2026 franchises</div>
+      <h2>Ten teams, one trophy</h2>
+      <div class="fgrid">
+    <a class="fcard" href="chennai-super-kings.html" style="--t-primary:#F9CD05">
+      <div class="fcard-abbr">CSK</div>
+      <div class="fcard-name">Super Kings</div>
+      <div class="fcard-captain mono">GAIKWAD Ruturaj</div>
+      <div class="fcard-venue mono">Chepauk</div>
+    </a>
+    <a class="fcard" href="mumbai-indians.html" style="--t-primary:#004BA0">
+      <div class="fcard-abbr">MI</div>
+      <div class="fcard-name">Mumbai</div>
+      <div class="fcard-captain mono">PANDYA Hardik</div>
+      <div class="fcard-venue mono">Wankhede</div>
+    </a>
+    <a class="fcard" href="royal-challengers-bengaluru.html" style="--t-primary:#EC1C24">
+      <div class="fcard-abbr">RCB</div>
+      <div class="fcard-name">RCB</div>
+      <div class="fcard-captain mono">PATIDAR Rajat</div>
+      <div class="fcard-venue mono">Chinnaswamy</div>
+    </a>
+    <a class="fcard" href="kolkata-knight-riders.html" style="--t-primary:#3A225D">
+      <div class="fcard-abbr">KKR</div>
+      <div class="fcard-name">Knight Riders</div>
+      <div class="fcard-captain mono">RAHANE Ajinkya</div>
+      <div class="fcard-venue mono">Eden</div>
+    </a>
+    <a class="fcard" href="delhi-capitals.html" style="--t-primary:#17479E">
+      <div class="fcard-abbr">DC</div>
+      <div class="fcard-name">Capitals</div>
+      <div class="fcard-captain mono">PATEL Axar</div>
+      <div class="fcard-venue mono">Kotla</div>
+    </a>
+    <a class="fcard" href="gujarat-titans.html" style="--t-primary:#1B2133">
+      <div class="fcard-abbr">GT</div>
+      <div class="fcard-name">Titans</div>
+      <div class="fcard-captain mono">GILL Shubman</div>
+      <div class="fcard-venue mono">Motera</div>
+    </a>
+    <a class="fcard" href="rajasthan-royals.html" style="--t-primary:#EA1A85">
+      <div class="fcard-abbr">RR</div>
+      <div class="fcard-name">Royals</div>
+      <div class="fcard-captain mono">PARAG Riyan</div>
+      <div class="fcard-venue mono">SMS</div>
+    </a>
+    <a class="fcard" href="sunrisers-hyderabad.html" style="--t-primary:#FB643E">
+      <div class="fcard-abbr">SRH</div>
+      <div class="fcard-name">Sunrisers</div>
+      <div class="fcard-captain mono">KISHAN Ishan</div>
+      <div class="fcard-venue mono">Uppal</div>
+    </a>
+    <a class="fcard" href="lucknow-super-giants.html" style="--t-primary:#005F9F">
+      <div class="fcard-abbr">LSG</div>
+      <div class="fcard-name">Super Giants</div>
+      <div class="fcard-captain mono">PANT Rishabh</div>
+      <div class="fcard-venue mono">Ekana</div>
+    </a>
+    <a class="fcard" href="punjab-kings.html" style="--t-primary:#D71920">
+      <div class="fcard-abbr">PBKS</div>
+      <div class="fcard-name">Punjab</div>
+      <div class="fcard-captain mono">IYER Shreyas</div>
+      <div class="fcard-venue mono">Mullanpur (New PCA)</div>
+    </a></div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-row">
+        <span>No Spoiler Cricket · Teams Index</span>
+        <span class="dev">धर्म · खेल · रोमांच</span>
+        <span>Built 2026-04-20</span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

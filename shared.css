@@ -1,102 +1,202 @@
-/* No Spoiler Cricket — paper/ink match sheet styles, adapted from no-spoiler-cycling */
+/* No Spoiler Cricket — Fixtures Platform design system
+   Indian Railways × match-ticket aesthetic.
+   Pair with fixtures.html, match-test.html, match-ipl.html, data.js. */
+
 :root {
-  --paper: #f2e9d6;                  /* willow-cream */
-  --paper-2: #e7dcbf;                /* slightly deeper cream */
-  --ink: #1a1714;                    /* umpire's notebook */
-  --ink-2: #3a3530;
-  --ink-3: #6b635a;
-  --rule: #1a1714;
-  --rule-soft: rgba(26,23,20,.18);
-  --signal: #b52c23;                 /* cricket ball red */
-  --india-saffron: #ff9933;
-  --india-white: #ffffff;
-  --india-green: #138808;
-  --india-chakra: #000088;
-  --icc-blue: #003087;
-  --gold: #c9a43c;                   /* trophy gold */
-  --density: 1;
-  --font-sans: 'Inter Tight', 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+  --saffron:#ff7722;
+  --saffron-2:#ffa14d;
+  --green:#117a3d;
+  --green-2:#1fa356;
+  --navy:#0a2447;
+  --navy-2:#15386e;
+  --gold:#ffcc66;
+  --paper:#fffdf6;
+  --paper-2:#f5efd9;
+  --ink:#14110f;
+  --ink-2:#4a4338;
+  --ink-3:#8a8270;
+  --rule:rgba(20,17,15,.22);
+  --rule-soft:rgba(20,17,15,.12);
+  --red-alert:#c8102e;
+
+  --font-sans:'Inter Tight', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+  --font-dev:'Noto Sans Devanagari', 'Mukta', serif;
+  --font-display:'Bungee', 'Oswald', 'Inter Tight', sans-serif;
 }
-[data-theme="dark"] {
-  --paper:#0e0d0c; --paper-2:#1a1815; --ink:#f2ede2; --ink-2:#c9c2b4;
-  --ink-3:#7e766b; --rule:#f2ede2; --rule-soft:rgba(242,237,226,.18);
+
+[data-theme="dark"]{
+  --paper:#0f0c08; --paper-2:#1a1510; --ink:#f5efd9; --ink-2:#cfc7b0;
+  --ink-3:#8a8270; --rule:rgba(245,239,217,.22); --rule-soft:rgba(245,239,217,.1);
 }
+
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-feature-settings:"ss01","cv11","tnum";}
-body{min-height:100vh;}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-sans);font-feature-settings:"ss01","tnum"}
 a{color:inherit;text-decoration:none}
 .mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.dev{font-family:var(--font-dev)}
 
-/* ——— Top accent band — India tricolour + chakra navy + ball red ——— */
-.tricolour{display:flex;height:4px;width:100%}
+/* ——— Tricolour band ——— */
+.tricolour{display:flex;height:6px;width:100%}
 .tricolour>span{flex:1}
-.tricolour>span:nth-child(1){background:var(--india-saffron)}
-.tricolour>span:nth-child(2){background:var(--india-white);border-top:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft)}
-.tricolour>span:nth-child(3){background:var(--india-green)}
+.tricolour>span:nth-child(1){background:var(--saffron)}
+.tricolour>span:nth-child(2){background:#fff;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.tricolour>span:nth-child(3){background:var(--green)}
 .tricolour.thick{height:10px}
 
-/* Alternate accent (icc blue / gold / ball red) for non-India-specific pages */
-.icc-stripe{display:flex;height:4px;width:100%}
-.icc-stripe>span{flex:1}
-.icc-stripe>span:nth-child(1){background:var(--icc-blue)}
-.icc-stripe>span:nth-child(2){background:var(--gold)}
-.icc-stripe>span:nth-child(3){background:var(--signal)}
-.icc-stripe.thick{height:10px}
-
 /* ——— Page frame ——— */
-.frame{max-width:1360px;margin:0 auto;padding:0 32px}
-.masthead{border-bottom:1px solid var(--rule);}
-.masthead-inner{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding:22px 0 18px}
-.wordmark{font-family:var(--font-sans);font-weight:800;letter-spacing:-.02em;font-size:34px;line-height:.95;text-transform:uppercase}
-.wordmark .slash{color:var(--signal);margin:0 .1em}
-.wordmark .sub{display:block;font-size:11px;letter-spacing:.22em;font-weight:500;color:var(--ink-3);margin-top:8px}
-.mast-meta{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);text-align:right;line-height:1.55;letter-spacing:.02em;text-transform:uppercase}
-.mast-meta b{color:var(--ink);font-weight:600}
+.frame{max-width:1320px;margin:0 auto;padding:0 28px}
 
-/* Nav strip */
-.navstrip{display:flex;gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
-.navstrip a{padding:10px 18px;border-right:1px solid var(--rule-soft);color:var(--ink-2)}
-.navstrip a.on{background:var(--ink);color:var(--paper)}
-.navstrip a:hover:not(.on){background:var(--paper-2)}
-.navstrip .spacer{flex:1;border-right:1px solid var(--rule-soft)}
-.navstrip .edition{padding:10px 18px;color:var(--ink-3)}
+/* ——— Masthead ——— */
+.masthead{border-bottom:2px dashed var(--rule)}
+.masthead-inner{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding:22px 0 16px}
+.wordmark-dev{font-family:var(--font-dev);font-size:15px;color:var(--saffron);font-weight:700;letter-spacing:.02em}
+.wordmark{font-weight:900;font-size:44px;letter-spacing:-.03em;line-height:.9;margin-top:2px;text-transform:none}
+.wordmark .slash{color:var(--saffron);margin:0 .06em}
+.wordmark .two{color:var(--navy)}
+.mast-meta{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;color:var(--ink-2);text-transform:uppercase;text-align:right;line-height:1.7}
+.mast-meta b{color:var(--navy);font-weight:700}
 
-/* ——— Format / prestige codes ——— */
-.code{display:inline-flex;align-items:center;height:20px;padding:0 7px;border:1px solid var(--ink);font-family:var(--font-mono);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1;white-space:nowrap}
-.code.inv{background:var(--ink);color:var(--paper)}
-.code.sig{background:var(--signal);color:#fff;border-color:var(--signal)}
-.code.icc{background:var(--icc-blue);color:#fff;border-color:var(--icc-blue)}
-.code.gt{background:var(--gold);color:#111;border-color:var(--gold)}
-.code.ind{background:linear-gradient(to bottom,
-  var(--india-saffron) 0 33%,
-  var(--india-white) 33% 66%,
-  var(--india-green) 66% 100%);
-  color:var(--ink);border-color:transparent;font-weight:700}
+/* ——— Platform/Nav ——— */
+.platform{display:flex;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:var(--paper)}
+.platform a{padding:10px 16px;border-right:1px dashed var(--rule);color:var(--ink-2);display:flex;gap:8px;align-items:center}
+.platform a .num{color:var(--saffron);font-weight:700}
+.platform a.on{background:var(--navy);color:#fff}
+.platform a.on .num{color:var(--gold)}
+.platform a:hover:not(.on){background:var(--paper-2)}
+.platform .spacer{flex:1;border-right:1px dashed var(--rule)}
+.platform .stamp{padding:10px 16px;color:var(--ink-3)}
 
-/* Stars */
-.stars{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--ink)}
+/* ——— Departure board hero strip ——— */
+.board{background:var(--navy);color:#fff;padding:14px 22px;display:grid;
+  grid-template-columns:auto 1fr auto auto;gap:20px;align-items:center}
+.board .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:700}
+.board .vs{font-weight:800;font-size:26px;letter-spacing:-.01em;line-height:1}
+.board .vs .x{color:var(--gold);margin:0 .3em}
+.board .dev{font-size:13px;color:var(--gold);margin-top:3px;opacity:.9}
+.board .when{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-align:right}
+.board .when b{display:block;font-size:16px;font-weight:700}
+.board .when .tm{color:var(--gold);margin-top:2px}
+.board .cta{border:1px solid var(--gold);color:var(--gold);padding:8px 14px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+
+/* ——— Format codes (ticket chips) ——— */
+.fmt{display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 9px;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;line-height:1;white-space:nowrap}
+.fmt.test{background:var(--red-alert)}
+.fmt.odi {background:var(--navy)}
+.fmt.t20 {background:var(--saffron)}
+.fmt.t20i{background:var(--saffron)}
+.fmt.ipl {background:var(--green)}
+.fmt.league{background:var(--ink);color:var(--gold)}
+.fmt.womens{background:var(--paper);color:var(--navy);border:1px solid var(--navy)}
+.fmt.icc{background:var(--navy-2)}
+
+/* ——— Token chip (ticket letter in boxed square) ——— */
+.tok{width:26px;height:26px;border:1.5px solid var(--ink);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;font-family:var(--font-mono)}
+.tok.saffron{border-color:var(--saffron);color:var(--saffron)}
+.tok.green  {border-color:var(--green);color:var(--green)}
+.tok.navy   {border-color:var(--navy);color:var(--navy)}
+.tok.red    {border-color:var(--red-alert);color:var(--red-alert)}
+
+/* ——— Stars ——— */
+.stars{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--saffron)}
 .stars .off{color:var(--rule-soft)}
 
-/* Buttons / chips */
-.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--rule);background:transparent;color:var(--ink);font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;line-height:1}
+/* ——— Chip filters ——— */
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;line-height:1}
 .chip .n{color:var(--ink-3)}
-.chip.on{background:var(--ink);color:var(--paper)}
-.chip.on .n{color:var(--paper)}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chip.on .n{color:var(--gold)}
 .chip:hover:not(.on){background:var(--paper-2)}
 
-/* Section head (month) */
-.month-head{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:22px 0 8px;border-top:3px solid var(--ink);margin-top:36px}
-.month-head .num{font-family:var(--font-sans);font-weight:800;font-size:76px;line-height:.9;letter-spacing:-.04em}
-.month-head .lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
-.month-head .name{font-family:var(--font-sans);font-weight:600;font-size:28px;letter-spacing:-.02em}
+/* ——— Toolbar ——— */
+.toolbar{position:sticky;top:0;background:var(--paper);z-index:10;border-bottom:2px dashed var(--rule);padding:12px 0 10px;margin-top:10px}
+.toolbar-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.toolbar-row+.toolbar-row{margin-top:8px}
+.tb-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin-right:10px;min-width:60px}
+.showing{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;margin-left:auto}
+.showing b{color:var(--ink);font-weight:700}
+
+/* ——— Month header ——— */
+.month-head{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:baseline;
+  padding:22px 0 8px;border-top:3px solid var(--ink);margin-top:32px}
+.month-head .num{font-weight:900;font-size:70px;line-height:.9;letter-spacing:-.04em;color:var(--navy)}
+.month-head .lbl{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
+.month-head .name{font-weight:700;font-size:26px;letter-spacing:-.02em}
+.month-head .dev{font-family:var(--font-dev);font-size:14px;color:var(--saffron);font-weight:600;margin-top:4px}
 .month-head .count{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);text-align:right}
 
-/* Footer */
-footer.foot{border-top:1px solid var(--rule);margin-top:60px;padding:22px 0 40px;font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
-.foot-row{display:flex;justify-content:space-between;gap:24px}
+/* ——— Fixture row (ticket) ——— */
+.row{display:grid;grid-template-columns:32px 80px 60px 1fr 170px 80px 52px 90px;gap:0;
+  padding:11px 0;border-bottom:1px dashed var(--rule-soft);align-items:center;transition:background .08s}
+.row:hover{background:var(--paper-2)}
+.row .c{padding:0 10px;min-width:0}
+.row .c.first{padding-left:0}
+.row .dt{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em}
+.row .dt .tm{color:var(--ink-3);display:block;margin-top:2px}
+.row .vs{font-weight:700;font-size:16px;letter-spacing:-.005em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .vs .x{color:var(--saffron);margin:0 .25em;font-weight:500}
+.row .sub{font-family:var(--font-mono);font-size:9.5px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .ven{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-2);letter-spacing:.06em;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .ovr{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-3);text-align:right;letter-spacing:.08em}
+.row .cv{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-2);letter-spacing:.06em;text-transform:uppercase;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-/* utility */
+.row.hot{background:linear-gradient(90deg, rgba(255,119,34,.10), transparent 50%)}
+.row.test{background:linear-gradient(90deg, rgba(200,16,46,.08), transparent 50%)}
+.row.final{background:linear-gradient(90deg, rgba(255,204,102,.22), transparent 50%)}
+
+@media (max-width:1100px){
+  .row{grid-template-columns:28px 70px 54px 1fr 68px}
+  .row .c.ven,.row .c.ovr,.row .c.cv{display:none}
+}
+@media (max-width:640px){
+  .row{grid-template-columns:54px 1fr 60px}
+  .row .c.first,.row .c.dt,.row .c:nth-child(3){display:none}
+}
+
+/* ——— Legend / colophon ——— */
+.legend{margin-top:44px;padding:22px 0;border-top:3px solid var(--ink);border-bottom:2px dashed var(--rule);display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+.legend h3{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:0 0 12px;font-weight:600}
+.legend .row2{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:8px;font-family:var(--font-mono);font-size:12px}
+.legend .row2 .k{color:var(--ink);font-weight:700;letter-spacing:.04em}
+.legend .row2 .v{color:var(--ink-3)}
+
+/* ——— Footer ——— */
+footer.foot{border-top:2px dashed var(--rule);margin-top:48px;padding:20px 0 36px;
+  font-family:var(--font-mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.18em;text-transform:uppercase}
+.foot-row{display:flex;justify-content:space-between;gap:24px}
+.foot-row .dev{font-family:var(--font-dev);letter-spacing:.02em;color:var(--saffron);text-transform:none;font-size:12px}
+
+/* ——— Eyebrow / hr ——— */
+.eyebrow{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
 .hr{border:0;border-top:1px solid var(--rule-soft);margin:0}
 .hr.solid{border-top-color:var(--rule)}
-.eyebrow{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
+.hr.dash{border-top:2px dashed var(--rule)}
+
+/* ——— Match detail patterns ——— */
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;padding:34px 0 28px;border-bottom:3px solid var(--ink);position:relative}
+.hero h1{font-weight:900;font-size:clamp(52px,6.5vw,96px);line-height:.9;letter-spacing:-.035em;margin:0}
+.hero h1 .vs{color:var(--saffron);font-weight:500;font-style:italic;margin:0 .1em}
+.hero .dev{font-family:var(--font-dev);font-size:18px;color:var(--saffron);font-weight:600;margin-top:8px}
+.hero aside{border-left:2px dashed var(--rule);padding-left:26px;display:grid;grid-template-columns:1fr 1fr;gap:16px 22px;align-content:start}
+.stat{display:block}
+.stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.stat .v{font-weight:800;font-size:28px;letter-spacing:-.02em;line-height:1;margin-top:4px;color:var(--navy)}
+.stat .v.sm{font-size:18px}
+
+.statband{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:3px solid var(--ink);border-bottom:1px solid var(--rule);margin-top:18px}
+.statband .s{padding:18px 14px;border-right:1px dashed var(--rule)}
+.statband .s:last-child{border-right:0}
+.statband .s .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.statband .s .v{font-weight:800;font-size:30px;letter-spacing:-.02em;margin-top:6px;line-height:1;color:var(--navy)}
+.statband .s .v small{font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--ink-3);letter-spacing:.12em;text-transform:uppercase;margin-left:4px}
+
+/* ——— Tweaks panel ——— */
+.tweaks{position:fixed;right:16px;bottom:16px;width:280px;background:var(--paper);border:2px solid var(--navy);box-shadow:6px 6px 0 var(--saffron);font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;z-index:50;display:none}
+.tweaks.show{display:block}
+.tweaks header{display:flex;justify-content:space-between;align-items:center;background:var(--navy);color:#fff;padding:8px 10px;text-transform:uppercase;letter-spacing:.18em}
+.tweaks header .x{cursor:pointer}
+.tweaks .row{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-top:1px dashed var(--rule-soft);gap:8px}
+.tweaks .row:first-of-type{border-top:0}
+.tweaks button{background:transparent;border:1px solid var(--navy);color:var(--navy);padding:4px 8px;font-family:var(--font-mono);font-size:11px;cursor:pointer;text-transform:uppercase;letter-spacing:.06em}
+.tweaks button.on{background:var(--navy);color:#fff}
