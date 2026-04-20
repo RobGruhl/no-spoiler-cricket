@@ -79,12 +79,25 @@ function transformMatch(m) {
   const teams = m.teams || [];
   const featuresIndia = teams.includes('IND') || teams.includes('IN') || (m.venue || '').toLowerCase().includes('india');
 
-  // Build the vs label
+  // Build the vs label — bilateral: "IND vs AUS"; single-country leagues: use short name
   const TEAM_LABEL = { IND: 'IND', IN: 'IND', AUS: 'AUS', AU: 'AUS', ENG: 'ENG', UK: 'ENG', PAK: 'PAK', PK: 'PAK',
     NZ: 'NZ', ZA: 'SA', BD: 'BAN', SL: 'SL', AFG: 'AFG', WI: 'WI', US: 'USA', INTL: 'Intl Field' };
+  // Hand-tuned league short-names for single-country entries
+  const LEAGUE_SHORT = {
+    'ipl-2026': 'IPL 2026 · 10 Franchises',
+    'sa20-2026': 'SA20 · 6 Franchises',
+    'bbl-15-finals': 'Big Bash · Finals',
+    'ilt20-2026': 'ILT20 · 6 Franchises',
+    'psl-11-2026': 'PSL 11 · 6 Franchises',
+    'mlc-2026': 'MLC · 6 Franchises',
+    'cpl-2026': 'CPL · 6 Franchises',
+    'the-hundred-2026': 'The Hundred · 8 Teams',
+  };
   let vs = '';
   if (teams.length === 2) {
     vs = `${TEAM_LABEL[teams[0]] || teams[0]} vs ${TEAM_LABEL[teams[1]] || teams[1]}`;
+  } else if (LEAGUE_SHORT[m.id]) {
+    vs = LEAGUE_SHORT[m.id];
   } else if (teams.length === 1 && teams[0] !== 'INTL') {
     vs = `${TEAM_LABEL[teams[0]] || teams[0]} Domestic`;
   } else {
@@ -196,6 +209,19 @@ function buildHtml(rows, stats, updatedLabel, todayYmd) {
 .hero .stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
 .hero .stat .v{font-weight:800;font-size:30px;letter-spacing:-.02em;margin-top:4px;line-height:1;color:var(--navy)}
 .hero .stat .v.sm{font-size:20px}
+
+/* Fixture rows on index —
+   widen col 1 for multi-char tokens (IPL / BGT / ASH / T20 / ENG)
+   widen col 3 for the longest .fmt chip labels ("LEAGUE" 6ch, "WOMEN'S" 7ch)
+   without those overrides the chips overflow into the vs column. */
+.row{grid-template-columns:60px 90px 96px 1fr 170px 80px 58px 110px}
+.row .tok{min-width:26px;width:auto;padding:0 6px;white-space:nowrap;font-size:10.5px;letter-spacing:.02em}
+@media (max-width:1100px){
+  .row{grid-template-columns:56px 80px 88px 1fr 72px}
+}
+@media (max-width:640px){
+  .row{grid-template-columns:56px 1fr 64px}
+}
 </style>
 </head>
 <body>
