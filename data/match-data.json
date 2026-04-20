@@ -1,0 +1,454 @@
+{
+  "_note": "Seed data — representative sample of marquee 2026 fixtures. Dates and broadcast details are best-effort placeholders; verify before treating as authoritative. India-leaning selection (the target audience).",
+  "lastUpdated": "2026-04-20T00:00:00Z",
+  "event": {
+    "name": "Cricket Calendar 2026",
+    "year": 2026
+  },
+  "matches": [
+    {
+      "id": "ashes-2025-26-tail",
+      "name": "The Ashes 2025–26 (final Tests)",
+      "format": "test-series",
+      "teams": ["AUS", "ENG"],
+      "venue": "Australia",
+      "startDate": "2026-01-04",
+      "endDate": "2026-01-19",
+      "rating": 5,
+      "prestige": ["ashes"],
+      "conditions": ["bouncy", "pace-friendly"],
+      "description": "Final two Tests of the 2025–26 Ashes series in Australia — Melbourne (Boxing Day tail) and the SCG New Year Test.",
+      "matches": [
+        { "matchNumber": 4, "name": "4th Test — Melbourne", "date": "2026-01-04", "venue": "MCG", "matchType": "test" },
+        { "matchNumber": 5, "name": "5th Test — Sydney", "date": "2026-01-15", "venue": "SCG", "matchType": "test" }
+      ],
+      "broadcast": {
+        "geos": {
+          "AU": { "primary": { "broadcaster": "Fox Cricket / Kayo Sports", "type": "streaming", "subscription": true, "url": "https://www.kayosports.com.au/cricket", "coverage": "live" }, "alternatives": [{ "broadcaster": "Channel 7", "type": "free", "url": "https://7plus.com.au", "coverage": "live" }] },
+          "UK": { "primary": { "broadcaster": "TNT Sports / Discovery+", "type": "streaming", "subscription": true, "url": "https://www.discoveryplus.com", "coverage": "live" } },
+          "IN": { "primary": { "broadcaster": "Disney+ Hotstar", "type": "streaming", "subscription": true, "url": "https://www.hotstar.com", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } }
+        },
+        "youtubeChannels": [{ "channel": "ICC", "handle": "@ICC", "contentType": "highlights" }]
+      },
+      "matchDetails": {
+        "summary": "The final two Tests close out the 2025–26 Ashes series in Australia. Boxing Day at the MCG and the New Year Test at the SCG are cricket's most-watched fixtures on the Australian calendar.",
+        "storylines": [
+          "The Ashes Urn lives with the holders — both sides arrive with the series still in the balance or decided, but the MCG & SCG fixtures carry their own weight regardless of urn status.",
+          "Pink-ball Tests have shifted the balance in recent Ashes cycles; keep an eye on how the home attack uses Australian conditions.",
+          "For Indian-origin viewers: these Tests are prime scouting material — India's top order will face many of these bowlers later in the year."
+        ],
+        "historicalContext": "The Ashes began in 1882 after England lost at home and an obituary declared English cricket dead — 'the body will be cremated and the ashes taken to Australia.' Australia won the 2021-22 and 2023 cycles; the 2025-26 series is the next instalment on Australian soil.",
+        "watchNotes": "Test days run roughly 10:00–17:00 AEDT (three sessions of ~2 hours with breaks). For US east coast viewers, that's an overnight watch — most viewers catch the highlight reels next morning."
+      }
+    },
+
+    {
+      "id": "sa20-2026",
+      "name": "SA20 Season 4",
+      "format": "franchise-league",
+      "teams": ["ZA"],
+      "venue": "South Africa",
+      "startDate": "2026-01-10",
+      "endDate": "2026-02-08",
+      "rating": 3,
+      "prestige": [],
+      "conditions": ["pace-friendly", "bouncy"],
+      "description": "South Africa's flagship domestic T20 franchise league. Six city-based teams, ~34 matches across a month.",
+      "broadcast": {
+        "geos": {
+          "ZA": { "primary": { "broadcaster": "SuperSport", "type": "streaming", "subscription": true, "url": "https://www.supersport.com", "coverage": "live" } },
+          "IN": { "primary": { "broadcaster": "Star Sports", "type": "tv", "subscription": true, "url": "https://www.hotstar.com", "coverage": "live" } },
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } }
+        }
+      },
+      "matchDetails": {
+        "summary": "SA20 features six franchises owned by IPL team holders — expect overlapping ownership and squad mobility. Fast, bouncy surfaces reward pacers; the tournament has become a premier T20 league in its short life.",
+        "storylines": [
+          "IPL franchise-owned sides (MI Cape Town, Sunrisers Eastern Cape, etc.) use this as a scouting window for overseas talent.",
+          "South Africa's Test-starved summer leans heavily on SA20 for revenue and visibility."
+        ],
+        "watchNotes": "Most matches start 17:30 or 20:00 SAST. For India fans it's a comfortable evening watch."
+      }
+    },
+
+    {
+      "id": "bbl-15-finals",
+      "name": "Big Bash League 15 — Finals series",
+      "format": "franchise-league",
+      "teams": ["AU"],
+      "venue": "Australia",
+      "startDate": "2026-01-18",
+      "endDate": "2026-01-25",
+      "rating": 3,
+      "prestige": [],
+      "conditions": ["pace-friendly", "bouncy"],
+      "description": "The Qualifier, Knockout, Challenger and Final of BBL|15 — Australia's domestic T20 league. Eight franchises; knockout format.",
+      "broadcast": {
+        "geos": {
+          "AU": { "primary": { "broadcaster": "Fox Cricket / Kayo Sports", "type": "streaming", "subscription": true, "url": "https://www.kayosports.com.au/cricket", "coverage": "live" }, "alternatives": [{ "broadcaster": "Channel 7", "type": "free", "url": "https://7plus.com.au", "coverage": "live" }] },
+          "IN": { "primary": { "broadcaster": "Star Sports", "type": "tv", "subscription": true, "url": "https://www.hotstar.com", "coverage": "live" } },
+          "UK": { "primary": { "broadcaster": "TNT Sports", "type": "streaming", "subscription": true, "url": "https://www.discoveryplus.com", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } }
+        }
+      }
+    },
+
+    {
+      "id": "ilt20-2026",
+      "name": "DP World International League T20 Season 4",
+      "format": "franchise-league",
+      "teams": ["INTL"],
+      "venue": "United Arab Emirates",
+      "startDate": "2026-01-11",
+      "endDate": "2026-02-15",
+      "rating": 3,
+      "prestige": [],
+      "conditions": ["spin-friendly", "flat"],
+      "description": "UAE-based T20 franchise league. Six teams owned by IPL/Indian investors; dry spin-friendly pitches.",
+      "broadcast": {
+        "geos": {
+          "IN": { "primary": { "broadcaster": "Disney+ Hotstar", "type": "streaming", "subscription": true, "url": "https://www.hotstar.com", "coverage": "live" } },
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } }
+        }
+      }
+    },
+
+    {
+      "id": "psl-11-2026",
+      "name": "Pakistan Super League 11",
+      "format": "franchise-league",
+      "teams": ["PK"],
+      "venue": "Pakistan",
+      "startDate": "2026-02-10",
+      "endDate": "2026-03-22",
+      "rating": 4,
+      "prestige": [],
+      "conditions": ["flat", "spin-friendly"],
+      "description": "Pakistan's flagship T20 franchise league. Six teams, ~34 matches across Karachi, Lahore, Rawalpindi and Multan.",
+      "broadcast": {
+        "geos": {
+          "PK": { "primary": { "broadcaster": "PTV Sports / A Sports", "type": "tv", "subscription": false, "url": "https://www.ptvsports.com.pk", "coverage": "live" } },
+          "IN": { "primary": { "broadcaster": "Not telecast in India", "type": "none", "subscription": false, "coverage": "none", "notes": "Bilateral tensions mean PSL is not broadcast in India. Use VPN at own risk." } },
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } }
+        }
+      }
+    },
+
+    {
+      "id": "icc-t20-world-cup-2026",
+      "name": "ICC Men's T20 World Cup 2026",
+      "format": "icc-tournament",
+      "teams": ["INTL"],
+      "venue": "India & Sri Lanka",
+      "startDate": "2026-02-11",
+      "endDate": "2026-03-08",
+      "rating": 5,
+      "prestige": ["t20-world-cup"],
+      "conditions": ["spin-friendly", "flat"],
+      "description": "The marquee ICC T20 event — 20 teams, co-hosted by India and Sri Lanka. Super-8 format; knockouts lead to the final.",
+      "broadcast": {
+        "geos": {
+          "IN": { "primary": { "broadcaster": "Star Sports / Disney+ Hotstar", "type": "streaming", "subscription": true, "url": "https://www.hotstar.com", "coverage": "live", "notes": "India's matches on TV & streaming" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } },
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" } },
+          "AU": { "primary": { "broadcaster": "Fox Cricket / Kayo Sports", "type": "streaming", "subscription": true, "url": "https://www.kayosports.com.au/cricket", "coverage": "live" }, "alternatives": [{ "broadcaster": "Amazon Prime Video", "type": "streaming", "subscription": true, "url": "https://www.amazon.com.au/gp/video" }] },
+          "ZA": { "primary": { "broadcaster": "SuperSport", "type": "streaming", "subscription": true, "url": "https://www.supersport.com", "coverage": "live" } },
+          "NZ": { "primary": { "broadcaster": "Sky Sport NZ", "type": "streaming", "subscription": true, "url": "https://www.sky.co.nz/sky-sport", "coverage": "live" } }
+        },
+        "youtubeChannels": [{ "channel": "ICC", "handle": "@ICC", "contentType": "highlights" }]
+      },
+      "matchDetails": {
+        "summary": "Twenty nations compete across a month. First round seeds into the Super 8 stage, then semifinals and a final. India and Sri Lanka share hosting rights, with matches on flat subcontinental surfaces that typically reward aggressive batting and crafty spin.",
+        "storylines": [
+          "India's home T20 World Cup — first since 2016 — puts enormous pressure on the hosts and any potential India vs Pakistan group-stage fixture.",
+          "T20 World Cup finals are single-match deciders; form in the Super 8 stage rarely predicts the winner.",
+          "Keep an eye on associate nations — the expanded 20-team field has produced memorable upsets in recent editions."
+        ],
+        "historicalContext": "The T20 World Cup began in 2007 (won by India under MS Dhoni). Winners since: Pakistan (2009), England (2010, 2022), West Indies (2012, 2016), Sri Lanka (2014), Australia (2021), India (2024).",
+        "watchNotes": "Most India matches start 19:00 IST (09:30 ET / 14:30 BST). India vs Pakistan, if the draw produces one, usually runs in prime-time Asia."
+      }
+    },
+
+    {
+      "id": "ind-vs-eng-ltd-2026",
+      "name": "India vs England — T20I & ODI series",
+      "format": "odi-series",
+      "teams": ["IND", "ENG"],
+      "venue": "India",
+      "startDate": "2026-03-12",
+      "endDate": "2026-03-19",
+      "rating": 4,
+      "prestige": [],
+      "conditions": ["flat", "spin-friendly"],
+      "description": "Short white-ball series in India before the IPL window. Three T20Is followed by three ODIs (placeholder — confirm once fixtures firm up).",
+      "broadcast": {
+        "geos": {
+          "IN": { "primary": { "broadcaster": "Star Sports / Disney+ Hotstar", "type": "streaming", "subscription": true, "url": "https://www.hotstar.com", "coverage": "live" } },
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } },
+          "AU": { "primary": { "broadcaster": "Fox Cricket / Kayo Sports", "type": "streaming", "subscription": true, "url": "https://www.kayosports.com.au/cricket", "coverage": "live" } }
+        }
+      }
+    },
+
+    {
+      "id": "ipl-2026",
+      "name": "Indian Premier League 2026",
+      "format": "franchise-league",
+      "teams": ["IN"],
+      "venue": "India",
+      "startDate": "2026-03-20",
+      "endDate": "2026-05-24",
+      "rating": 5,
+      "prestige": ["ipl-final"],
+      "conditions": ["flat", "spin-friendly", "batting"],
+      "description": "The IPL — ten franchises, 74 matches, ~10 weeks across India. The richest and most-watched T20 league in the world.",
+      "broadcast": {
+        "geos": {
+          "IN": { "primary": { "broadcaster": "JioCinema (streaming) · Star Sports (TV)", "type": "streaming", "subscription": false, "url": "https://www.jiocinema.com", "coverage": "live", "notes": "Free on JioCinema for mobile; TV on Star Sports" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" }, "alternatives": [{ "broadcaster": "Disney+ Hotstar USA", "type": "streaming", "subscription": true, "url": "https://www.hotstar.com/us" }] },
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" } },
+          "AU": { "primary": { "broadcaster": "Fox Cricket / Kayo Sports", "type": "streaming", "subscription": true, "url": "https://www.kayosports.com.au/cricket", "coverage": "live" } },
+          "ZA": { "primary": { "broadcaster": "SuperSport", "type": "streaming", "subscription": true, "url": "https://www.supersport.com", "coverage": "live" } }
+        }
+      },
+      "matchDetails": {
+        "summary": "Ten franchises across India play a double round-robin (70 league matches) followed by four playoff matches — Qualifier 1, Eliminator, Qualifier 2, and the Final. Each match is a standalone spectacle; the league's format concentrates star power into three-hour T20 games most evenings.",
+        "storylines": [
+          "Mega auction years reshape squads every 2–3 seasons — the composition of teams can shift drastically between editions.",
+          "The Impact Player rule (introduced in 2023) continues to influence how teams build their XI.",
+          "International players' availability depends on their national boards' schedules — keep an eye on NOCs.",
+          "The playoffs are where legacies are made: the Qualifier-2-to-Final path has produced several fairytale runs."
+        ],
+        "historicalContext": "The IPL launched in 2008. Champions: Rajasthan (2008), Deccan (2009), Chennai (2010, 2011, 2018, 2021, 2023), Mumbai (2013, 2015, 2017, 2019, 2020), Kolkata (2012, 2014, 2024), Hyderabad (2016), Gujarat (2022), and more recent winners from the latest editions.",
+        "watchNotes": "Most matches start 19:30 IST (10:00 ET / 15:00 BST). Weekend double-headers begin 15:30 IST. The final is typically on a Sunday in late May in a major city like Ahmedabad or Mumbai."
+      }
+    },
+
+    {
+      "id": "icc-womens-t20-wc-2026",
+      "name": "ICC Women's T20 World Cup 2026",
+      "format": "icc-tournament",
+      "teams": ["INTL"],
+      "venue": "England",
+      "startDate": "2026-06-12",
+      "endDate": "2026-07-05",
+      "rating": 4,
+      "prestige": ["world-cup"],
+      "conditions": ["swinging"],
+      "description": "Ten-team women's T20 World Cup hosted in England. Single group stage into semifinals and a final.",
+      "broadcast": {
+        "geos": {
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" }, "alternatives": [{ "broadcaster": "BBC (selected matches)", "type": "free", "url": "https://www.bbc.co.uk/sport/cricket", "coverage": "highlights" }] },
+          "IN": { "primary": { "broadcaster": "Star Sports / Disney+ Hotstar", "type": "streaming", "subscription": true, "url": "https://www.hotstar.com", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } },
+          "AU": { "primary": { "broadcaster": "Fox Cricket / Kayo Sports", "type": "streaming", "subscription": true, "url": "https://www.kayosports.com.au/cricket", "coverage": "live" } }
+        }
+      }
+    },
+
+    {
+      "id": "ind-tour-eng-2026",
+      "name": "India tour of England 2026",
+      "format": "test-series",
+      "teams": ["ENG", "IND"],
+      "venue": "England",
+      "startDate": "2026-06-18",
+      "endDate": "2026-08-16",
+      "rating": 5,
+      "prestige": ["pataudi-trophy"],
+      "conditions": ["swinging"],
+      "description": "India's multi-format tour of England — five Tests (Pataudi/Anthony de Mello Trophy) plus white-ball series. English summer cricket's showpiece.",
+      "matches": [
+        { "matchNumber": 1, "name": "1st Test — Headingley", "date": "2026-06-18", "venue": "Headingley, Leeds", "matchType": "test" },
+        { "matchNumber": 2, "name": "2nd Test — Edgbaston", "date": "2026-07-02", "venue": "Edgbaston, Birmingham", "matchType": "test" },
+        { "matchNumber": 3, "name": "3rd Test — Lord's", "date": "2026-07-16", "venue": "Lord's, London", "matchType": "test" },
+        { "matchNumber": 4, "name": "4th Test — Old Trafford", "date": "2026-07-30", "venue": "Old Trafford, Manchester", "matchType": "test" },
+        { "matchNumber": 5, "name": "5th Test — The Oval", "date": "2026-08-13", "venue": "The Oval, London", "matchType": "test" }
+      ],
+      "broadcast": {
+        "geos": {
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" } },
+          "IN": { "primary": { "broadcaster": "Sony Sports / SonyLIV", "type": "streaming", "subscription": true, "url": "https://www.sonyliv.com", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } },
+          "AU": { "primary": { "broadcaster": "Fox Cricket / Kayo Sports", "type": "streaming", "subscription": true, "url": "https://www.kayosports.com.au/cricket", "coverage": "live" } }
+        }
+      },
+      "matchDetails": {
+        "summary": "Five Tests on classic English grounds in the peak of summer. Swinging Dukes ball conditions test Indian batters who are used to the subcontinent; Indian spinners' role depends on pitch wear in late-series Tests.",
+        "storylines": [
+          "India has never won a series in England since 2007 — the last tour was defining for the post-Kohli/Rohit generation.",
+          "Dukes ball behaviour in June–August can swing dramatically between cloudy and sunny sessions at the same venue.",
+          "England's Bazball era has produced high-scoring, high-stakes Tests; India's response tempo will shape every match."
+        ],
+        "historicalContext": "India's first tour of England was in 1932. The Pataudi Trophy is contested when England tour India; the Anthony de Mello Trophy when India tour England. India's only series wins in England remain 1971, 1986, and 2007.",
+        "watchNotes": "Play typically runs 11:00–18:00 BST (15:30–22:30 IST) with a lunch and tea break. For US East Coast, mornings line up well with the first session."
+      }
+    },
+
+    {
+      "id": "mlc-2026",
+      "name": "Major League Cricket Season 4",
+      "format": "franchise-league",
+      "teams": ["US"],
+      "venue": "United States",
+      "startDate": "2026-07-04",
+      "endDate": "2026-07-26",
+      "rating": 3,
+      "prestige": [],
+      "conditions": ["batting", "flat"],
+      "description": "The US's domestic T20 franchise league — six teams including multiple IPL-franchise-backed sides. Grand Prairie, Morrisville, Dallas, and more.",
+      "broadcast": {
+        "geos": {
+          "US": { "primary": { "broadcaster": "Willow TV / CBS Sports", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } },
+          "IN": { "primary": { "broadcaster": "FanCode", "type": "streaming", "subscription": true, "url": "https://www.fancode.com", "coverage": "live" } },
+          "UK": { "primary": { "broadcaster": "TNT Sports", "type": "streaming", "subscription": true, "url": "https://www.discoveryplus.com", "coverage": "live" } }
+        }
+      },
+      "matchDetails": {
+        "summary": "MLC launched in 2023 after the US gained Full Membership pathway. Teams are backed by IPL owners — MI New York, Washington Freedom, Texas Super Kings, and others. The league's growth is deliberate, building on co-hosting the 2024 T20 World Cup.",
+        "storylines": [
+          "The US cricket ecosystem is in a formative phase — expect to see Indian diaspora crowds at Grand Prairie and Morrisville.",
+          "Retired IPL stars and current international names share squads with emerging American players."
+        ],
+        "watchNotes": "Matches run evening US Central / Eastern time. For Indian viewers, that's early-to-mid morning IST — convenient for weekday watching."
+      }
+    },
+
+    {
+      "id": "the-hundred-2026",
+      "name": "The Hundred — Men's & Women's 2026",
+      "format": "franchise-league",
+      "teams": ["ENG"],
+      "venue": "England",
+      "startDate": "2026-08-05",
+      "endDate": "2026-08-30",
+      "rating": 3,
+      "prestige": [],
+      "conditions": ["swinging", "flat"],
+      "description": "England's 100-ball city-based league. Eight teams, men's and women's draws played alongside, finals at Lord's.",
+      "broadcast": {
+        "geos": {
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" }, "alternatives": [{ "broadcaster": "BBC (selected matches)", "type": "free", "url": "https://www.bbc.co.uk/sport/cricket", "coverage": "live" }] },
+          "IN": { "primary": { "broadcaster": "FanCode", "type": "streaming", "subscription": true, "url": "https://www.fancode.com", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } }
+        }
+      }
+    },
+
+    {
+      "id": "asia-cup-2026",
+      "name": "Asia Cup 2026 (T20)",
+      "format": "t20i-series",
+      "teams": ["INTL"],
+      "venue": "TBD",
+      "startDate": "2026-09-05",
+      "endDate": "2026-09-22",
+      "rating": 4,
+      "prestige": ["india-pakistan"],
+      "conditions": ["spin-friendly", "flat"],
+      "description": "The Asia Cup in T20 format — six teams (India, Pakistan, Sri Lanka, Bangladesh, Afghanistan, plus one qualifier). Potential India vs Pakistan group-stage + Super Four fixtures make this must-watch in South Asia.",
+      "broadcast": {
+        "geos": {
+          "IN": { "primary": { "broadcaster": "Sony Sports / SonyLIV", "type": "streaming", "subscription": true, "url": "https://www.sonyliv.com", "coverage": "live" } },
+          "PK": { "primary": { "broadcaster": "PTV Sports", "type": "tv", "subscription": false, "url": "https://www.ptvsports.com.pk", "coverage": "live" } },
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } },
+          "AU": { "primary": { "broadcaster": "Fox Cricket / Kayo Sports", "type": "streaming", "subscription": true, "url": "https://www.kayosports.com.au/cricket", "coverage": "live" } }
+        }
+      },
+      "matchDetails": {
+        "summary": "Asia's biggest white-ball tournament. T20 format in 2026 keeps matches tight; the Super Four stage guarantees repeat fixtures between the top four sides, maximising the chance of an India–Pakistan sequel.",
+        "storylines": [
+          "India vs Pakistan — bilateral series remain frozen, so this is one of only two venues (Asia Cup + World Cups) where the fixture happens.",
+          "Afghanistan's spin quartet has made them a genuine dark horse on subcontinental tracks."
+        ],
+        "historicalContext": "The Asia Cup began in 1984. India are the most successful side with 8 titles; Sri Lanka 6; Pakistan 2. Recent editions have alternated formats between ODI and T20."
+      }
+    },
+
+    {
+      "id": "cpl-2026",
+      "name": "Caribbean Premier League 2026",
+      "format": "franchise-league",
+      "teams": ["INTL"],
+      "venue": "Caribbean",
+      "startDate": "2026-08-22",
+      "endDate": "2026-09-28",
+      "rating": 3,
+      "prestige": [],
+      "conditions": ["spin-friendly", "flat"],
+      "description": "Six-team Caribbean T20 league — Trinidad, Barbados, Guyana, Jamaica, St Lucia, St Kitts & Nevis. Slower, lower surfaces reward spin and manipulation over brute force.",
+      "broadcast": {
+        "geos": {
+          "IN": { "primary": { "broadcaster": "FanCode", "type": "streaming", "subscription": true, "url": "https://www.fancode.com", "coverage": "live" } },
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } }
+        }
+      }
+    },
+
+    {
+      "id": "aus-tour-ind-bgt-2026",
+      "name": "Border-Gavaskar Trophy (AUS tour of India)",
+      "format": "test-series",
+      "teams": ["IND", "AUS"],
+      "venue": "India",
+      "startDate": "2026-09-28",
+      "endDate": "2026-11-15",
+      "rating": 5,
+      "prestige": ["border-gavaskar"],
+      "conditions": ["spin-friendly", "flat"],
+      "description": "Australia's multi-format tour of India — four Tests for the Border-Gavaskar Trophy, plus short white-ball series. Turning Indian surfaces against Australian batters is the sub-plot of every edition.",
+      "matches": [
+        { "matchNumber": 1, "name": "1st Test — Chennai", "date": "2026-09-28", "venue": "Chepauk, Chennai", "matchType": "test" },
+        { "matchNumber": 2, "name": "2nd Test — Delhi", "date": "2026-10-09", "venue": "Feroz Shah Kotla, Delhi", "matchType": "test" },
+        { "matchNumber": 3, "name": "3rd Test — Ahmedabad", "date": "2026-10-23", "venue": "Narendra Modi Stadium, Ahmedabad", "matchType": "test" },
+        { "matchNumber": 4, "name": "4th Test — Kolkata", "date": "2026-11-04", "venue": "Eden Gardens, Kolkata", "matchType": "test" }
+      ],
+      "broadcast": {
+        "geos": {
+          "IN": { "primary": { "broadcaster": "Star Sports / Disney+ Hotstar", "type": "streaming", "subscription": true, "url": "https://www.hotstar.com", "coverage": "live" } },
+          "AU": { "primary": { "broadcaster": "Fox Cricket / Kayo Sports", "type": "streaming", "subscription": true, "url": "https://www.kayosports.com.au/cricket", "coverage": "live" } },
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" } },
+          "US": { "primary": { "broadcaster": "Willow TV", "type": "streaming", "subscription": true, "url": "https://www.willow.tv", "coverage": "live" } }
+        }
+      },
+      "matchDetails": {
+        "summary": "Four Tests on Indian spinning surfaces. India's spin trio vs Australia's modern attempts at SENA-inverted batting plans; expect Tests that finish inside four days as pitches wear.",
+        "storylines": [
+          "India have won the last four Border-Gavaskar series at home. Australia's only win in India this century was 2004-05.",
+          "Pat Cummins' side arrives with the 2023 WTC crown and the 2025-26 Ashes in recent memory — this series measures their subcontinental adaptation.",
+          "Ashwin-era Indian spin attacks and Kuldeep/Axar rotations tend to dominate at home."
+        ],
+        "historicalContext": "The Border-Gavaskar Trophy was introduced in 1996, honouring Allan Border and Sunil Gavaskar. India have 10 series wins to Australia's 5 in the trophy's lifetime.",
+        "watchNotes": "Play runs roughly 09:30–16:30 IST. Perfect for Indian audiences; awkward overnight for US East Coast."
+      }
+    },
+
+    {
+      "id": "ashes-2026-27-start",
+      "name": "The Ashes 2026–27 (opening Tests)",
+      "format": "test-series",
+      "teams": ["ENG", "AUS"],
+      "venue": "England",
+      "startDate": "2026-11-26",
+      "endDate": "2026-12-22",
+      "rating": 5,
+      "prestige": ["ashes"],
+      "conditions": ["swinging"],
+      "description": "Placeholder — scheduling of the next Ashes cycle is still being finalised. Assumed winter tour depending on FTP cycles.",
+      "broadcast": {
+        "geos": {
+          "UK": { "primary": { "broadcaster": "Sky Sports Cricket", "type": "streaming", "subscription": true, "url": "https://www.skysports.com/cricket", "coverage": "live" } },
+          "AU": { "primary": { "broadcaster": "Fox Cricket / Kayo Sports", "type": "streaming", "subscription": true, "url": "https://www.kayosports.com.au/cricket", "coverage": "live" } },
+          "IN": { "primary": { "broadcaster": "Disney+ Hotstar", "type": "streaming", "subscription": true, "url": "https://www.hotstar.com", "coverage": "live" } }
+        }
+      }
+    }
+  ]
+}

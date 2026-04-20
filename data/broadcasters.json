@@ -1,0 +1,50 @@
+{
+  "_note": "Reference only. Live URLs used in match-data.json override this if they exist. Correct as of early 2026; confirm before publishing.",
+  "geos": {
+    "IN": {
+      "flag": "🇮🇳",
+      "name": "India",
+      "primary": ["Star Sports / Disney+ Hotstar", "JioCinema", "Sony Sports Network"]
+    },
+    "US": {
+      "flag": "🇺🇸",
+      "name": "United States",
+      "primary": ["Willow TV (Sling/Willow.tv)", "ESPN+", "Disney+ Hotstar USA"]
+    },
+    "UK": {
+      "flag": "🇬🇧",
+      "name": "United Kingdom",
+      "primary": ["Sky Sports Cricket", "TNT Sports", "BBC (Test Match Special radio)"]
+    },
+    "AU": {
+      "flag": "🇦🇺",
+      "name": "Australia",
+      "primary": ["Fox Cricket / Kayo Sports", "Channel 7 (home tests)", "Amazon Prime"]
+    },
+    "NZ": {
+      "flag": "🇳🇿",
+      "name": "New Zealand",
+      "primary": ["Sky Sport NZ", "Spark Sport"]
+    },
+    "ZA": {
+      "flag": "🇿🇦",
+      "name": "South Africa",
+      "primary": ["SuperSport"]
+    },
+    "PK": {
+      "flag": "🇵🇰",
+      "name": "Pakistan",
+      "primary": ["PTV Sports", "A Sports", "Ten Sports"]
+    },
+    "BD": {
+      "flag": "🇧🇩",
+      "name": "Bangladesh",
+      "primary": ["T Sports", "Gazi TV"]
+    },
+    "INTL": {
+      "flag": "🌐",
+      "name": "International",
+      "primary": ["ICC.tv (selected events)"]
+    }
+  }
+}

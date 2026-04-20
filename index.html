@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>No Spoiler Cricket — 2026 Fixtures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;padding:44px 0 32px;border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--font-sans);font-weight:800;font-size:clamp(56px,7vw,104px);line-height:.88;letter-spacing:-.045em;margin:0}
+.hero h1 .tri{background:linear-gradient(90deg,var(--india-saffron) 0 33%,var(--ink) 33% 66%,var(--india-green) 66% 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-top:18px}
+.hero aside{border-left:1px solid var(--rule);padding-left:32px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px 24px;align-content:start}
+.stat{display:block}
+.stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.stat .v{font-family:var(--font-sans);font-weight:700;font-size:32px;letter-spacing:-.02em;line-height:1;margin-top:4px}
+.stat .v.sm{font-size:22px}
+.toolbar{position:sticky;top:0;background:var(--paper);z-index:10;border-bottom:1px solid var(--rule);padding:12px 0 10px;margin-top:18px}
+.toolbar-row{display:flex;flex-wrap:wrap;gap:6px 6px;align-items:center}
+.toolbar-row + .toolbar-row{margin-top:8px}
+.tb-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin-right:10px;min-width:56px}
+.showing{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.12em;text-transform:uppercase;margin-left:auto}
+.showing b{color:var(--ink);font-weight:600}
+.cal{margin-top:0}
+.row{display:grid;grid-template-columns:56px 72px 120px 1fr 150px 90px 120px 80px;gap:0;padding:10px 0;border-bottom:1px solid var(--rule-soft);align-items:center;transition:background .08s;color:inherit}
+.row:hover{background:var(--paper-2)}
+.row .c{padding:0 10px;display:flex;align-items:center;min-width:0}
+.row .c.first{padding-left:0}
+.row .name{font-family:var(--font-sans);font-weight:600;font-size:16px;letter-spacing:-.005em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .venue{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .dt{font-family:var(--font-mono);font-size:12px;letter-spacing:.02em}
+.row .mc{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;text-align:right}
+.row .cond{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-2);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .bc{font-family:var(--font-mono);font-size:13px;text-align:right;line-height:1;display:flex;gap:4px;justify-content:flex-end;align-items:center}
+.row .bc .f{display:inline-block;font-size:16px}
+.row .bc .more{font-size:10px;color:var(--ink-3);letter-spacing:.08em;margin-left:2px}
+.row .bc.tbd{font-size:10.5px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase}
+.row.india{background:linear-gradient(90deg, rgba(255,153,51,.10), transparent 45%)}
+.row.ashes{background:linear-gradient(90deg, rgba(0,48,135,.10), transparent 45%)}
+.row.wc{background:linear-gradient(90deg, rgba(201,164,60,.18), transparent 45%)}
+.legend{margin-top:48px;padding:22px 0;border-top:3px solid var(--ink);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.legend h3{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:0 0 14px;font-weight:500}
+.legend .row2{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:8px;font-family:var(--font-mono);font-size:12px}
+.legend .row2 .k{color:var(--ink);font-weight:600;letter-spacing:.04em}
+.legend .row2 .v{color:var(--ink-3)}
+@media (max-width:1100px){
+  .row{grid-template-columns:50px 60px 110px 1fr 90px}
+  .row .c.cond,.row .c.bc,.row .c.mc,.row .c.venue{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero aside{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:20px}
+}
+@media (max-width:640px){
+  .row{grid-template-columns:48px 1fr 70px}
+  .row .c.first,.row .c:nth-child(4),.row .c:nth-child(8){display:flex}
+  .row .c:nth-child(2),.row .c:nth-child(3),.row .c.venue,.row .c.cond,.row .c.bc{display:none}
+}
+</style>
+</head>
+<body>
+  <div class="tricolour thick"></div>
+  <header class="masthead">
+    <div class="frame">
+      <div class="masthead-inner">
+        <div>
+          <div class="wordmark">No<span class="slash">/</span>Spoiler<br/>Cricket
+            <span class="sub">International Cricket · Fixtures &amp; Watch Guide · Season MMXXVI</span>
+          </div>
+        </div>
+        <div class="mast-meta">
+          Edition <b>2026</b><br/>
+          Document <b>NSC/FIX/26</b><br/>
+          Updated <b>20 APR 2026</b>
+        </div>
+      </div>
+      <nav class="navstrip">
+        <a href="index.html" class="on">01 — Fixtures</a>
+        <a href="players.html">02 — Players</a>
+        <span class="spacer"></span>
+        <span class="edition mono">EN</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="frame">
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">International &amp; Franchise Cricket · 2026</div>
+        <h1>The 2026<br/>Cricket Season, <span class="tri">Unspoiled</span>.</h1>
+        <p class="lead">Every series worth watching. Filtered, coded, and scheduled — without telling you who won.</p>
+      </div>
+      <aside>
+        <div class="stat"><span class="k">Fixtures on file</span><span class="v">16</span></div>
+        <div class="stat"><span class="k">Featuring India</span><span class="v">5</span></div>
+        <div class="stat"><span class="k">Test series</span><span class="v">4</span></div>
+        <div class="stat"><span class="k">Franchise leagues</span><span class="v">8</span></div>
+        <div class="stat"><span class="k">ICC tournaments</span><span class="v sm">2</span></div>
+        <div class="stat"><span class="k">★★★★★ fixtures</span><span class="v sm">6</span></div>
+      </aside>
+    </section>
+
+    <section class="toolbar" id="toolbar">
+      <div class="toolbar-row">
+        <span class="tb-label">Rating</span>
+        <button class="chip on" data-f="rating" data-v="0">All</button>
+        <button class="chip" data-f="rating" data-v="3">★★★+</button>
+        <button class="chip" data-f="rating" data-v="4">★★★★+</button>
+        <button class="chip" data-f="rating" data-v="5">★★★★★</button>
+        <span class="tb-label" style="margin-left:18px">Format</span>
+        <button class="chip on" data-f="format" data-v="all">All</button>
+        <button class="chip" data-f="format" data-v="test">Test</button>
+        <button class="chip" data-f="format" data-v="odi">ODI</button>
+        <button class="chip" data-f="format" data-v="t20i">T20I</button>
+        <button class="chip" data-f="format" data-v="franchise">Franchise</button>
+        <button class="chip" data-f="format" data-v="icc">ICC</button>
+        <span class="showing"><b id="shown">—</b> of <b id="total">—</b> fixtures</span>
+      </div>
+      <div class="toolbar-row">
+        <span class="tb-label">Team</span>
+        <button class="chip on" data-f="team" data-v="all">All</button>
+        <button class="chip" data-f="team" data-v="IND">India</button>
+        <button class="chip" data-f="team" data-v="ENG">England</button>
+        <button class="chip" data-f="team" data-v="AUS">Australia</button>
+        <button class="chip" data-f="team" data-v="PAK">Pakistan</button>
+        <span class="tb-label" style="margin-left:18px">Prestige</span>
+        <button class="chip on" data-f="prestige" data-v="all">All</button>
+        <button class="chip" data-f="prestige" data-v="ashes">Ashes</button>
+        <button class="chip" data-f="prestige" data-v="border-gavaskar">BGT</button>
+        <button class="chip" data-f="prestige" data-v="world-cup">World Cup</button>
+        <button class="chip" data-f="prestige" data-v="t20-world-cup">T20 WC</button>
+        <button class="chip" data-f="prestige" data-v="ipl-final">IPL Final</button>
+        <button class="chip" data-f="prestige" data-v="india-pakistan">Ind vs Pak</button>
+      </div>
+    </section>
+
+    <section class="cal" id="cal"></section>
+
+    <section class="legend">
+      <div>
+        <h3>★ Rating Guide</h3>
+        <div class="row2">
+          <span class="k">★★★★★</span><span class="v">Can't miss — World Cup, Ashes, BGT, IPL final</span>
+          <span class="k">★★★★</span><span class="v">Major fixtures — ICC, India tours, big franchise</span>
+          <span class="k">★★★</span><span class="v">Good cricket — established franchise leagues</span>
+          <span class="k">★★</span><span class="v">Nice to catch — domestic / filler bilateral</span>
+          <span class="k">★</span><span class="v">Completionist</span>
+        </div>
+      </div>
+      <div>
+        <h3>Format Codes</h3>
+        <div class="row2">
+          <span class="k">TEST</span><span class="v">Test series (5 days per match)</span>
+          <span class="k">ODI</span><span class="v">One-Day Internationals (50 overs)</span>
+          <span class="k">T20I</span><span class="v">International T20 bilateral</span>
+          <span class="k">FRNCH</span><span class="v">Franchise T20 league (IPL, PSL, BBL…)</span>
+          <span class="k">ICC</span><span class="v">ICC tournament (World Cup etc.)</span>
+        </div>
+      </div>
+      <div>
+        <h3>Colophon</h3>
+        <div class="row2">
+          <span class="k">Set in</span><span class="v">Inter Tight · JetBrains Mono</span>
+          <span class="k">Colours</span><span class="v">Willow-cream · Ball-red · India tri-colour</span>
+          <span class="k">Edition</span><span class="v">20 APR 2026</span>
+          <span class="k">Source</span><span class="v">FTP calendar · editorial selection</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-row">
+        <span>No Spoiler Cricket · 2026 Fixtures</span>
+        <span>§ 01 — Fixtures</span>
+        <span>Built 2026-04-20</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+  window.MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  window.MATCHES = [{"d":"Jan 4–19","start":"2026-01-04","end":"2026-01-19","month":1,"name":"The Ashes 2025–26 (final Tests)","venue":"Australia","teams":["AUS","ENG"],"featuresIndia":false,"rating":5,"format":"test","prestige":["ashes"],"conditions":["bouncy","pace-friendly"],"geos":["IN","US","UK","AU"],"otherGeos":[],"matchCount":2,"slug":"ashes-2025-26-tail"},{"d":"Jan 10 – Feb 8","start":"2026-01-10","end":"2026-02-08","month":1,"name":"SA20 Season 4","venue":"South Africa","teams":["ZA"],"featuresIndia":false,"rating":3,"format":"franchise","prestige":[],"conditions":["pace-friendly","bouncy"],"geos":["IN","US","UK","ZA"],"otherGeos":[],"matchCount":0,"slug":"sa20-2026"},{"d":"Jan 11 – Feb 15","start":"2026-01-11","end":"2026-02-15","month":1,"name":"DP World International League T20 Season 4","venue":"United Arab Emirates","teams":["INTL"],"featuresIndia":false,"rating":3,"format":"franchise","prestige":[],"conditions":["spin-friendly","flat"],"geos":["IN","US","UK"],"otherGeos":[],"matchCount":0,"slug":"ilt20-2026"},{"d":"Jan 18–25","start":"2026-01-18","end":"2026-01-25","month":1,"name":"Big Bash League 15 — Finals series","venue":"Australia","teams":["AU"],"featuresIndia":false,"rating":3,"format":"franchise","prestige":[],"conditions":["pace-friendly","bouncy"],"geos":["IN","US","UK","AU"],"otherGeos":[],"matchCount":0,"slug":"bbl-15-finals"},{"d":"Feb 10 – Mar 22","start":"2026-02-10","end":"2026-03-22","month":2,"name":"Pakistan Super League 11","venue":"Pakistan","teams":["PK"],"featuresIndia":false,"rating":4,"format":"franchise","prestige":[],"conditions":["flat","spin-friendly"],"geos":["US","UK","PK"],"otherGeos":[],"matchCount":0,"slug":"psl-11-2026"},{"d":"Feb 11 – Mar 8","start":"2026-02-11","end":"2026-03-08","month":2,"name":"ICC Men's T20 World Cup 2026","venue":"India & Sri Lanka","teams":["INTL"],"featuresIndia":true,"rating":5,"format":"icc","prestige":["t20-world-cup"],"conditions":["spin-friendly","flat"],"geos":["IN","US","UK","AU","NZ","ZA"],"otherGeos":[],"matchCount":0,"slug":"icc-t20-world-cup-2026"},{"d":"Mar 12–19","start":"2026-03-12","end":"2026-03-19","month":3,"name":"India vs England — T20I & ODI series","venue":"India","teams":["IND","ENG"],"featuresIndia":true,"rating":4,"format":"odi","prestige":[],"conditions":["flat","spin-friendly"],"geos":["IN","US","UK","AU"],"otherGeos":[],"matchCount":0,"slug":"ind-vs-eng-ltd-2026"},{"d":"Mar 20 – May 24","start":"2026-03-20","end":"2026-05-24","month":3,"name":"Indian Premier League 2026","venue":"India","teams":["IN"],"featuresIndia":true,"rating":5,"format":"franchise","prestige":["ipl-final"],"conditions":["flat","spin-friendly","batting"],"geos":["IN","US","UK","AU","ZA"],"otherGeos":[],"matchCount":0,"slug":"ipl-2026"},{"d":"Jun 12 – Jul 5","start":"2026-06-12","end":"2026-07-05","month":6,"name":"ICC Women's T20 World Cup 2026","venue":"England","teams":["INTL"],"featuresIndia":false,"rating":4,"format":"icc","prestige":["world-cup"],"conditions":["swinging"],"geos":["IN","US","UK","AU"],"otherGeos":[],"matchCount":0,"slug":"icc-womens-t20-wc-2026"},{"d":"Jun 18 – Aug 16","start":"2026-06-18","end":"2026-08-16","month":6,"name":"India tour of England 2026","venue":"England","teams":["ENG","IND"],"featuresIndia":true,"rating":5,"format":"test","prestige":["pataudi-trophy"],"conditions":["swinging"],"geos":["IN","US","UK","AU"],"otherGeos":[],"matchCount":5,"slug":"ind-tour-eng-2026"},{"d":"Jul 4–26","start":"2026-07-04","end":"2026-07-26","month":7,"name":"Major League Cricket Season 4","venue":"United States","teams":["US"],"featuresIndia":false,"rating":3,"format":"franchise","prestige":[],"conditions":["batting","flat"],"geos":["IN","US","UK"],"otherGeos":[],"matchCount":0,"slug":"mlc-2026"},{"d":"Aug 5–30","start":"2026-08-05","end":"2026-08-30","month":8,"name":"The Hundred — Men's & Women's 2026","venue":"England","teams":["ENG"],"featuresIndia":false,"rating":3,"format":"franchise","prestige":[],"conditions":["swinging","flat"],"geos":["IN","US","UK"],"otherGeos":[],"matchCount":0,"slug":"the-hundred-2026"},{"d":"Aug 22 – Sep 28","start":"2026-08-22","end":"2026-09-28","month":8,"name":"Caribbean Premier League 2026","venue":"Caribbean","teams":["INTL"],"featuresIndia":false,"rating":3,"format":"franchise","prestige":[],"conditions":["spin-friendly","flat"],"geos":["IN","US","UK"],"otherGeos":[],"matchCount":0,"slug":"cpl-2026"},{"d":"Sep 5–22","start":"2026-09-05","end":"2026-09-22","month":9,"name":"Asia Cup 2026 (T20)","venue":"TBD","teams":["INTL"],"featuresIndia":false,"rating":4,"format":"t20i","prestige":["india-pakistan"],"conditions":["spin-friendly","flat"],"geos":["IN","US","UK","AU","PK"],"otherGeos":[],"matchCount":0,"slug":"asia-cup-2026"},{"d":"Sep 28 – Nov 15","start":"2026-09-28","end":"2026-11-15","month":9,"name":"Border-Gavaskar Trophy (AUS tour of India)","venue":"India","teams":["IND","AUS"],"featuresIndia":true,"rating":5,"format":"test","prestige":["border-gavaskar"],"conditions":["spin-friendly","flat"],"geos":["IN","US","UK","AU"],"otherGeos":[],"matchCount":4,"slug":"aus-tour-ind-bgt-2026"},{"d":"Nov 26 – Dec 22","start":"2026-11-26","end":"2026-12-22","month":11,"name":"The Ashes 2026–27 (opening Tests)","venue":"England","teams":["ENG","AUS"],"featuresIndia":false,"rating":5,"format":"test","prestige":["ashes"],"conditions":["swinging"],"geos":["IN","UK","AU"],"otherGeos":[],"matchCount":0,"slug":"ashes-2026-27-start"}];
+  </script>
+  <script>
+  const state = {rating:0, format:"all", team:"all", prestige:"all"};
+  const MONTHS = window.MONTHS;
+  const FORMAT_LABEL = {"test":"TEST","odi":"ODI","t20i":"T20I","single":"SINGLE","franchise":"FRNCH","icc":"ICC"};
+  const GEO_FLAG = {IN:"🇮🇳",US:"🇺🇸",UK:"🇬🇧",AU:"🇦🇺",PK:"🇵🇰",NZ:"🇳🇿",ZA:"🇿🇦",BD:"🇧🇩",INTL:"🌐"};
+
+  const starsHtml = (n) => {
+    const on = "★".repeat(n), off = "★".repeat(5-n);
+    return `<span class="stars">${on}<span class="off">${off}</span></span>`;
+  };
+  const condMap = {"pace-friendly":"PACE", "spin-friendly":"SPIN", "batting":"BAT", "swinging":"SWG", "bouncy":"BNC", "flat":"FLT", "day-night":"D/N", "pink-ball":"PNK"};
+  const condHtml = (arr) => (arr||[]).map(c=>condMap[c]||c.toUpperCase()).join(" · ");
+  const geoCell = (r) => {
+    if (!r.geos.length && !r.otherGeos.length) return '<span class="bc tbd">TBD</span>';
+    const main = r.geos.map(g => `<span class="f" title="${g}">${GEO_FLAG[g]||g}</span>`).join("");
+    const extra = r.otherGeos.length ? `<span class="more">+${r.otherGeos.length}</span>` : "";
+    return main + extra;
+  };
+  const teamMatches = (r, t) => {
+    if (t === 'all') return true;
+    // Accept both 3-letter (IND/AUS/ENG) and 2-letter (IN/UK/AU) forms in data
+    const map = {IND:['IND','IN'], ENG:['ENG','UK','GB'], AUS:['AUS','AU'], PAK:['PAK','PK']};
+    const opts = map[t] || [t];
+    return opts.some(x => r.teams.includes(x));
+  };
+
+  function match(r){
+    if (state.rating && r.rating < state.rating) return false;
+    if (state.format!=="all" && r.format!==state.format) return false;
+    if (state.prestige!=="all" && !r.prestige.includes(state.prestige)) return false;
+    if (state.team!=="all" && !teamMatches(r, state.team)) return false;
+    return true;
+  }
+
+  function render(){
+    const host = document.getElementById("cal");
+    const grouped = {};
+    const filtered = window.MATCHES.filter(match);
+    filtered.forEach(r => (grouped[r.month] = grouped[r.month] || []).push(r));
+    document.getElementById("shown").textContent = filtered.length;
+    document.getElementById("total").textContent = window.MATCHES.length;
+
+    let html = "";
+    Object.keys(grouped).sort((a,b)=>a-b).forEach(m => {
+      const fixtures = grouped[m];
+      html += `<header class="month-head">
+        <div><div class="lbl">Month</div><div class="num mono">${String(m).padStart(2,"0")}</div></div>
+        <div><div class="lbl">2026</div><div class="name">${MONTHS[m-1]}</div></div>
+        <div class="count">${fixtures.length} fixture${fixtures.length!==1?"s":""}</div>
+      </header>`;
+      fixtures.forEach(r => {
+        const href = r.slug ? `match-details/${r.slug}.html` : "#";
+        const isAshes = r.prestige.includes('ashes');
+        const isWC = r.prestige.includes('world-cup') || r.prestige.includes('t20-world-cup') || r.prestige.includes('champions-trophy');
+        const cls = isWC?'wc':isAshes?'ashes':(r.featuresIndia?'india':'');
+        const fmtLabel = FORMAT_LABEL[r.format] || r.format.toUpperCase();
+        const codeCls = r.format==='icc' ? 'code icc' : r.format==='test' ? 'code inv' : 'code';
+        const countLabel = r.matchCount ? `${r.matchCount} ${r.format==='test'?'test':r.format==='icc'?'match':'m'}` : '';
+        html += `<a class="row ${cls}" href="${href}">
+          <div class="c first">${starsHtml(r.rating)}</div>
+          <div class="c"><span class="${codeCls}">${fmtLabel}</span></div>
+          <div class="c dt">${r.d}</div>
+          <div class="c"><span class="name">${r.name}</span></div>
+          <div class="c venue">${r.venue}</div>
+          <div class="c cond">${condHtml(r.conditions)}</div>
+          <div class="c bc">${geoCell(r)}</div>
+          <div class="c mc">${countLabel}</div>
+        </a>`;
+      });
+    });
+    if (!filtered.length) html = `<div style="padding:60px 0;text-align:center;font-family:var(--font-mono);color:var(--ink-3);letter-spacing:.12em;text-transform:uppercase">No fixtures match these filters.</div>`;
+    host.innerHTML = html;
+  }
+
+  document.querySelectorAll(".chip").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const f = btn.dataset.f, v = btn.dataset.v;
+      state[f] = (f==="rating") ? Number(v) : v;
+      document.querySelectorAll(`.chip[data-f="${f}"]`).forEach(b => b.classList.toggle("on", b===btn));
+      render();
+    });
+  });
+
+  render();
+  </script>
+</body>
+</html>

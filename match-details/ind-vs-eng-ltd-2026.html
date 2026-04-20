@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>India vs England — T20I &amp; ODI series — No Spoiler Cricket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../shared.css"/>
+<style>
+.crumbs{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);padding:16px 0;border-bottom:1px solid var(--rule-soft)}
+.crumbs a{color:var(--ink-3);border-bottom:1px solid transparent}
+.crumbs a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.crumbs .sep{margin:0 10px;color:var(--rule-soft)}
+.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;padding:40px 0 32px;border-bottom:3px solid var(--ink);position:relative}
+.hero .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+.hero h1{font-family:var(--font-sans);font-weight:800;font-size:clamp(48px,6vw,92px);line-height:.88;letter-spacing:-.04em;margin:0}
+.hero h1 .em{font-style:italic;font-weight:500;color:var(--signal)}
+.hero .sub{font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;color:var(--ink-2);margin-top:18px;max-width:62ch;line-height:1.5}
+.hero aside{border-left:1px solid var(--rule);padding-left:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;align-content:start}
+.stat{display:block}
+.stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.stat .v{font-family:var(--font-sans);font-weight:700;font-size:32px;letter-spacing:-.02em;line-height:1;margin-top:4px}
+.stat .v.sm{font-size:18px;line-height:1.15}
+.stat .v.mono{font-family:var(--font-mono);font-weight:600;letter-spacing:-.01em}
+.section{padding:28px 0;border-bottom:1px solid var(--rule-soft)}
+.section h2{font-family:var(--font-sans);font-weight:700;font-size:22px;letter-spacing:-.01em;margin:0 0 6px}
+.section .eyebrow{margin-bottom:4px}
+.placeholder{display:inline-block;border:1px dashed var(--ink-3);padding:2px 8px;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-left:10px;vertical-align:middle;border-radius:2px}
+.section.watch{background:linear-gradient(180deg, rgba(181,44,35,.04), transparent 70%)}
+.wtable{display:grid;grid-template-columns:1fr;border-top:1px solid var(--rule);margin-top:14px}
+.wrow{display:grid;grid-template-columns:200px 1fr 120px;gap:0;padding:16px 0;border-bottom:1px solid var(--rule-soft);align-items:center}
+.wrow .w-geo{display:flex;align-items:center;gap:10px;padding:0 10px 0 0}
+.wrow .w-flag{font-size:24px;line-height:1}
+.wrow .w-name{font-family:var(--font-sans);font-weight:600;font-size:14px;letter-spacing:-.005em}
+.wrow .w-bc{padding:0 16px;min-width:0}
+.wrow .w-bc-name{font-family:var(--font-sans);font-weight:600;font-size:15px;letter-spacing:-.005em;line-height:1.2}
+.wrow .w-bc-meta{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-top:4px}
+.wrow .w-bc-notes{font-family:var(--font-sans);font-size:12.5px;color:var(--ink-2);margin-top:6px;line-height:1.4}
+.wrow .w-alts{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px 14px;font-family:var(--font-mono);font-size:11px}
+.wrow .w-alt{display:flex;align-items:center;gap:6px;color:var(--ink-2)}
+.wrow .w-alt a{border-bottom:1px solid var(--rule-soft);color:var(--ink)}
+.wrow .w-alt a:hover{border-bottom-color:var(--ink)}
+.wrow .w-altmeta{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.wrow .w-cta{text-align:right}
+.watch-cta{display:inline-flex;align-items:center;padding:10px 16px;background:var(--ink);color:var(--paper);font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;border:1px solid var(--ink);line-height:1;transition:background .12s,color .12s}
+.watch-cta:hover{background:var(--signal);border-color:var(--signal);color:#fff}
+.watch-cta.disabled{background:transparent;color:var(--ink-3);border-color:var(--rule-soft);cursor:default}
+.w-yt{margin-top:18px;padding:14px;border:1px dashed var(--rule);display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:11.5px;letter-spacing:.08em}
+.w-yt-lbl{font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-right:6px}
+.w-yt a{border-bottom:1px solid var(--rule-soft);color:var(--ink)}
+.w-yt a:hover{border-bottom-color:var(--ink)}
+.w-yt .sep{color:var(--rule-soft);margin:0 4px}
+.mlist{display:grid;grid-template-columns:1fr;margin-top:14px;border-top:1px solid var(--rule)}
+.mrow{display:grid;grid-template-columns:60px 70px 120px 1.5fr 1fr;gap:0;padding:12px 0;border-bottom:1px solid var(--rule-soft);align-items:center}
+.mrow .c{padding:0 10px;min-width:0}
+.mrow .c.first{padding-left:0}
+.mrow .mn{font-family:var(--font-sans);font-weight:800;font-size:22px;letter-spacing:-.03em}
+.mrow .lbl{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+.mrow .dt{font-size:12px}
+.mrow .nm{font-family:var(--font-sans);font-weight:600;font-size:14px;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mrow .vn{font-size:11px;color:var(--ink-3);letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mrow:hover{background:var(--paper-2)}
+.narratives{margin-top:10px;padding:0;list-style:none}
+.narratives li{font-family:var(--font-sans);font-size:15px;line-height:1.55;color:var(--ink-2);margin:8px 0;padding-left:18px;position:relative}
+.narratives li::before{content:"§";position:absolute;left:0;color:var(--ink-3);font-family:var(--font-mono);font-weight:600}
+.prose{font-family:var(--font-sans);font-size:15px;line-height:1.6;color:var(--ink-2);margin:10px 0;max-width:72ch}
+.fav{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);margin-top:14px}
+.fav .card{padding:18px;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);display:grid;grid-template-rows:auto auto auto auto;gap:6px;color:inherit}
+.fav .card:nth-child(3n){border-right:0}
+.fav .card:hover{background:var(--paper-2)}
+.fav .card .no{font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;color:var(--ink-3)}
+.fav .card .nm{font-family:var(--font-sans);font-weight:700;font-size:20px;letter-spacing:-.015em}
+.fav .card .tm{font-family:var(--font-mono);font-size:12px;color:var(--ink-2);letter-spacing:.04em}
+.fav .card .ft{display:flex;justify-content:space-between;align-items:center;margin-top:4px;font-family:var(--font-mono);font-size:11px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase}
+.fav .card .ft .st{color:var(--ink)}
+@media (max-width:1100px){
+  .hero{grid-template-columns:1fr}
+  .hero aside{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:20px}
+  .fav{grid-template-columns:1fr}
+  .mrow{grid-template-columns:44px 60px 1fr}
+  .mrow .c.dt,.mrow .c.vn{display:none}
+  .wrow{grid-template-columns:1fr;gap:10px;padding:14px 10px}
+  .wrow .w-cta{text-align:left}
+}
+</style>
+</head>
+<body>
+  <div class="tricolour thick"></div>
+  <header class="masthead">
+    <div class="frame">
+      <div class="masthead-inner">
+        <div class="wordmark">No<span class="slash">/</span>Spoiler Cricket
+          <span class="sub">Match Sheet · Season MMXXVI</span>
+        </div>
+        <div class="mast-meta">
+          Document <b>NSC/IND-VS-ENG-LTD</b><br/>
+          Built <b>2026-04-20</b>
+        </div>
+      </div>
+      <nav class="navstrip">
+        <a href="../index.html" class="on">01 — Fixtures</a>
+        <a href="../players.html">02 — Players</a>
+        <span class="spacer"></span>
+        <span class="edition mono">§ Match Sheet</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="frame">
+    <div class="crumbs"><a href="../index.html">Fixtures</a><span class="sep">/</span>March 2026<span class="sep">/</span>India vs England — T20I &amp; ODI series</div>
+    
+    <section class="hero">
+      <div>
+        <div class="tag">
+          <span class="code inv">ODI SERIES</span>
+          
+          <span>★★★★</span>
+          <span>Mar 12–19 2026</span>
+        </div>
+        <h1>India vs England<br/><span class="em">T20I &amp; ODI series</span></h1>
+        <p class="sub">Short white-ball series in India before the IPL window. Three T20Is followed by three ODIs (placeholder — confirm once fixtures firm up).</p>
+      </div>
+      <aside>
+        <div class="stat"><span class="k">Teams</span><span class="v sm">IND vs ENG</span></div>
+        <div class="stat"><span class="k">Venue</span><span class="v sm">India</span></div>
+        <div class="stat"><span class="k">Dates</span><span class="v mono">—</span></div>
+        <div class="stat"><span class="k">Conditions</span><span class="v sm">FLAT · SPIN FRIENDLY</span></div>
+        <div class="stat"><span class="k">IN Coverage</span><span class="v sm">Star Sports / Disney+ Hotstar</span></div>
+        <div class="stat"><span class="k">Rating</span><span class="v">4★</span></div>
+      </aside>
+    </section>
+
+    <section class="section watch">
+    <div class="eyebrow">§ Watch</div>
+    <h2>Where to watch</h2>
+    <div class="wtable"><div class="wrow">
+      <div class="w-geo"><span class="w-flag">🇮🇳</span><span class="w-name">India</span></div>
+      <div class="w-bc">
+        <div class="w-bc-name">Star Sports / Disney+ Hotstar</div>
+        <div class="w-bc-meta mono">streaming · LIVE · $</div>
+        
+        
+      </div>
+      <div class="w-cta"><a class="watch-cta" href="https://www.hotstar.com" target="_blank" rel="noopener">Watch →</a></div>
+    </div><div class="wrow">
+      <div class="w-geo"><span class="w-flag">🇺🇸</span><span class="w-name">United States</span></div>
+      <div class="w-bc">
+        <div class="w-bc-name">Willow TV</div>
+        <div class="w-bc-meta mono">streaming · LIVE · $</div>
+        
+        
+      </div>
+      <div class="w-cta"><a class="watch-cta" href="https://www.willow.tv" target="_blank" rel="noopener">Watch →</a></div>
+    </div><div class="wrow">
+      <div class="w-geo"><span class="w-flag">🇬🇧</span><span class="w-name">United Kingdom</span></div>
+      <div class="w-bc">
+        <div class="w-bc-name">Sky Sports Cricket</div>
+        <div class="w-bc-meta mono">streaming · LIVE · $</div>
+        
+        
+      </div>
+      <div class="w-cta"><a class="watch-cta" href="https://www.skysports.com/cricket" target="_blank" rel="noopener">Watch →</a></div>
+    </div><div class="wrow">
+      <div class="w-geo"><span class="w-flag">🇦🇺</span><span class="w-name">Australia</span></div>
+      <div class="w-bc">
+        <div class="w-bc-name">Fox Cricket / Kayo Sports</div>
+        <div class="w-bc-meta mono">streaming · LIVE · $</div>
+        
+        
+      </div>
+      <div class="w-cta"><a class="watch-cta" href="https://www.kayosports.com.au/cricket" target="_blank" rel="noopener">Watch →</a></div>
+    </div></div>
+    
+    <p class="prose" style="margin-top:10px;font-size:12px;letter-spacing:.04em">⚠️ Spoiler warning: live streams and broadcaster home pages often show current scores. Disable autoplay &amp; avoid sidebar recommendations on YouTube.</p>
+  </section>
+    
+    <section class="section">
+    <div class="eyebrow">§ 03 — Players to watch</div>
+    <h2>Who to watch</h2>
+    <div class="fav"><a class="card" href="../players/rohit-sharma.html">
+        <div class="no">№ 01 · BATTER</div>
+        <div class="nm">R. Sharma</div>
+        <div class="tm">India · Mumbai Indians</div>
+        <div class="ft"><span>#1</span><span class="st">opener · captain</span></div>
+      </a><a class="card" href="../players/virat-kohli.html">
+        <div class="no">№ 02 · BATTER</div>
+        <div class="nm">V. Kohli</div>
+        <div class="tm">India · Royal Challengers Bengaluru</div>
+        <div class="ft"><span>#2</span><span class="st">top-order · chase-master</span></div>
+      </a><a class="card" href="../players/jasprit-bumrah.html">
+        <div class="no">№ 03 · BOWLER</div>
+        <div class="nm">J. Bumrah</div>
+        <div class="tm">India · Mumbai Indians</div>
+        <div class="ft"><span>#3</span><span class="st">fast · yorker</span></div>
+      </a><a class="card" href="../players/ravindra-jadeja.html">
+        <div class="no">№ 04 · ALL-ROUNDER</div>
+        <div class="nm">R. Jadeja</div>
+        <div class="tm">India · Chennai Super Kings</div>
+        <div class="ft"><span>#6</span><span class="st">left-arm-spin · lower-order</span></div>
+      </a><a class="card" href="../players/joe-root.html">
+        <div class="no">№ 05 · BATTER</div>
+        <div class="nm">J. Root</div>
+        <div class="tm">England</div>
+        <div class="ft"><span>#7</span><span class="st">top-order · test-specialist</span></div>
+      </a><a class="card" href="../players/shubman-gill.html">
+        <div class="no">№ 06 · BATTER</div>
+        <div class="nm">S. Gill</div>
+        <div class="tm">India · Gujarat Titans</div>
+        <div class="ft"><span>#8</span><span class="st">opener · top-order</span></div>
+      </a></div>
+  </section>
+    
+    
+    
+  
+    <footer class="foot">
+      <div class="foot-row">
+        <span>No Spoiler Cricket · 2026 Fixtures</span>
+        <span>§ Match Sheet · India vs England — T20I &amp; ODI series</span>
+        <span>Built 2026-04-20</span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mohammed Siraj — No Spoiler Cricket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../shared.css"/>
+<style>
+.crumbs{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);padding:16px 0;border-bottom:1px solid var(--rule-soft)}
+.crumbs a{color:var(--ink-3);border-bottom:1px solid transparent}
+.crumbs a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.crumbs .sep{margin:0 10px;color:var(--rule-soft)}
+.hero{display:grid;grid-template-columns:240px 1.3fr 1fr;gap:40px;padding:40px 0 32px;border-bottom:3px solid var(--ink)}
+.hero .photo{aspect-ratio:1/1;background:var(--paper-2);border:1px solid var(--rule);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero .photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.12) contrast(1.03)}
+.hero .photo .no-photo{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.hero .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.hero h1{font-family:var(--font-sans);font-weight:800;font-size:clamp(44px,5.5vw,80px);line-height:.9;letter-spacing:-.04em;margin:0}
+.hero h1 .em{font-weight:500;font-style:italic;color:var(--signal);display:block}
+.hero .sub{font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;color:var(--ink-2);margin-top:14px;line-height:1.5}
+.hero aside{border-left:1px solid var(--rule);padding-left:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;align-content:start}
+.stat .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.stat .v{font-family:var(--font-sans);font-weight:700;font-size:28px;letter-spacing:-.02em;line-height:1;margin-top:4px}
+.stat .v.sm{font-size:16px}
+.stat .v.mono{font-family:var(--font-mono);font-weight:600;letter-spacing:-.01em}
+.section{padding:28px 0;border-bottom:1px solid var(--rule-soft)}
+.section h2{font-family:var(--font-sans);font-weight:700;font-size:22px;letter-spacing:-.01em;margin:0 0 10px}
+.section .eyebrow{margin-bottom:4px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
+.chips-inline{display:flex;gap:6px;flex-wrap:wrap}
+.sp{display:inline-flex;align-items:center;height:22px;padding:0 10px;border:1px solid var(--ink);font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;line-height:1}
+.program{margin-top:14px}
+.pm{margin-top:24px}
+.pm-head{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:16px 0 8px;border-top:3px solid var(--ink)}
+.pm-head .pm-num{font-family:var(--font-sans);font-weight:800;font-size:48px;line-height:.9;letter-spacing:-.04em}
+.pm-head .pm-name{font-family:var(--font-sans);font-weight:600;font-size:22px;letter-spacing:-.02em}
+.pm-head .pm-count{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);text-align:right}
+.pm-list{border-top:1px solid var(--rule)}
+.prow{display:grid;grid-template-columns:140px 1fr 140px;gap:0;padding:10px 0;border-bottom:1px solid var(--rule-soft);align-items:center;color:inherit}
+.prow:hover{background:var(--paper-2)}
+.prow .c{padding:0 10px;min-width:0}
+.prow .c.first{padding-left:0}
+.prow .c .name{font-family:var(--font-sans);font-weight:600;font-size:15px;letter-spacing:-.005em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.prow .c.cat{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;text-align:right}
+.prose{font-family:var(--font-sans);font-size:15px;line-height:1.6;color:var(--ink-2);margin:10px 0;max-width:72ch}
+.bio{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);margin-top:14px}
+.bio .s{padding:18px;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft)}
+.bio .s:last-child{border-right:0}
+.bio .s .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.bio .s .v{font-family:var(--font-sans);font-weight:700;font-size:22px;letter-spacing:-.02em;margin-top:4px;line-height:1}
+.bio .s .v.mono{font-family:var(--font-mono);font-weight:600}
+@media (max-width:1100px){
+  .hero{grid-template-columns:1fr}
+  .hero aside{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:20px}
+  .bio{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+  <div class="tricolour thick"></div>
+  <header class="masthead">
+    <div class="frame">
+      <div class="masthead-inner">
+        <div class="wordmark">No<span class="slash">/</span>Spoiler Cricket
+          <span class="sub">Player Sheet · 2026</span>
+        </div>
+        <div class="mast-meta">
+          Document <b>NSC/PLY/MOHAMMED-S</b><br/>
+          Built <b>2026-04-20</b>
+        </div>
+      </div>
+      <nav class="navstrip">
+        <a href="../index.html">01 — Fixtures</a>
+        <a href="../players.html" class="on">02 — Players</a>
+        <span class="spacer"></span>
+        <span class="edition mono">EN</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="frame">
+    <div class="crumbs"><a href="../index.html">Fixtures</a><span class="sep">/</span><a href="../players.html">Players</a><span class="sep">/</span>Mohammed Siraj</div>
+
+    <section class="hero">
+      <div class="photo">
+        <img src="../players/photos/mohammed-siraj.jpg" alt="Mohammed Siraj" onerror="this.parentNode.innerHTML='<span class=&quot;no-photo&quot;>No photo</span>'"/>
+      </div>
+      <div>
+        <div class="tag">
+          <span>🇮🇳 India</span>
+          <span>Rank #18</span>
+          <span>Age 32</span>
+          <span>Bowler</span>
+        </div>
+        <h1>Mohammed<span class="em">Siraj</span></h1>
+        <p class="sub">India · Royal Challengers Bengaluru</p>
+        <div class="chips-inline" style="margin-top:14px">
+          <span class="sp">FAST</span><span class="sp">NEW BALL</span><span class="sp">ALL FORMATS</span>
+        </div>
+      </div>
+      <aside>
+        <div class="stat"><span class="k">Rank</span><span class="v">18</span></div>
+        <div class="stat"><span class="k">Role</span><span class="v sm">Bowler</span></div>
+        <div class="stat"><span class="k">Team</span><span class="v sm">India · Royal Challengers Bengaluru</span></div>
+        <div class="stat"><span class="k">Nation</span><span class="v sm">🇮🇳 India</span></div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ 01 — Profile</div>
+      <h2>Bio</h2>
+      <div class="bio">
+        <div class="s"><div class="k">Nationality</div><div class="v sm">🇮🇳 India</div></div>
+        <div class="s"><div class="k">Date of Birth</div><div class="v sm mono">1994-03-13</div></div>
+        <div class="s"><div class="k">Specialties</div><div class="v sm">fast · new ball · all formats</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">§ 02 — 2026 Fixtures</div>
+      <h2>Likely appearances</h2>
+      <p class="prose" style="font-size:12px;letter-spacing:.04em">Derived from nation &amp; franchise — squads are announced closer to each fixture.</p>
+      <div class="program"><div class="pm">
+      <div class="pm-head">
+        <div class="pm-num mono">03</div>
+        <div class="pm-name">March</div>
+        <div class="pm-count mono">2 fixtures</div>
+      </div>
+      <div class="pm-list"><a class="prow" href="../match-details/ind-vs-eng-ltd-2026.html">
+        <div class="c first mono">Thu, Mar 12</div>
+        <div class="c"><span class="name">India vs England — T20I &amp; ODI series</span></div>
+        <div class="c mono cat">ODI SERIES</div>
+      </a><a class="prow" href="../match-details/ipl-2026.html">
+        <div class="c first mono">Fri, Mar 20</div>
+        <div class="c"><span class="name">Indian Premier League 2026</span></div>
+        <div class="c mono cat">FRANCHISE LEAGUE</div>
+      </a></div>
+    </div><div class="pm">
+      <div class="pm-head">
+        <div class="pm-num mono">06</div>
+        <div class="pm-name">June</div>
+        <div class="pm-count mono">1 fixture</div>
+      </div>
+      <div class="pm-list"><a class="prow" href="../match-details/ind-tour-eng-2026.html">
+        <div class="c first mono">Thu, Jun 18</div>
+        <div class="c"><span class="name">India tour of England 2026</span></div>
+        <div class="c mono cat">TEST SERIES</div>
+      </a></div>
+    </div><div class="pm">
+      <div class="pm-head">
+        <div class="pm-num mono">08</div>
+        <div class="pm-name">August</div>
+        <div class="pm-count mono">1 fixture</div>
+      </div>
+      <div class="pm-list"><a class="prow" href="../match-details/cpl-2026.html">
+        <div class="c first mono">Sat, Aug 22</div>
+        <div class="c"><span class="name">Caribbean Premier League 2026</span></div>
+        <div class="c mono cat">FRANCHISE LEAGUE</div>
+      </a></div>
+    </div><div class="pm">
+      <div class="pm-head">
+        <div class="pm-num mono">09</div>
+        <div class="pm-name">September</div>
+        <div class="pm-count mono">1 fixture</div>
+      </div>
+      <div class="pm-list"><a class="prow" href="../match-details/aus-tour-ind-bgt-2026.html">
+        <div class="c first mono">Mon, Sep 28</div>
+        <div class="c"><span class="name">Border-Gavaskar Trophy (AUS tour of India)</span></div>
+        <div class="c mono cat">TEST SERIES</div>
+      </a></div>
+    </div></div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-row">
+        <span>No Spoiler Cricket · 2026 Fixtures</span>
+        <span>§ Player Sheet · Mohammed Siraj</span>
+        <span>Built 2026-04-20</span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
